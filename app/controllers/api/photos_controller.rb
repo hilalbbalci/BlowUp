@@ -1,4 +1,4 @@
-class PhotosController < ApplicationController
+class Api::PhotosController < ApplicationController
     # def new
     # @chirp = Chirp.new
     # render :new
@@ -38,14 +38,14 @@ class PhotosController < ApplicationController
     #     render :edit
     # end
 
-    def update
-        @photo = Photo.find(params[:id])
-        if @photo.update(photo_params)
-        render json: @photo
-        else
-        render json: @photo.errors.full_messages, status: 422
-        end
-    end
+    # def update
+    #     @photo = Photo.find(params[:id])
+    #     if @photo.update(photo_params)
+    #     render json: @photo
+    #     else
+    #     render json: @photo.errors.full_messages, status: 422
+    #     end
+    # end
 
     def destroy
         @photo = Photo.find(params[:id])

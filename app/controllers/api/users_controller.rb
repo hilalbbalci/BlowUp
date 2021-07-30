@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class Api::UsersController < ApplicationController
 #      def new
 #     @user = User.new
 #     render :new
@@ -36,28 +36,28 @@ class UsersController < ApplicationController
     #     render :edit
     # end
 
-    def update
-        @user = User.find(params[:id])
-        if @user.update(user_params)
-        render json: @user
-        else
-        render json: @user.errors.full_messages, status: 422
-        end
-    end
+    # def update
+    #     @user = User.find(params[:id])
+    #     if @user.update(user_params)
+    #     render json: @user
+    #     else
+    #     render json: @user.errors.full_messages, status: 422
+    #     end
+    # end
 
-    def destroy
-        @user = User.find(params[:id])
-        if @user.destroy
-        render json: @users
-        else
-        render plain: "You can't destroy what's not there."
-        end
-    end
+    # def destroy
+    #     @user = User.find(params[:id])
+    #     if @user.destroy
+    #     render json: @users
+    #     else
+    #     render plain: "You can't destroy what's not there."
+    #     end
+    # end
 
-    def search
-        @users = User.where("username LIKE '%#{params[:query]}%'")
-        render json: @users
-    end
+    # def search
+    #     @users = User.where("username LIKE '%#{params[:query]}%'")
+    #     render json: @users
+    # end
 
     private
 
