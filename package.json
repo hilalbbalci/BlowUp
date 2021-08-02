@@ -9,6 +9,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.4",
+    "react-router-dom": "^5.2.0",
     "redux": "^4.1.0",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
@@ -24,7 +25,12 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "webpack": "webpack --mode=development --watch"
+    "webpack": "webpack --mode=development --watch",
+    "postinstall": "webpack"
+  },
+  "engines": {
+    "node": "14.16.0",
+    "npm": "6.14.11"
   },
   "repository": {
     "type": "git",

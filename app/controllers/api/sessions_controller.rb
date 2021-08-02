@@ -1,4 +1,4 @@
-class Api::SessionController < ApplicationController
+class Api::SessionsController < ApplicationController
     before_action :require_logged_in, only: [:destroy]
     def create
         @user = User.find_by_credentials(params[:user][:username], params[:user][:password])
@@ -6,13 +6,12 @@ class Api::SessionController < ApplicationController
             login(@user)
             render 'api/users/show'
         else
-            render json: ["invalid username/password combination"], status: 401
+            render json: ["invalid username/password combination"], status: 422
         end
     end
 
     def destroy
         logout!
-        render "api/users/show"
     end
 
    
