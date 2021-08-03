@@ -17,6 +17,8 @@ import SessionForm from './session_form/session_form';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
+   
+
     <div>
         <header className="header">
             <Link to="/" className="header-link">BlowUp</Link>
