@@ -24,10 +24,9 @@ class SignUpForm extends React.Component {
         return (
             <div className="login-form-container">
                 <form onSubmit={this.handleSubmit} className="login-form-box">
-                    Welcome to BlowUp!
+                    Join BlowUp!
                     <br /> 
-                    {this.props.navLink}
-
+                    
                     <div className="login-form">
                         <br />
                         <label>Username:
@@ -57,6 +56,7 @@ class SignUpForm extends React.Component {
                         <input className="session-submit" type="submit" value={this.props.formType} />
                     </div>
                 </form>
+                Already have an account? {this.props.navLink}
             </div>
         );
     }
