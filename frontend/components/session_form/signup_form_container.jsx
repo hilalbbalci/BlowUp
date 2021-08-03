@@ -11,8 +11,8 @@ const mapStateToProps = () => {
             username: '',
             password: ''
         },
-        formType: 'signup',
-        navLink: <Link to="/login">login</Link>,
+        formType: 'Sign up',
+        navLink: <Link to="/login">Log in</Link>,
     };
 };
 

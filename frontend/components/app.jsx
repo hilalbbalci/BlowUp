@@ -21,7 +21,11 @@ const App = () => (
 
     <div>
         <header className="header">
-            <Link to="/" className="header-link">BlowUp</Link>
+            <div className="header-links">
+                <Link to="/" className="header-link-blow">Blow</Link>
+                <Link to="/" className="header-link-up">Up</Link>
+            </div>
+            
             <GreetingContainer />
         </header>
         <Switch>
