@@ -1,4 +1,4 @@
-class PhotosController < ApplicationController
+class Api::PhotosController < ApplicationController
     # def new
     # @chirp = Chirp.new
     # render :new
@@ -9,7 +9,7 @@ class PhotosController < ApplicationController
         @photo.user_id = current_user.id
         if @photo.save
         # redirect_to photo_url(@chirp)
-        render json: @photo
+        render :show
         else
         render json: @photo.errors.full_messages, status: 422
         end
@@ -18,7 +18,7 @@ class PhotosController < ApplicationController
     def show
         @photo = Photo.find(params[:id])
         if @photo
-        render json: @photo
+        render :show
         else
         render json: @photo.errors.full_messages, status: 404
         end
@@ -30,7 +30,7 @@ class PhotosController < ApplicationController
                 else
                     Photo.all
                 end
-        render json: @photos
+        render :index
     end
 
     # def edit
@@ -38,19 +38,19 @@ class PhotosController < ApplicationController
     #     render :edit
     # end
 
-    def update
-        @photo = Photo.find(params[:id])
-        if @photo.update(photo_params)
-        render json: @photo
-        else
-        render json: @photo.errors.full_messages, status: 422
-        end
-    end
+    # def update
+    #     @photo = Photo.find(params[:id])
+    #     if @photo.update(photo_params)
+    #     render json: @photo
+    #     else
+    #     render json: @photo.errors.full_messages, status: 422
+    #     end
+    # end
 
     def destroy
         @photo = Photo.find(params[:id])
         if @photo.destroy
-        render json: @photo
+        render :index
         else
         render plain: "You can't destroy what's not there."
         end
