@@ -13,12 +13,10 @@ export const receivePhoto = (photo) => ({
     type: RECEIVE_PHOTO,
     photo
 });
-export const removePhoto = (id) =({
+export const removePhoto = (photoId) =({
     type: REMOVE_PHOTO,
-    id
+    photoId
 });
-
-
 
 
 export const fetchPhotos = () => dispatch => (
@@ -38,8 +36,8 @@ export const createPhoto = photo => dispatch => (
         dispatch(receivePhoto(photo))
     ))
 );
-export const deletePhoto = id => dispatch => (
-    APIUtil.deletePhoto(id).then(() => (
-        dispatch(removePhoto(id))
+export const deletePhoto = photoId => dispatch => (
+    APIUtil.deletePhoto(photoId).then(() => (
+        dispatch(removePhoto(photoId))
     ))
 );

@@ -14,6 +14,7 @@ const Greeting = ({ currentUser, logout }) => {
         <hgroup className="header-group">
             <h2 className="header-name"></h2>
             <button className="header-button" onClick={logout}>Log Out</button>
+            <Link to="/upload" className="upload-photo">Upload</Link>
         </hgroup>
     );
 

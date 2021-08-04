@@ -13,7 +13,7 @@ import SignUpFormContainer from './session_form/signup_form_container';
 import SessionForm from './session_form/session_form';
 // import SearchContainer from './search/search_container';
 // import PhotoShowContainer from './photo_show/photo_show_container';
-// import PhotoFormContainer from './photo_form/photo_form_container';
+import PhotoFormContainer from './photo_form/photo_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
@@ -31,6 +31,7 @@ const App = () => (
         <Switch>
             <AuthRoute exact path="/login" component={SessionForm} />
             <AuthRoute exact path="/signup" component={SignUpFormContainer} />
+            <AuthRoute exact path="/upload" component={PhotoFormContainer} />
         </Switch>
     </div>
 );
