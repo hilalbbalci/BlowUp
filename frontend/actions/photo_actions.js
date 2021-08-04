@@ -13,7 +13,7 @@ export const receivePhoto = (photo) => ({
     type: RECEIVE_PHOTO,
     photo
 });
-export const removePhoto = (photoId) =({
+export const removePhoto = (photoId) => ({
     type: REMOVE_PHOTO,
     photoId
 });

@@ -31,7 +31,7 @@ const App = () => (
         <Switch>
             <AuthRoute exact path="/login" component={SessionForm} />
             <AuthRoute exact path="/signup" component={SignUpFormContainer} />
-            <AuthRoute exact path="/upload" component={PhotoFormContainer} />
+            <ProtectedRoute exact path="/upload" component={PhotoFormContainer} />
         </Switch>
     </div>
 );

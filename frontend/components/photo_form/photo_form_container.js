@@ -4,11 +4,11 @@ import UploadPhoto from "./photo_form";
 
 const mSTP = (state = {}) => {
     // console.log(state);
-    return {
+    return ({
         photo: state.entities.photos,
-        currentUser: state.session.currentUser.id
+        currentUser: state.session.id
        
-    };
+    });
 };
 
 const mDTP = dispatch => {
