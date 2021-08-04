@@ -25,11 +25,8 @@ class SignUpForm extends React.Component {
         return (
             <div className="login-form-container">
                 <form onSubmit={this.handleSubmit} className="login-form-box">
+                <div className="login-form">
                     Join BlowUp!
-                    <br /> 
-                    
-                    <div className="login-form">
-                        <br />
                         <label>Username:
                             <input type="text"
                                 value={this.state.username}
@@ -37,7 +34,6 @@ class SignUpForm extends React.Component {
                                 className="login-input"
                             />
                         </label>
-                        <br />
                         <label>Email:
                             <input type="text"
                                 value={this.state.email}
@@ -45,7 +41,6 @@ class SignUpForm extends React.Component {
                                 className="login-input"
                             />
                         </label>
-                        <br />
                         <label>Password:
                             <input type="password"
                                 value={this.state.password}
@@ -53,7 +48,6 @@ class SignUpForm extends React.Component {
                                 className="login-input"
                             />
                         </label>
-                        <br />
                         <input className="session-submit" type="submit" value={this.props.formType} />
                         <GoogleLogin
                             clientId='659316375025-oef0r356n7ltan2662lbdj3s2cnjbjrb.apps.googleusercontent.com'
@@ -61,10 +55,9 @@ class SignUpForm extends React.Component {
                             cokkiePolicy={'single_host_origin'}
 
                         />
-                        Already have an account? {this.props.navLink}
+                        <p>Already have an account? {this.props.navLink}</p>
                     </div>
                 </form>
-                
             </div>
         );
     }
