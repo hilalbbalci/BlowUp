@@ -1,4 +1,5 @@
 import React from 'react';
+import GoogleLogin from 'react-google-login';
 
 class SignUpForm extends React.Component {
     constructor(props) {
@@ -54,9 +55,16 @@ class SignUpForm extends React.Component {
                         </label>
                         <br />
                         <input className="session-submit" type="submit" value={this.props.formType} />
+                        <GoogleLogin
+                            clientId='659316375025-oef0r356n7ltan2662lbdj3s2cnjbjrb.apps.googleusercontent.com'
+                            buttonText='login'
+                            cokkiePolicy={'single_host_origin'}
+
+                        />
+                        Already have an account? {this.props.navLink}
                     </div>
                 </form>
-                Already have an account? {this.props.navLink}
+                
             </div>
         );
     }
