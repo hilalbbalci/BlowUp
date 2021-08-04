@@ -7,11 +7,10 @@ import { login } from '../../actions/session_actions';
 class SessionForm extends React.Component {
     constructor(props) {
         super(props);
-        this.state = props.user;
+        this.state = this.props.user;
         this.handleSubmit = this.handleSubmit.bind(this);
     }
-    
-
+   
     update(field) {
         return e => this.setState({
             [field]: e.currentTarget.value
@@ -22,6 +21,17 @@ class SessionForm extends React.Component {
         e.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.processForm(user);
+    }
+    renderErrors() {
+        return (
+            <ul>
+                {this.props.errors.map((error, i) => (
+                    <li key={`error-${i}`}>
+                        {error}
+                    </li>
+                ))}
+            </ul>
+        );
     }
 
 
@@ -49,12 +59,13 @@ class SessionForm extends React.Component {
                             />
                         </label> 
                         <input className="session-submit" type="submit" value={this.props.formType} />
-                        <GoogleLogin
+                        {/* <GoogleLogin
                             clientId='659316375025-oef0r356n7ltan2662lbdj3s2cnjbjrb.apps.googleusercontent.com'
                             buttonText='login'
                             cokkiePolicy={'single_host_origin'}
 
-                        />
+                        /> */}
+                        <div className="errors">{this.renderErrors()}</div>
                         <p>Don't have an account?{this.props.navLink}</p>
                     </div>
                 </form>
@@ -65,8 +76,9 @@ class SessionForm extends React.Component {
     }
 }
 
-const mapStateToProps = () => {
+const mapStateToProps = ({sessionErrors}) => {
     return {
+        errors: sessionErrors,
         user: {
             username: '',
             password: ''

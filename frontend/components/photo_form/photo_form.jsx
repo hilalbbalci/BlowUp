@@ -25,6 +25,7 @@ class UploadPhoto extends React.Component {
     }
 
     handleFile(e) {
+        console.log(e.target)
         const file = e.target.files[0];
         const fileReader = new FileReader();
         fileReader.onloadend = () => {
@@ -46,9 +47,6 @@ class UploadPhoto extends React.Component {
             this.props.createPhoto(formData).then(rest => this.props.history.push(`/photos/${rest.photo.id}`));
         }
     }
-
-
-
     handleCancel(e) {
         this.setState({ selectForm: 0 });
     }
@@ -63,7 +61,7 @@ class UploadPhoto extends React.Component {
     render() {
         const preview = this.state.photoUrl ? <img className="upload_form_preview_img" src={this.state.photoUrl} /> : null
 
-        // if (this.state.selectForm == 0) {
+        if (this.state.selectForm == 0) {
             return (
                 <div className="upload_container">
                     <h3>Upload</h3>
@@ -71,10 +69,12 @@ class UploadPhoto extends React.Component {
                         <i className="fas fa-arrow-up"></i>
                         <h2>Upload photos</h2>
                         
-                        <label className="upload_lable" for="selectedFile">
+                        <label className="upload_lable">
                             Select Photo
-                            <input type="file" onChange={this.handleFile} id="selectedFile" style={{ display: "none" }} />
+                            <input type="file" onChange={this.handleFile} style={{ display: "none" }} />
                         </label>
+                                           
+                    </div>
                         <div className="requirements_for_photos">
                             <h3>Photo requirements</h3>
                             .jpg only
@@ -84,37 +84,36 @@ class UploadPhoto extends React.Component {
                             No watermarks, logos, or borders
                             No NSFW content
                         </div>
+                </div>
+            )
+        }
+
+        if (this.state.selectForm == 1) {
+            return (
+                <div className="upload_container">
+                    <h3>Upload</h3>
+                    <div className="upload_container_from_two">
+                        <div className="upload_form_preview">
+                            {preview}
+                        </div>
+                        <form className="upload_form">
+                            <h4>art selected</h4>
+                            <label>Title:
+                                <input className="upload_input" type="text" value={this.state.title} onChange={this.Update("title")} />
+                                {this.state.tError ? <p className="errors">Title can not be empty</p> : null}
+                            </label>
+                            <label>Description:
+                                <textarea cols="40" rows="6" className="upload_textarea" type="text" value={this.state.description} onChange={this.Update("description")} />
+                            </label>
+                            <div>
+                                <button className="upload_button_cancel" onClick={this.handleCancel}>Cancel</button>
+                                <input className="upload_button_upload" onClick={this.handleSubmit} type="submit" value="Upload" />
+                            </div>
+                        </form>
                     </div>
                 </div>
             )
-        // }
-
-        // if (this.state.selectForm == 1) {
-        //     return (
-        //         <div className="upload_container">
-        //             <h3>Upload</h3>
-        //             <div className="upload_container_from_two">
-        //                 <div className="upload_form_preview">
-        //                     {preview}
-        //                 </div>
-        //                 <form className="upload_form">
-        //                     <h4>art selected</h4>
-        //                     <label>Title:
-        //                         <input className="upload_input" type="text" value={this.state.title} onChange={this.Update("title")} />
-        //                         {this.state.tError ? <p className="errors">Title can not be empty</p> : null}
-        //                     </label>
-        //                     <label>Description:
-        //                         <textarea cols="40" rows="6" className="upload_textarea" type="text" value={this.state.description} onChange={this.Update("description")} />
-        //                     </label>
-        //                     <div>
-        //                         <button className="upload_button_cancel" onClick={this.handleCancel}>Cancel</button>
-        //                         <input className="upload_button_upload" onClick={this.handleSubmit} type="submit" value="Upload" />
-        //                     </div>
-        //                 </form>
-        //             </div>
-        //         </div>
-        //     )
-        // }
+        }
     }
 }
 
