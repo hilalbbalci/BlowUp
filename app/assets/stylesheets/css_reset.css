@@ -47,3 +47,18 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+input[type="submit" i] {
+    appearance: auto;
+    user-select: none;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    color: -internal-light-dark(black, white);
+    background-color: cornflowerblue;
+    box-sizing: border-box;
+    padding: 1px 6px;
+	width: 160px;
+    border-width: 1px;
+	border-radius: 25%;
+    /* border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133)); */
+}
