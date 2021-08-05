@@ -8,7 +8,7 @@ class UploadPhoto extends React.Component {
             id: "",
             title: "",
             description: "",
-            ownerId: this.props.currentUser,
+            userId: this.props.currentUser,
             redirect: false,
             photoFile: null,
             photoUrl: null,
@@ -42,8 +42,8 @@ class UploadPhoto extends React.Component {
             const formData = new FormData();
             formData.append("photo[title]", this.state.title);
             formData.append("photo[description]", this.state.description);
-            formData.append("photo[ownerId]", this.state.ownerId);
-            formData.append("photo[photo]", this.state.photoFile);
+            formData.append("photo[userId]", this.state.user_id);
+            formData.append("photo[photoUrl]", this.state.photoFile);
             this.props.createPhoto(formData).then(rest => this.props.history.push(`/photos/${rest.photo.id}`));
         }
     }
@@ -59,7 +59,7 @@ class UploadPhoto extends React.Component {
 
 
     render() {
-        const preview = this.state.photoUrl ? <img className="upload_form_preview_img" src={this.state.photoUrl} /> : null
+        const preview = this.state.photoUrl ? <img className="upload_form_preview_img" src={url_for(this.state.photo.photoUrl)} /> : null
 
         if (this.state.selectForm == 0) {
             return (
