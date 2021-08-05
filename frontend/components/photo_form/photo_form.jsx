@@ -13,7 +13,7 @@ class UploadPhoto extends React.Component {
             photoFile: null,
             photoUrl: null,
             tError: false,
-            // selectForm: 0,
+            selectForm: 0,
         };
         this.handleFile = this.handleFile.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -59,9 +59,9 @@ class UploadPhoto extends React.Component {
 
 
     render() {
-        const preview = this.state.photoUrl ? <img className="upload_form_preview_img" src={url_for(this.state.photo.photoUrl)} /> : null
+        const preview = this.state.photoUrl ? <img className="upload_form_preview_img" src={(this.state.photoUrl)} /> : null
 
-        if (this.state.selectForm == 0) {
+        if (this.state.selectForm === 0) {
             return (
                 <div className="upload_container">
                     <h3>Upload</h3>
