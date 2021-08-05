@@ -1,3 +1,30 @@
 // Place all the styles related to the photo controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+img {
+    width: 500px;
+    height: auto;
+}
+.upload-container {
+    padding: 50px;
+}
+.upload-container_box {
+    // padding: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+// .upload-form-preview{
+//     position: relative;
+// }
+.upload-photo-form {
+    // position: relative;
+    // margin-left: 50%; 
+    // margin-top: -150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 0.1px solid rgb(234, 232, 232);
+    border-radius: 0%;
+    background-color: rgb(255, 255, 255);
+}

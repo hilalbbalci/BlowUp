@@ -90,20 +90,22 @@ class UploadPhoto extends React.Component {
 
         if (this.state.selectForm == 1) {
             return (
-                <div className="upload_container">
-                    <h3>Upload</h3>
-                    <div className="upload_container_from_two">
-                        <div className="upload_form_preview">
+                <div className="upload-container">
+                    <h1>Upload</h1>
+                    <div className="upload-container_box">
+                        <div className="upload-form-preview">
                             {preview}
                         </div>
-                        <form className="upload_form">
-                            <h4>art selected</h4>
-                            <label>Title:
+                        <form className="upload-photo-form">
+                            <label>Title
+                                <br />
                                 <input className="upload_input" type="text" value={this.state.title} onChange={this.Update("title")} />
                                 {this.state.tError ? <p className="errors">Title can not be empty</p> : null}
                             </label>
-                            <label>Description:
-                                <textarea cols="40" rows="6" className="upload_textarea" type="text" value={this.state.description} onChange={this.Update("description")} />
+                            <br />
+                            <label>Description
+                                <br />
+                                <textarea cols="30" rows="5" className="upload_textarea" type="text" value={this.state.description} onChange={this.Update("description")} />
                             </label>
                             <div>
                                 <button className="upload_button_cancel" onClick={this.handleCancel}>Cancel</button>
