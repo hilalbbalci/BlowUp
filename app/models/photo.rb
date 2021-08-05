@@ -1,6 +1,6 @@
 class Photo < ApplicationRecord
     validates :title, :description, :user_id, presence: true
-    validates :user_id, uniqueness: true
+    validates :title, uniqueness: {scope: :user_id}
     has_one_attached :photo_url
     belongs_to :user
 
