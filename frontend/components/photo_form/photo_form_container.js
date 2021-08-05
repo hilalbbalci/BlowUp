@@ -6,7 +6,7 @@ const mSTP = (state = {}) => {
     // console.log(state);
     return ({
         photo: state.entities.photos,
-        currentUser: state.session.id
+        userId: state.session.id
        
     });
 };

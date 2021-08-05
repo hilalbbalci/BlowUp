@@ -8,11 +8,9 @@ class UploadPhoto extends React.Component {
             id: "",
             title: "",
             description: "",
-            userId: this.props.currentUser,
-            redirect: false,
+            userId: this.props.userId,
             photoFile: null,
             photoUrl: null,
-            tError: false,
             selectForm: 0,
         };
         this.handleFile = this.handleFile.bind(this);
@@ -25,12 +23,11 @@ class UploadPhoto extends React.Component {
     }
 
     handleFile(e) {
-        console.log(e.target.files[0])
         const file = e.target.files[0];
         const fileReader = new FileReader();
         fileReader.onloadend = () => {
             this.setState({ photoFile: file, photoUrl: fileReader.result, selectForm: 1 });
-        }
+        };
         if (file) {
             fileReader.readAsDataURL(file);
         }
@@ -38,24 +35,18 @@ class UploadPhoto extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        if (this.titleError() === false) {
             const formData = new FormData();
             formData.append("photo[title]", this.state.title);
             formData.append("photo[description]", this.state.description);
-            formData.append("photo[userId]", this.state.user_id);
-            formData.append("photo[photoUrl]", this.state.photoFile);
-            this.props.createPhoto(formData).then(rest => this.props.history.push(`/photos/${rest.photo.id}`));
-        }
+            formData.append("photo[userId]", this.state.userId);
+            formData.append("photo[post]", this.state.photoFile);
+            this.props.createPhoto(formData).then(rest => this.props.history.push(`/photos/${rest.id}`));
+        
     }
     handleCancel(e) {
         this.setState({ selectForm: 0 });
     }
-    titleError() {
-        if (this.state.title.length !== 0) {
-            return false;
-        }
-        this.setState({ tError: true });
-    }
+   
 
 
     render() {

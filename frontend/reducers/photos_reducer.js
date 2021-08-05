@@ -9,7 +9,7 @@ const photosReducer = (state = {}, action) => {
     let newState = Object.assign({}, state);
     switch (action.type) {
         case RECEIVE_PHOTOS:
-            return action.photos;
+            return Object.assign(newState, action.photos);
         case RECEIVE_PHOTO:
             newState[action.photo.id] = action.photo;
             return newState;
