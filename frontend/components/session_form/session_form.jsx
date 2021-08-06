@@ -1,5 +1,4 @@
 import React from 'react';
-import GoogleLogin from 'react-google-login';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { login } from '../../actions/session_actions';
@@ -59,12 +58,7 @@ class SessionForm extends React.Component {
                             />
                         </label> 
                         <input className="session-submit" type="submit" value={this.props.formType} />
-                        {/* <GoogleLogin
-                            clientId='659316375025-oef0r356n7ltan2662lbdj3s2cnjbjrb.apps.googleusercontent.com'
-                            buttonText='login'
-                            cokkiePolicy={'single_host_origin'}
-
-                        /> */}
+                       
                         <div className="errors">{this.renderErrors()}</div>
                         <p>Don't have an account?{this.props.navLink}</p>
                     </div>
