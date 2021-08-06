@@ -32,15 +32,15 @@ const App = () => (
             <input type="text" placeholder="Search.." />
             <GreetingContainer />
         </header>
-        <div className="photo-index-container">
-            <PhotoIndexContainer />
-        </div>
+        
         
         <Switch>
             <AuthRoute exact path="/login" component={SessionForm} />
             <AuthRoute exact path="/signup" component={SignUpFormContainer} />
             <ProtectedRoute exact path="/upload" component={PhotoFormContainer} />
-            <AuthRoute exact path="/photos/:photoId" component={PhotoShowContainer} />
+            <Route exact path="/photos/:id" component={PhotoShowContainer} />
+            <Route exact path='/' component={PhotoIndexContainer}/>
+
         </Switch>
     </div>
 );

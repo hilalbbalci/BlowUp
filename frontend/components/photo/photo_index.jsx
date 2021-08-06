@@ -21,8 +21,8 @@ class PhotoIndex extends React.Component {
                 <div className="discover-container">
                     <ul className="photo-item_container">
                         {photos.map((photo, idx) => (
-                            <li className="photo-item">
-                                <Link to={`/photos/${photo.id}`} key={idx}>
+                            <li className="photo-item" key={idx}>
+                                <Link to={`/photos/${photo.id}`} >
                                     <img className="photo-img" src={photo.post} />
                                 </Link>
                             </li>
