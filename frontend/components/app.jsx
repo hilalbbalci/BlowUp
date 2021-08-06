@@ -12,9 +12,10 @@ import GreetingContainer from './greeting/greeting_container';
 import SignUpFormContainer from './session_form/signup_form_container';
 import SessionForm from './session_form/session_form';
 // import SearchContainer from './search/search_container';
-// import PhotoShowContainer from './photo_show/photo_show_container';
-// import PhotoFormContainer from './photo_form/photo_form_container';
+import PhotoShowContainer from './photo/photo_show_container';
+import PhotoFormContainer from './photo_form/photo_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import PhotoIndexContainer from './photo/photo_index_container';
 
 const App = () => (
    
@@ -25,12 +26,21 @@ const App = () => (
                 <Link to="/" className="header-link-blow">Blow</Link>
                 <Link to="/" className="header-link-up">Up</Link>
             </div>
-            
+            <div>
+                
+            </div>
+            <input type="text" placeholder="Search.." />
             <GreetingContainer />
         </header>
+        
+        
         <Switch>
             <AuthRoute exact path="/login" component={SessionForm} />
             <AuthRoute exact path="/signup" component={SignUpFormContainer} />
+            <ProtectedRoute exact path="/upload" component={PhotoFormContainer} />
+            <Route exact path="/photos/:id" component={PhotoShowContainer} />
+            <Route exact path='/' component={PhotoIndexContainer}/>
+
         </Switch>
     </div>
 );

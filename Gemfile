@@ -5,6 +5,7 @@ ruby '2.5.1'
 gem 'jquery-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
+gem 'aws-sdk-s3'
 # Use postgresql as the database for Active Record
 group :production do
 gem 'pg', '>= 0.18', '< 2.0'

@@ -1,4 +1,6 @@
 class Api::PhotosController < ApplicationController
+    before_action :require_logged_in, only: [:create, :destroy]
+
     # def new
     # @chirp = Chirp.new
     # render :new
@@ -7,7 +9,8 @@ class Api::PhotosController < ApplicationController
     def create
         @photo = Photo.new(photo_params)
         @photo.user_id = current_user.id
-        if @photo.save
+        @photo.post.attach(params[:photo][:post])
+        if @photo.save! 
         # redirect_to photo_url(@chirp)
         render :show
         else
@@ -25,11 +28,7 @@ class Api::PhotosController < ApplicationController
     end
 
     def index
-        @photos = if params[:user_id]
-                    Photo.where(user_id: params[:user_id])
-                else
-                    Photo.all
-                end
+        @photos = Photo.all
         render :index
     end
 
@@ -59,6 +58,6 @@ class Api::PhotosController < ApplicationController
     private
 
     def photo_params
-        params.require(:photo).permit(:title, :description, :user_id)
+        params.require(:photo).permit(:title, :description, :user_id, :post)
     end
 end

@@ -19,7 +19,17 @@ class SignUpForm extends React.Component {
         const user = Object.assign({}, this.state);
         this.props.processForm(user);
     }
-
+    renderErrors() {
+        return (
+            <ul>
+                {this.props.errors.map((error, i) => (
+                    <li key={`error-${i}`}>
+                        {error}
+                    </li>
+                ))}
+            </ul>
+        );
+    }
 
     render() {
         return (
@@ -27,21 +37,24 @@ class SignUpForm extends React.Component {
                 <form onSubmit={this.handleSubmit} className="login-form-box">
                 <div className="login-form">
                     Join BlowUp!
-                        <label>Username:
+                        <label>Username
+                            <br />
                             <input type="text"
                                 value={this.state.username}
                                 onChange={this.update('username')}
                                 className="login-input"
                             />
                         </label>
-                        <label>Email:
+                        <label>Email
+                            <br />
                             <input type="text"
                                 value={this.state.email}
                                 onChange={this.update('email')}
                                 className="login-input"
                             />
                         </label>
-                        <label>Password:
+                        <label>Password
+                            <br />
                             <input type="password"
                                 value={this.state.password}
                                 onChange={this.update('password')}
@@ -49,12 +62,14 @@ class SignUpForm extends React.Component {
                             />
                         </label>
                         <input className="session-submit" type="submit" value={this.props.formType} />
-                        <GoogleLogin
+                        {/* <GoogleLogin
                             clientId='659316375025-oef0r356n7ltan2662lbdj3s2cnjbjrb.apps.googleusercontent.com'
                             buttonText='login'
                             cokkiePolicy={'single_host_origin'}
 
-                        />
+                        /> */
+                        }
+                        <div className="errors">{this.renderErrors()}</div>
                         <p>Already have an account? {this.props.navLink}</p>
                     </div>
                 </form>

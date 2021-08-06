@@ -1,7 +1,8 @@
 class Photo < ApplicationRecord
-    validates :title, :description, :user_id, :url, presence: true
-    validates :user_id, uniqueness: true
-
+    validates :title, :description, :user_id, presence: true
+    validates :title, uniqueness: {scope: :user_id}
+    validate :ensure_post
+    has_one_attached :post
     belongs_to :user
 
     has_many :comments,
@@ -19,4 +20,10 @@ class Photo < ApplicationRecord
     # has_many :likers,
     #     through: :likes,
     #     source: :liker
+
+    def ensure_post
+        unless self.post.attached?
+            errors[:post] << "Must be attached"
+        end
+    end
 end

@@ -49,6 +49,9 @@ body, html {
  a {
     text-decoration: none;
  }
+ form {
+     
+ }
  a:hover {
      cursor: pointer;
      color: cornflowerblue;
