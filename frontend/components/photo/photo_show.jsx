@@ -1,5 +1,7 @@
 import React from "react";
 import { Redirect } from 'react-router-dom';
+import CreateCommentContainer from '../comments/create_comment_container';
+import CommentIndexContainer from '../comments/comment_index_container';
 
 class PhotoShow extends React.Component {
     constructor(props) {
@@ -48,6 +50,10 @@ class PhotoShow extends React.Component {
                             <p>{photo.description}</p>
                         </div>
                     </div>
+                </div>
+                <div className="comment-container">
+                    <CreateCommentContainer photoId={this.props.photo.id}/>
+                    <CommentIndexContainer />
                 </div>
             </div>
         )

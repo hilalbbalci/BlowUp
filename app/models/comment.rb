@@ -1,6 +1,6 @@
 class Comment < ApplicationRecord
 
-    validates :commenter_id, :photo_id, presence: true
+    validates :commenter_id, :photo_id, :comment, presence: true
 
     belongs_to :photo
        
