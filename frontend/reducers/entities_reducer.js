@@ -6,8 +6,8 @@ import photos from './photos_reducer';
 import comments from './comments_reducer';
 
 const entities = combineReducers({
-    users,
     photos,
-    comments
+    comments,
+    users
 });
 export default entities;
