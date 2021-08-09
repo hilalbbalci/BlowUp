@@ -17,7 +17,6 @@ class PhotoIndex extends React.Component {
         if (!photos) return null;
         return (
             <div className="upload-container">
-                <h3>Discover</h3>
                 <div className="discover-container">
                     <ul className="photo-item_container">
                         {photos.map((photo, idx) => (

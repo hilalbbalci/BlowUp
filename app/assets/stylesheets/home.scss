@@ -1,0 +1,29 @@
+.home-group-app {
+    box-sizing: border-box;
+    // font-size: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    justify-content: space-between;
+    width: 100%;
+    height: 90px;
+    padding-left:64px; 
+    padding-right: 50px;
+    background-color: rgb(255, 255, 255);
+    left: 0px;
+    right: 0px;
+    z-index: 4;
+    top: 0px;
+ }
+ .home-group {
+    height: 55px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    justify-content: space-between;
+    width: 100%;
+ }
+ .home-group-app > a::after{
+    text-decoration: underline;
+ }
