@@ -2,19 +2,22 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
+    border-bottom: black;
+    border-top: black;
 }
 .photo-index-container > .first-item {
     display: flex;
+    height: 75px;
+    line-height: 1.5em;
     flex-direction: column;
-    border-bottom: darkgray;
+    align-items: center;
 }
 .photos-slices-container {
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
     align-items: center;
-    background-color: blanchedalmond;
     justify-content: space-between;
     width: 100%;
     height: 300px;

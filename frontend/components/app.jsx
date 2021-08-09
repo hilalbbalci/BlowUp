@@ -39,8 +39,7 @@ const App = () => (
         <div>
             <Switch>
                 <AuthRoute exact path='/' component={Entry} />
-                <ProtectedRoute exact path='/' component={Home}/>
-                
+                <Route exact path='/' component={Home}/>   
             </Switch>
         </div>
         <div>

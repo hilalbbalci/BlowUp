@@ -1,6 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { fetchPhotos } from '../../actions/photo_actions';
 class Entry extends React.Component {
    
     render() {
