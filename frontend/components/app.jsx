@@ -19,6 +19,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import PhotoIndexContainer from './photo/photo_index_container';
 import Home from './home/home';
 import Entry from './entry/entry';
+import WhatMakesUsDifferent from './what_makes_different/what_makes_us_different';
 
 const App = () => (
    
@@ -33,6 +34,7 @@ const App = () => (
             </div>
             <input type="text" placeholder="Search.." />
             <GreetingContainer />
+
         </header>
         <div>
             <Switch>
@@ -42,12 +44,16 @@ const App = () => (
             </Switch>
         </div>
         <div>
+            {/* <AuthRoute exact path='/' component={WhatMakesUsDifferent} /> */}
+            <ProtectedRoute exact path='/' component={PhotoIndexContainer} />
+
+        </div>
+        <div>
             <Switch>
                 <AuthRoute exact path="/login" component={SessionForm} />
                 <AuthRoute exact path="/signup" component={SignUpFormContainer} />
                 <ProtectedRoute exact path="/upload" component={PhotoFormContainer} />
                 <Route exact path="/photos/:id" component={PhotoShowContainer} />
-                <Route exact path='/' component={PhotoIndexContainer} />
             </Switch>
         </div>
         

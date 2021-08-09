@@ -54,19 +54,19 @@ class UploadPhoto extends React.Component {
 
         if (this.state.selectForm === 0) {
             return (
-                <div className="upload_container">
+                <div className="upload-container">
                     <h3>Upload</h3>
-                    <div className="upload_form_container">
+                    <div className="upload-form-container">
                         <i className="fas fa-arrow-up"></i>
                         <h2>Upload photos</h2>
                         
-                        <label className="upload_lable">
+                        <label className="upload-label">
                             Select Photo
                             <input type="file" onChange={this.handleFile} style={{ display: "none" }} />
                         </label>
                                            
                     </div>
-                        <div className="requirements_for_photos">
+                        <div className="requirements-for-photos">
                             <h3>Photo requirements</h3>
                             .jpg only
                             Max. photo dimensions are 200MP/megapixels
@@ -83,24 +83,24 @@ class UploadPhoto extends React.Component {
             return (
                 <div className="upload-container">
                     <h1>Upload</h1>
-                    <div className="upload-container_box">
+                    <div className="upload-container-box">
                         <div className="upload-form-preview">
                             {preview}
                         </div>
                         <form className="upload-photo-form">
                             <label>Title
                                 <br />
-                                <input className="upload_input" type="text" value={this.state.title} onChange={this.Update("title")} />
+                                <input className="upload-input" type="text" value={this.state.title} onChange={this.Update("title")} />
                                 {this.state.tError ? <p className="errors">Title can not be empty</p> : null}
                             </label>
                             <br />
                             <label>Description
                                 <br />
-                                <textarea cols="30" rows="5" className="upload_textarea" type="text" value={this.state.description} onChange={this.Update("description")} />
+                                <textarea cols="30" rows="5" className="upload-textarea" type="text" value={this.state.description} onChange={this.Update("description")} />
                             </label>
                             <div>
-                                <button className="upload_button_cancel" onClick={this.handleCancel}>Cancel</button>
-                                <input className="upload_button_upload" onClick={this.handleSubmit} type="submit" value="Upload" />
+                                <button className="upload-button-cancel" onClick={this.handleCancel}>Cancel</button>
+                                <input className="upload-button-upload" onClick={this.handleSubmit} type="submit" value="Upload" />
                             </div>
                         </form>
                     </div>

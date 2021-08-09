@@ -1,0 +1,31 @@
+.photo-index-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.photo-index-container > .first-item {
+    display: flex;
+    flex-direction: column;
+    border-bottom: darkgray;
+}
+.photos-slices-container {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: blanchedalmond;
+    justify-content: space-between;
+    width: 100%;
+    height: 300px;
+    padding-left:64px; 
+    padding-right: 50px;
+
+}
+.photo-item-container {
+    display: flex;
+}
+.photo-img {
+    width: 100px;
+    height: auto;
+}
