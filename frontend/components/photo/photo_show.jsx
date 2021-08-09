@@ -28,34 +28,35 @@ class PhotoShow extends React.Component {
         if (!photo) return null;
         
         return (
-            <div>
-                hello
-                <div className="photo-show-container">
-                    <div className="photo-show-box1">
+        <div className="photo-show-biggest-container">
+            <div className="photo-show-container">
+                <div className="photo-show-box">
+                    {/* <div className="photo-show-box1">
                         <i className="fas fa-arrow-left" onClick={this.handleback}></i>
-                    </div>
+                    </div> */}
                     <div className="photo-show-box2">
                         <div>
                             <img className="photo-show-img" src={photo.post} />
                         </div>
                     </div>
                 </div>
-                <div className="photo-show-info">
-                    <div className="photo-info">
-                        <div className="photo-info-box1">
-                            <div className="photo-info-box2">
-                                <i onClick={() => this.props.history.push(`/users/${photo.userId}`)} className="fas fa-user-circle profile_logo"></i>
-                                <h5>{photo.title}</h5>
-                            </div>
-                            <p>{photo.description}</p>
-                        </div>
-                    </div>
-                </div>
-                <div className="comment-container">
-                    <CreateCommentContainer photoId={this.props.photo.id}/>
-                    <CommentIndexContainer />
-                </div>
             </div>
+            <br />
+            <div className="photo-show-info">
+                    <div className="photo-info-box1">
+                        <div className="photo-info-box2">
+                            {/* <i onClick={() => this.props.history.push(`/users/${photo.userId}`)} className="fas fa-user-circle profile_logo"></i> */}
+                            <h2>{photo.title}</h2>
+                        </div>
+                        <p>{photo.description}</p>
+                    </div>
+            </div>
+            <br />
+            <div className="comment-container">
+                <CreateCommentContainer photoId={this.props.photo.id}/>
+                <CommentIndexContainer />
+            </div>
+        </div>
         )
     }
 

@@ -34,46 +34,33 @@ class SignUpForm extends React.Component {
     render() {
         return (
             <div className="login-form-container">
+                <div className="head">
+                    <h3>Join BlowUp!</h3>
+                </div>
                 <form onSubmit={this.handleSubmit} className="login-form-box">
-                <div className="login-form">
-                    Join BlowUp!
-                        <label>Username
-                            <br />
-                            <input type="text"
-                                value={this.state.username}
-                                onChange={this.update('username')}
-                                className="login-input"
-                            />
-                        </label>
-                        <label>Email
-                            <br />
-                            <input type="text"
-                                value={this.state.email}
-                                onChange={this.update('email')}
-                                className="login-input"
-                            />
-                        </label>
-                        <label>Password
-                            <br />
-                            <input type="password"
-                                value={this.state.password}
-                                onChange={this.update('password')}
-                                className="login-input"
-                            />
-                        </label>
-                        <input className="session-submit" type="submit" value={this.props.formType} />
-                        {/* <GoogleLogin
-                            clientId='659316375025-oef0r356n7ltan2662lbdj3s2cnjbjrb.apps.googleusercontent.com'
-                            buttonText='login'
-                            cokkiePolicy={'single_host_origin'}
-
-                        /> */
-                        }
-                        <div className="errors">{this.renderErrors()}</div>
-                        <p>Already have an account? {this.props.navLink}</p>
-                    </div>
+                    <label>Username
+                        <br />
+                        <input type="text"
+                            value={this.state.username}
+                            onChange={this.update('username')}
+                            className="login-input"
+                        />
+                    </label>
+                    <label>Password
+                        <br />
+                        <input type="password"
+                            value={this.state.password}
+                            onChange={this.update('password')}
+                            className="login-input"
+                        />
+                    </label>
+                    <input className="session-submit" type="submit" value={this.props.formType} />
                 </form>
+                <p>{this.renderErrors()}</p>
+                <p>Already have an account? <strong>{this.props.navLink}</strong></p>
             </div>
+
+                        
         );
     }
 }

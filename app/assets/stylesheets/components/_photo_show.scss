@@ -1,0 +1,30 @@
+
+.photo-show-container {
+    width: 100%;
+    box-sizing: border-box;
+    display: table;
+    // flex-direction: column;
+   
+    padding-left: 64px;
+    padding-right: 50px;
+};
+.photo-show-box {
+    width: 100%;
+    height: 50%;
+    background-color: rgba(1, 1, 0, 0.701);
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;}
+.photo-show-img {
+    width: 30%;
+    height: 50%;
+    height: auto;
+}
+.photo-show-info {
+    padding-left: 64px;
+    padding-right: 50px;
+}
+.comment-container {
+    padding-left: 64px;
+    padding-right: 50px;
+}

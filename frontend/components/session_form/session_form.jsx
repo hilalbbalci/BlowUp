@@ -37,10 +37,10 @@ class SessionForm extends React.Component {
     render() {
         return (
             <div className="login-form-container">
-                
-                <form onSubmit={this.handleSubmit} className="login-form-box">
-                    <div className="login-form">
-                        <h2> Log in to BlowUp </h2>
+                <div className="head">
+                    <h3> Log in to BlowUp </h3>
+                </div>
+                <form onSubmit={this.handleSubmit} className="login-form-box">      
                         <label>Username
                             <br />
                             <input type="text"
@@ -57,14 +57,10 @@ class SessionForm extends React.Component {
                                 className="login-input"
                             />
                         </label> 
-                        <input className="session-submit" type="submit" value={this.props.formType} />
-                       
-                        <div className="errors">{this.renderErrors()}</div>
-                        <p>Don't have an account?{this.props.navLink}</p>
-                    </div>
-                </form>
-               
-                
+                        <input className="session-submit" type="submit" value={this.props.formType} />       
+                </form>   
+                <p>{this.renderErrors()}</p>
+                <p>Don't have an account? <strong>{this.props.navLink}</strong></p>
             </div> 
         );
     }
