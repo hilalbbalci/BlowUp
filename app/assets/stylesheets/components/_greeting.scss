@@ -1,0 +1,28 @@
+.logout-upload-photo {
+    width: 20%;
+}
+.profile-logo-and-upload-photo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+    // float: left;
+}
+.user-icon {
+    height: 35px;
+}
+.profile-logo-and-upload-photo ul {
+    display: none;
+}
+.profile-logo-and-upload-photo li:hover > ul {
+    display: block;
+}
+
+
+.upload-photo {
+    border-radius: 25px;
+   text-align: center;
+   width: 70px;
+   border: 2px solid black;
+   padding: 10px;
+}

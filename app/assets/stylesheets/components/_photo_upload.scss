@@ -4,16 +4,24 @@
 
 
 .upload-container {
-    padding: 50px;
-}
-.upload-container_box {
-    // padding: 50px;
+    width: 30%;
+    max-width: 350px;
+    height: 50%;
+    padding: 15px;
+    position: fixed;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
+    align-items: center;
+    top:30%;
+    left:40%;
 }
-// .upload-form-preview{
-//     position: relative;
-// }
+.requirements-for-photos {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
 .upload-photo-form {
     padding: 10px;
     display: flex;

@@ -15,12 +15,5 @@
 @import 'base/reset';
 @import 'base/base';
 
-@import 'components/comments';
-@import 'components/entry';
-@import 'components/header';
-@import 'components/home';
-@import 'components/photo_index';
-@import 'components/photo_upload';
-@import 'components/photo_show';
-@import 'components/session';
-@import 'components/what_makes_us_different';
+
+@import 'components/*';

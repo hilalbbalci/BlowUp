@@ -19,11 +19,10 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import PhotoIndexContainer from './photo/photo_index_container';
 import Home from './home/home';
 import Entry from './entry/entry';
-import WhatMakesUsDifferent from './what_makes_different/what_makes_us_different';
+// import WhatMakesUsDifferent from './what_makes_different/what_makes_us_different';
 
 const App = () => (
    
-
     <div>
         <header className="header">
             <div className="header-links">
@@ -37,10 +36,8 @@ const App = () => (
 
         </header>
         <div>
-            <Switch>
                 <AuthRoute exact path='/' component={Entry} />
-                <Route exact path='/' component={Home}/>   
-            </Switch>
+                <ProtectedRoute exact path='/' component={Home}/>   
         </div>
         <div>
             {/* <AuthRoute exact path='/' component={WhatMakesUsDifferent} /> */}
@@ -48,12 +45,11 @@ const App = () => (
 
         </div>
         <div>
-            <Switch>
-                <AuthRoute exact path="/login" component={SessionForm} />
-                <AuthRoute exact path="/signup" component={SignUpFormContainer} />
-                <ProtectedRoute exact path="/upload" component={PhotoFormContainer} />
-                <Route exact path="/photos/:id" component={PhotoShowContainer} />
-            </Switch>
+            <AuthRoute exact path="/login" component={SessionForm} />
+            <AuthRoute exact path="/signup" component={SignUpFormContainer} />
+            <ProtectedRoute exact path="/upload" component={PhotoFormContainer} />
+            <ProtectedRoute exact path="/photos/:id" component={PhotoShowContainer} />
+
         </div>
         
         

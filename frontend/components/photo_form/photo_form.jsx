@@ -1,5 +1,7 @@
 import React from 'react';
 // import { Redirect } from 'react-router-dom';
+import { IoArrowUp } from "react-icons/io5";
+
 
 class UploadPhoto extends React.Component {
     constructor(props) {
@@ -55,26 +57,21 @@ class UploadPhoto extends React.Component {
         if (this.state.selectForm === 0) {
             return (
                 <div className="upload-container">
-                    <h3>Upload</h3>
-                    <div className="upload-form-container">
-                        <i className="fas fa-arrow-up"></i>
-                        <h2>Upload photos</h2>
-                        
-                        <label className="upload-label">
-                            Select Photo
-                            <input type="file" onChange={this.handleFile} style={{ display: "none" }} />
-                        </label>
-                                           
+                    <IoArrowUp />
+                    <h2>Upload photos</h2>
+                    <label className="upload-label">
+                        Select Photo
+                        <input type="file" onChange={this.handleFile} style={{ display: "none" }} />
+                    </label>                        
+                    <div className="requirements-for-photos">
+                        <h3>Photo requirements</h3>
+                        .jpg only
+                        Max. photo dimensions are 200MP/megapixels
+                        <h3>Licensing requirements</h3>
+                        Min. photo dimensions are 3MP/megapixels
+                        No watermarks, logos, or borders
+                        No NSFW content
                     </div>
-                        <div className="requirements-for-photos">
-                            <h3>Photo requirements</h3>
-                            .jpg only
-                            Max. photo dimensions are 200MP/megapixels
-                            <h3>Licensing requirements</h3>
-                            Min. photo dimensions are 3MP/megapixels
-                            No watermarks, logos, or borders
-                            No NSFW content
-                        </div>
                 </div>
             )
         }
