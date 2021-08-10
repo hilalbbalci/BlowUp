@@ -259,6 +259,31 @@ photo25.save!
 
 
 
+Comment.create!({ photo_id: photo1.id, commenter_id: diane.id, comment: "Loving that theme" })
+Comment.create!({ photo_id: photo2.id, commenter_id: annie.id, comment: "Love seeing pictures of that" })
+Comment.create!({ photo_id: photo3.id, commenter_id: robert.id, comment: "Great colors!" })
+Comment.create!({ photo_id: photo4.id, commenter_id: steve.id, comment: "Good composition" })
+Comment.create!({ photo_id: photo5.id, commenter_id: edward.id, comment: "Amazing!" })
+Comment.create!({ photo_id: photo6.id, commenter_id: alfred.id, comment: "Love the details" })
+Comment.create!({ photo_id: photo7.id, commenter_id: irving.id, comment: "Good composition" })
+Comment.create!({ photo_id: photo8.id, commenter_id: cindy.id, comment: "That is wonderful!" })
+Comment.create!({ photo_id: photo9.id, commenter_id: amy.id, comment: "Love the details and harmony" })
+Comment.create!({ photo_id: photo10.id, commenter_id: drew.id, comment: "Wow that is an epic composition" })
+Comment.create!({ photo_id: photo11.id, commenter_id: john.id, comment: "Wow.." })
+Comment.create!({ photo_id: photo12.id, commenter_id: kate.id, comment: "The picture is so vivid" })
+Comment.create!({ photo_id: photo13.id, commenter_id: jazz.id, comment: 'Love that' })
+Comment.create!({ photo_id: photo14.id, commenter_id: diane.id, comment: "Nice colors" })
+Comment.create!({ photo_id: photo15.id, commenter_id: annie.id, comment: "Such a beautiful picture!" })
+Comment.create!({ photo_id: photo16.id, commenter_id: robert.id, comment: "What a cool shot" })
+Comment.create!({ photo_id: photo17.id, commenter_id: steve.id, comment: "Nice" })
+Comment.create!({ photo_id: photo18.id, commenter_id: edward.id, comment: "What an ideal perspective" })
+Comment.create!({ photo_id: photo19.id, commenter_id: alfred.id, comment: "Good Job" })
+Comment.create!({ photo_id: photo20.id, commenter_id: cindy.id, comment: "Loving the vibes" })
+Comment.create!({ photo_id: photo21.id, commenter_id: cindy.id, comment: "Loving the colors" })
+Comment.create!({ photo_id: photo22.id, commenter_id: amy.id, comment: "Loving the details" })
+Comment.create!({ photo_id: photo22.id, commenter_id: drew.id, comment: "Wonderful" })
+Comment.create!({ photo_id: photo24.id, commenter_id: john.id, comment: "So vivid.." })
+Comment.create!({ photo_id: photo25.id, commenter_id: kate.id, comment: "Super vibrant colors" })
 
 
 

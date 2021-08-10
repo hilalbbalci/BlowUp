@@ -60,12 +60,15 @@
     align-items: center;
     justify-content: flex-end;
 }
-// .upload-photo-form {
-//     padding: 10px;
-//     display: flex;
-//     flex-direction: column;
-//     align-items: center;
-//     border: 0.1px solid rgb(234, 232, 232);
-//     border-radius: 0%;
-//     background-color: rgb(255, 255, 255);
-// }
+.upload-photo-form {
+    width: 40%;
+    height: 70%;
+    margin-top: 5%;
+    padding: 10px;
+    display: flex;
+    border-inline: 1px;
+    flex-direction: column;
+    align-items: flex-start;
+    border: 0.1px solid rgb(234, 232, 232);
+    background-color: rgb(255, 255, 255);
+}

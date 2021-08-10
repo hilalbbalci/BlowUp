@@ -40,9 +40,13 @@ body, html {
      width: 200px;
      height: auto;
  }
+ form {
+     padding: 10px;
+ }
  form input[type="text"],
  form input[type="password"],
- form input[type="submit"]{
+ form input[type="submit"]
+ form input[type="textarea"]{
     //  display: block;
      width: 100%;
      box-sizing: border-box;

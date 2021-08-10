@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 class CommentIndex extends React.Component {
     constructor(props) {
         super(props);
+        console.log(this.props.comments);
         this.handleDelete = this.handleDelete.bind(this);
     }
 
@@ -16,45 +17,20 @@ class CommentIndex extends React.Component {
 
     renderComments() {
         return this.props.comments.map(comment => {
-            const date = new Date(comment.createdAt).toLocaleDateString();
             return (
-                <div key={comment.id} className="comment-item">
-                    <div className="comment-info-container">
-                        {/* <UserIcon /> */}
-                        <div className="comment-user-info">
-                            <div className="comment-content-item">
-                                <Link
-                                    className="comment-username"
-                                    to={`/users/${comment.commenterId}`}
-                                >
-                                    {this.props.users[comment.commenterId].username}
-                                </Link>
-                                <p className="comment-date">{date}</p>
-                            </div>
-                            <div className="comment-content-item">
-                                <p className="comment-content">{comment.comment}</p>
-                                {this.props.currentUserId === comment.commenterId && (
-                                    <div
-                                        className="comment-delete"
-                                        onClick={() => this.handleDelete(comment.id)}
-                                    >
-                                        delete
-                                    </div>
-                                )}
-                            </div>
-                        </div>
-                    </div>
+                <div>
+                    {comment.comment}
                 </div>
             );
-        }).reverse();
+        });
     }
 
     renderEmptyCommentsMessage() {
         if (this.props.comments.length === 0) {
             return (<li className="comment-zero">
-                <br />
-                No comments yet
-            </li>)
+                        <br />
+                        No comments yet
+                    </li>)
         } else {
             return null;
         }
@@ -67,7 +43,7 @@ class CommentIndex extends React.Component {
             <strong>{this.props.comments.length} Comments</strong>
             <ul className="comment-list">
                 {this.renderComments()}
-                {this.renderEmptyCommentsMessage()}
+                {/* {this.renderEmptyCommentsMessage()} */}
             </ul>
         </div>
         )
