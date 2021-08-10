@@ -3,7 +3,8 @@ import { withRouter } from 'react-router-dom';
 import CommentIndex from "./comment_index";
 import { deleteComment, fetchComments } from "../../actions/comment_actions";
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state, ownProps) => ({
+    photoId: ownProps.match.params.photoId,
     comments: Object.values(state.entities.comments),
     users: state.entities.users,
     currentUserId: state.session.id

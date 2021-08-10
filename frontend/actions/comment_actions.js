@@ -11,12 +11,12 @@ export const receiveCommentErrors = (errors) => ({
 });
 
 
-export const receiveComments = ({ comments}) => ({
+export const receiveComments = (comments) => ({
     type: RECEIVE_COMMENTS,
     comments,
 });
 
-export const receiveComment = ({ comment }) => ({
+export const receiveComment = (comment) => ({
     type: RECEIVE_COMMENT,
     comment,
 });

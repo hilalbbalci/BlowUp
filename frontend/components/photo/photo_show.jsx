@@ -2,6 +2,8 @@ import React from "react";
 import { Redirect } from 'react-router-dom';
 import CreateCommentContainer from '../comments/create_comment_container';
 import CommentIndexContainer from '../comments/comment_index_container';
+import { FaUserCircle } from "react-icons/fa";
+
 
 class PhotoShow extends React.Component {
     constructor(props) {
@@ -45,6 +47,7 @@ class PhotoShow extends React.Component {
             <div className="photo-show-info">
                     <div className="photo-info-box1">
                         <div className="photo-info-box2">
+                            <p><FaUserCircle/>{}</p>
                             {/* <i onClick={() => this.props.history.push(`/users/${photo.userId}`)} className="fas fa-user-circle profile_logo"></i> */}
                             <h2>{photo.title}</h2>
                         </div>

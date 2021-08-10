@@ -1,6 +1,27 @@
 .entry-image-box {
     width: 100%;
     height: auto;
+    position: relative;
+}
+.entry-image-box:before {
+display: block;
+  position: absolute;
+  border-radius: 100% 50%;
+  width: 340px;
+  height: 80px;
+  background-color: white;
+  right: -5px;
+  top: 40px;
+}
+.entry-image-box:after {
+    display: block;
+  position: absolute;
+  border-radius: 100% 50%;
+  width: 300px;
+  height: 70px;
+  background-color: #e0efe3;
+  left: 0;
+  top: 27px;
 }
 .entry-image-box > img {
     width: 100%;

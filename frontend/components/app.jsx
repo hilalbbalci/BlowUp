@@ -17,6 +17,7 @@ import PhotoShowContainer from './photo/photo_show_container';
 import PhotoFormContainer from './photo_form/photo_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import PhotoIndexContainer from './photo/photo_index_container';
+import CommentIndexContainer from './comments/comment_index_container';
 import Home from './home/home';
 import Entry from './entry/entry';
 // import WhatMakesUsDifferent from './what_makes_different/what_makes_us_different';

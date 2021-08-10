@@ -4,31 +4,36 @@ import { Link } from 'react-router-dom';
 class CommentIndex extends React.Component {
     constructor(props) {
         super(props);
-        console.log(this.props.comments);
-        this.handleDelete = this.handleDelete.bind(this);
+        console.log(this.props.photoId);
     }
 
     componentDidMount() {
         this.props.fetchComments();
     }
-    handleDelete(id) {
-        this.props.deleteComment(id);
-    }
+   
 
-    renderComments() {
+    renderCommentsOfAPhoto() {
+        if(!this.props.photoId) {
+            return null;
+        }
         return this.props.comments.map(comment => {
-            return (
-                <div>
-                    {comment.comment}
-                </div>
-            );
+            if(comment.photoId === this.props.photoId) {
+                 return (
+                        <ul>
+                            <li> {comment.comment}</li>
+                        </ul>   
+                 );  
+            } else {
+                return (
+                    {}
+                )
+            }     
         });
     }
 
     renderEmptyCommentsMessage() {
         if (this.props.comments.length === 0) {
             return (<li className="comment-zero">
-                        <br />
                         No comments yet
                     </li>)
         } else {
@@ -40,10 +45,10 @@ class CommentIndex extends React.Component {
     render() {
         if (!this.props.comments) return null;
         return (<div>
-            <strong>{this.props.comments.length} Comments</strong>
+           <strong>{this.props.comments.length} Comments</strong>
             <ul className="comment-list">
-                {this.renderComments()}
-                {/* {this.renderEmptyCommentsMessage()} */}
+                {this.renderCommentsOfAPhoto()}
+                {this.renderEmptyCommentsMessage()}
             </ul>
         </div>
         )
