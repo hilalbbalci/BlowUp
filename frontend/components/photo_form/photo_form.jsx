@@ -64,43 +64,48 @@ class UploadPhoto extends React.Component {
                         <input type="file" onChange={this.handleFile} style={{ display: "none" }} />
                     </label>                        
                     <div className="requirements-for-photos">
-                        <h3>Photo requirements</h3>
-                        .jpg only
-                        Max. photo dimensions are 200MP/megapixels
-                        <h3>Licensing requirements</h3>
-                        Min. photo dimensions are 3MP/megapixels
-                        No watermarks, logos, or borders
-                        No NSFW content
+                        <div>
+                            <h3>Photo requirements</h3>
+                            .jpg only
+                            Max. photo dimensions are 200MP/megapixels
+                        </div>
+                        <div>
+                            <h3>Licensing requirements</h3>
+                            Min. photo dimensions are 3MP/megapixels
+                            No watermarks, logos, or borders
+                            No NSFW content
+                        </div>
                     </div>
                 </div>
             )
         }
 
-        if (this.state.selectForm == 1) {
+        if (this.state.selectForm > 0) {
             return (
-                <div className="upload-container">
-                    <h1>Upload</h1>
-                    <div className="upload-container-box">
-                        <div className="upload-form-preview">
-                            {preview}
-                        </div>
-                        <form className="upload-photo-form">
-                            <label>Title
-                                <br />
-                                <input className="upload-input" type="text" value={this.state.title} onChange={this.Update("title")} />
-                                {this.state.tError ? <p className="errors">Title can not be empty</p> : null}
-                            </label>
-                            <br />
-                            <label>Description
-                                <br />
-                                <textarea cols="30" rows="5" className="upload-textarea" type="text" value={this.state.description} onChange={this.Update("description")} />
-                            </label>
-                            <div>
-                                <button className="upload-button-cancel" onClick={this.handleCancel}>Cancel</button>
-                                <input className="upload-button-upload" onClick={this.handleSubmit} type="submit" value="Upload" />
-                            </div>
-                        </form>
+                <div className="upload-container-with-image">
+                    <div className="upload-container-left">
+                        <label className="add-photo">
+                            + Add
+                            <input type="file" onChange={this.handleFile} style={{ display: "none" }} />
+                        </label>
+                        {preview}
                     </div>
+                    <form className="upload-photo-form">
+                        <label>Title
+                            <br />
+                            <input className="upload-input" type="text" value={this.state.title} onChange={this.Update("title")} />
+                            {this.state.tError ? <p className="errors">Title can not be empty</p> : null}
+                        </label>
+                        <br />
+                        <label>Description
+                            <br />
+                            <textarea cols="30" rows="5" className="upload-textarea" type="text" value={this.state.description} onChange={this.Update("description")} />
+                        </label>
+                        <div class="cancel-submit">
+                            <button className="upload-button-cancel" onClick={this.handleCancel}>Cancel</button>
+                            <input className="upload-button-upload" onClick={this.handleSubmit} type="submit" value="Upload" />
+                        </div>
+                    </form>
                 </div>
             )
         }
