@@ -42,7 +42,7 @@ const App = () => (
                 <ProtectedRoute exact path='/' component={Home}/>   
         </div>
         <div>
-            {/* <AuthRoute exact path='/' component={WhatMakesUsDifferent} /> */}
+        
             <ProtectedRoute exact path='/' component={PhotoIndexContainer} />
 
         </div>

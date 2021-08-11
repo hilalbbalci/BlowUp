@@ -1,6 +1,4 @@
 import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
-import { RECEIVE_PHOTOS, RECEIVE_PHOTO } from '../actions/photo_actions';
-// import { RECEIVE_COMMENTS } from '../actions/comment_actions';
 import { RECEIVE_USER } from '../actions/user_actions';
 
 const usersReducer = (state = {}, action) => {

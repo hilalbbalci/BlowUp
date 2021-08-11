@@ -7,7 +7,12 @@ const sessionErrors = (state = [], action) => {
     Object.freeze(state);
     switch (action.type) {
         case RECEIVE_SESSION_ERRORS:
-            return action.errors;
+            if(action.errors){
+                return action.errors;
+            } else {
+                return state;
+            }
+            
         case RECEIVE_CURRENT_USER:
             return [];
         default:
