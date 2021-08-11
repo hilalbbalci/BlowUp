@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 class CommentIndex extends React.Component {
     constructor(props) {
         super(props);
-        console.log(this.props.photoId);
     }
 
     componentDidMount() {
@@ -43,8 +42,15 @@ class CommentIndex extends React.Component {
 
     render() {
         if (!this.props.comments) return null;
+        // let recentComments;
+        // this.props.comments.map(comment => {
+        //     const idPhoto = comment.photoId.toString();
+        //     if (idPhoto === this.props.photoId) {
+        //         recentComments.push(comment)
+        //     }
+        // };
         return (<div>
-           <strong>{this.props.comments.length} Comments</strong>
+           <strong> Comments </strong>
             <ul className="comment-list">
                 {this.renderCommentsOfAPhoto()}
                 {this.renderEmptyCommentsMessage()}

@@ -1,4 +1,5 @@
 import React from "react";
+import { HiOutlineUserCircle} from "react-icons/hi";
 // import UserIcon from "../user_profile/user_icon";
 // import { faComment as farComment } from "@fortawesome/free-regular-svg-icons";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -64,7 +65,7 @@ class CommentForm extends React.Component {
         return (
             <form className="comment-form">
                 <div className="comment-input-container">
-                    {/* <UserIcon /> */}
+                    <p><HiOutlineUserCircle size="30" /></p>                    
                     <div className="comment-form-input" onClick={this.toggleButtons}>
                         {/* <FontAwesomeIcon icon={farComment} /> */}
                         <input
