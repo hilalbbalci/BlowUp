@@ -23,11 +23,12 @@ class Entry extends React.Component {
                     </div>
                 </div>  
                 <WhatMakesUsDifferent />
+              
+                    <div className="yellow">
+                       
+                    </div>
                 <div>
 
-                </div>
-                <div>
-                    
                 </div>
             </div>
             

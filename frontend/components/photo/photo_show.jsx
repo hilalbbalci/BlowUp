@@ -2,7 +2,9 @@ import React from "react";
 import { Redirect } from 'react-router-dom';
 import CreateCommentContainer from '../comments/create_comment_container';
 import CommentIndexContainer from '../comments/comment_index_container';
-import { FaUserCircle } from "react-icons/fa";
+import { HiOutlineUserCircle } from "react-icons/hi";
+import { RiHeartLine, RiFolderAddLine, RiShareLine} from "react-icons/ri";
+import {Link} from 'react-router-dom';
 
 
 class PhotoShow extends React.Component {
@@ -26,38 +28,48 @@ class PhotoShow extends React.Component {
     render() {
 
         const { photo } = this.props;
-
         if (!photo) return null;
+        console.log(photo.userId)
+        console.log(this.props.users)
+
         
         return (
+            
+
         <div className="photo-show-biggest-container">
             <div className="photo-show-container">
-                <div className="photo-show-box">
-                    {/* <div className="photo-show-box1">
-                        <i className="fas fa-arrow-left" onClick={this.handleback}></i>
-                    </div> */}
-                    <div className="photo-show-box2">
-                        <div>
-                            <img className="photo-show-img" src={photo.post} />
-                        </div>
-                    </div>
+                <div className="photo-box">
+                    <img className="photo-show-img" src={photo.post} />   
                 </div>
+                {/* <Link to=`/photos/${(photo.id)+1}`></Link> */}
             </div>
-            <br />
-            <div className="photo-show-info">
-                    <div className="photo-info-box1">
-                        <div className="photo-info-box2">
-                            <p><FaUserCircle/></p>
-                            {/* <i onClick={() => this.props.history.push(`/users/${photo.userId}`)} className="fas fa-user-circle profile_logo"></i> */}
-                            <h2>{photo.title}</h2>
-                        </div>
-                        <p>{photo.description}</p>
+            <div className="after-show-photo">
+                
+                <div className="photo-show-info">
+                    <div className="logos">
+                        <RiHeartLine size="30" />
+                        <RiFolderAddLine size="30" />
+                        <RiShareLine size="30" />
                     </div>
-            </div>
-            <br />
-            <div className="comment-container">
-                <CreateCommentContainer photoId={this.props.photo.id}/>
-                <CommentIndexContainer />
+                    <div className="center-box">
+                        <div className="photo-info-box">
+                        <p><HiOutlineUserCircle size="60"/></p>
+                        {/* <i onClick={() => this.props.history.push(`/users/${photo.userId}`)} className="fas fa-user-circle profile_logo"></i> */}
+                        <div className="next-to-photo">
+                            <h2>{photo.title}</h2>
+
+                            <p>Taken by {this.props.users[photo.userId]} </p>
+                        </div>
+                        
+                    </div> 
+                    <p>{photo.description}</p>
+                </div>   
+                   
+                </div>
+                <div className="comment-container">
+                    <CreateCommentContainer photoId={this.props.photo.id}/>
+                    <CommentIndexContainer />
+                </div>
             </div>
         </div>
         )
