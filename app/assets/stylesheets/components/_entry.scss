@@ -3,6 +3,26 @@
     // position: absolute;  
 
 }
+.custom-shape-divider-bottom-1628643098 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1628643098 svg {
+    position: relative;
+    display: block;
+    width: calc(138% + 1.3px);
+    height: 331px;
+}
+
+.custom-shape-divider-bottom-1628643098 .shape-fill {
+    fill:rgb(255, 255, 255);
+}
 
 .entry-image-box > img {
     width: 100%;
@@ -24,7 +44,7 @@
   position: absolute;
   width: 100%;
   height: 2000px;
-  margin-top: 700px;
+  margin-top: 690px;
   background-color: rgb(255, 255, 255);
 
 }
