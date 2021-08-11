@@ -17,16 +17,15 @@ class CommentIndex extends React.Component {
             return null;
         }
         return this.props.comments.map(comment => {
-            if(comment.photoId === this.props.photoId) {
-                 return (
+            const idPhoto = comment.photoId.toString();
+            if(idPhoto === this.props.photoId) {
+                return (
                         <ul>
                             <li> {comment.comment}</li>
                         </ul>   
                  );  
             } else {
-                return (
-                    {}
-                )
+                return 
             }     
         });
     }

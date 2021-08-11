@@ -152,6 +152,7 @@ file22 = open("https://blowup-dev.s3.us-west-1.amazonaws.com/guzelbiraile.jpeg")
 file23 = open("https://blowup-dev.s3.us-west-1.amazonaws.com/halilar.jpeg")
 file24 = open("https://blowup-dev.s3.us-west-1.amazonaws.com/hediyelikesya.jpeg")
 file25 = open("https://blowup-dev.s3.us-west-1.amazonaws.com/ilgincpencere.jpeg")
+file26 = open("https://blowup-dev.s3.us-west-1.amazonaws.com/entryPhoto.jpeg")
 # file26 = URI.open("")
 # file27 = URI.open("")
 # file28 = URI.open("")
@@ -203,6 +204,7 @@ photo22 = Photo.new(title: "Family", description: "A family in a shot, while lau
 photo23 = Photo.new(title: "Rugs", description: "Handcraft rugs are waiting for somebody who knows their value", user_id: jazz.id)
 photo24 = Photo.new(title: "Wind Chimes", description: "feel the enchanting melody", user_id: annie.id)
 photo25 = Photo.new(title: "An Interesting Window", description: "Some beauties are hidden, you need to find them", user_id: kate.id)
+photo26 = Photo.new(title: "Etry Image", description: "Some beauties are hidden, you need to find them", user_id: kate.id)
 
 photo1.post.attach(io: file1, filename: "flowergirl.jpeg")
 photo2.post.attach(io: file2, filename: "annekiz.jpeg")
@@ -229,6 +231,7 @@ photo22.post.attach(io: file22, filename: "guzelbiraile.jpeg")
 photo23.post.attach(io: file23, filename: "halilar.jpeg")
 photo24.post.attach(io: file24, filename: "hediyelikesya.jpeg")
 photo25.post.attach(io: file25, filename: "ilgincpencere.jpeg")
+photo26.post.attach(io: file26, filename: "entryPhoto.jpeg")
 
 
 photo1.save!
@@ -256,6 +259,7 @@ photo22.save!
 photo23.save!
 photo24.save!
 photo25.save!
+photo26.save!
 
 
 

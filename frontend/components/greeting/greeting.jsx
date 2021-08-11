@@ -7,10 +7,14 @@ import { FaUserCircle } from "react-icons/fa";
 
 const Greeting = ({ currentUser, logout }) => {
     const sessionLinks = () => (
-        <nav className="login-signup">
+        <div className="login-signup">
+            <nav >
             <Link to="/login">Log in</Link>
             <Link to="/signup" className="signup">Sign up</Link>
-        </nav>
+            </nav> 
+        </div>
+       
+       
         
     );
     const personalGreeting = () => (

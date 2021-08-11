@@ -8,6 +8,7 @@ import {
     HashRouter
 } from 'react-router-dom';
 
+
 import GreetingContainer from './greeting/greeting_container';
 import SignUpFormContainer from './session_form/signup_form_container';
 import SessionForm from './session_form/session_form';
@@ -32,7 +33,7 @@ const App = () => (
             </div>
             <div>
             </div>
-            <input type="text" placeholder="Search.." />
+            <input type="text" placeholder= "Search BlowUp" />
             <GreetingContainer />
 
         </header>

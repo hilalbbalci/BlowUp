@@ -4,7 +4,7 @@ import CommentIndex from "./comment_index";
 import { deleteComment, fetchComments } from "../../actions/comment_actions";
 
 const mapStateToProps = (state, ownProps) => ({
-    photoId: ownProps.match.params.photoId,
+    photoId: ownProps.match.params.id,
     comments: Object.values(state.entities.comments),
     users: state.entities.users,
     currentUserId: state.session.id

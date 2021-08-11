@@ -1,7 +1,33 @@
 .what-makes-us-different {
-    background-color: blanchedalmond;
-    position: relative;
-    top: -100
-    
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+}
+.what-makes-us-different > h1 {
+    padding: 80px;
+    font-size: 35px;
+}
+.triple-div {
+    display: flex;
+    margin-left: 200px;
+    margin-right: 200px;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 1.5rem;
 
+   
+}
+.triple-div > .div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+    // justify-content: flex-start;
+     h3 {
+        font-weight: bold;
+        font-size: 25px;
+    }
+    p {
+        text-align: start;
+        font-size: 20px;
+    }
 }

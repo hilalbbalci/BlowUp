@@ -47,7 +47,7 @@ class PhotoShow extends React.Component {
             <div className="photo-show-info">
                     <div className="photo-info-box1">
                         <div className="photo-info-box2">
-                            <p><FaUserCircle/>{}</p>
+                            <p><FaUserCircle/></p>
                             {/* <i onClick={() => this.props.history.push(`/users/${photo.userId}`)} className="fas fa-user-circle profile_logo"></i> */}
                             <h2>{photo.title}</h2>
                         </div>
