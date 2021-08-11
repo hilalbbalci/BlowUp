@@ -20,6 +20,7 @@
     height: 50%;
     height: auto;
 }
+
 .after-show-photo {
     display: flex;
     flex-direction: row;
@@ -38,8 +39,8 @@
         flex-direction: row;
         justify-content: space-around;
         margin-top: 5%;
-        width: 70%;
-        padding-bottom: 10%;
+        width: 30%;
+        padding-bottom: 5%;
     }
     .center-box {
     display: flex;
@@ -60,6 +61,7 @@
     align-items: center;
     width: 50%;
     justify-content:space-around;
+    
     .next-to-photo {
         display: flex;
         flex-direction: column;
@@ -73,7 +75,10 @@
     
 }
 .comment-container {
-    padding-left: 64px;
+
     padding-right: 50px;
     width: 30%;
+    .upgrade {
+        height: 10hv;
+    }
 }

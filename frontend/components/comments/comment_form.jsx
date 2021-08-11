@@ -42,16 +42,13 @@ class CommentForm extends React.Component {
         if (this.state.showButtons || this.state.comment.length > 0) {
             return (
                 <div className="comment-btns">
-                    <div className="" onClick={this.handleCancel}>
+                    <div className="cancel-btn" onClick={this.handleCancel}>
                         Cancel
                     </div>
-                    <button
-                        className="btn submit-btn"
+                        <input type="submit" 
                         onClick={this.handleSubmit}
                         disabled={this.state.comment.length === 0}
-                    >
-                        Submit
-                    </button>
+                    />      
                 </div>
             );
         }

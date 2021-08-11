@@ -51,6 +51,15 @@ class PhotoIndex extends React.Component {
                         ))}
                     </ul>
                 </div>
+                <div className="photos-all" >
+                    {photos.map((photo, idx) => (
+                        <div key={idx}>
+                            <Link to={`/photos/${photo.id}`} >
+                                <img className="photo-img" src={photo.post} />
+                            </Link>
+                        </div>
+                    ))}
+                </div>
             </div>
         )
     }

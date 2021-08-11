@@ -5,6 +5,7 @@
     justify-content: center;
     border-bottom: black;
     border-top: black;
+   
 }
 .photo-index-container > .first-item {
     display: flex;
@@ -12,6 +13,7 @@
     line-height: 1.5em;
     flex-direction: column;
     align-items: center;
+   
 }
 .photos-slices-container {
     box-sizing: border-box;
@@ -23,12 +25,23 @@
     height: 300px;
     padding-left:64px; 
     padding-right: 50px;
+    margin-bottom: 10%;
+    border-bottom: 0.5px ridge rgba(0, 0, 0, 0.284);
+    border-top: 0.5px ridge rgba(0, 0, 0, 0.284);
 
 }
 .photo-item-container {
     display: flex;
 }
 .photo-img {
-    width: 100px;
-    height: auto;
+    width: auto;
+    height: 200px;
+}
+.photos-all {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
 }

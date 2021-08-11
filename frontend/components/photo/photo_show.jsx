@@ -37,9 +37,10 @@ class PhotoShow extends React.Component {
         <div className="photo-show-biggest-container">
             <div className="photo-show-container">
                 <div className="photo-box">
-                    <img className="photo-show-img" src={photo.post} />   
+                    <img className="photo-show-img" src={photo.post} /> 
+                    {/* <Link to={`/photos/${(photo.id) + 1}`} > go </Link> */}
                 </div>
-                {/* <Link to=`/photos/${(photo.id)+1}`></Link> */}
+                
             </div>
             <div className="after-show-photo">
                 <div className="photo-show-info">
@@ -50,17 +51,20 @@ class PhotoShow extends React.Component {
                     </div>
                     <div className="center-box">
                         <div className="photo-info-box">
-                            <p><HiOutlineUserCircle size="60"/></p>
+                            <p><HiOutlineUserCircle size="70"/></p>
                             {/* <i onClick={() => this.props.history.push(`/users/${photo.userId}`)} className="fas fa-user-circle profile_logo"></i> */}
                             <div className="next-to-photo">
                                 <h2>{photo.title}</h2>
-                                <p>Taken by </p>
+                                <p> by </p>
                             </div>    
                         </div> 
                         <p>{photo.description}</p>
                     </div>                    
                 </div>
                 <div className="comment-container">
+                    <div className="upgrade">
+
+                    </div>
                     <CreateCommentContainer photoId={this.props.photo.id}/>
                     <CommentIndexContainer />
                 </div>

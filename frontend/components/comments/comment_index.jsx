@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { HiOutlineUserCircle } from "react-icons/hi";
+
 
 class CommentIndex extends React.Component {
     constructor(props) {
@@ -19,10 +21,13 @@ class CommentIndex extends React.Component {
             const idPhoto = comment.photoId.toString();
             if(idPhoto === this.props.photoId) {
                 return (
-                        <ul>
-                            <li> {comment.comment}</li>
-                        </ul>   
-                 );  
+                    <div className="comment-info-box"> 
+                        <p><HiOutlineUserCircle size="30"/></p>                           
+                        <div className="next-to-photo">  
+                            <li> {comment.comment}</li>                                     
+                        </div>    
+                    </div>
+                );  
             } else {
                 return 
             }     
@@ -49,8 +54,9 @@ class CommentIndex extends React.Component {
         //         recentComments.push(comment)
         //     }
         // };
-        return (<div>
-           <strong> Comments </strong>
+        return (
+        <div className="comments-last-container">
+            <h3>Comments</h3>  
             <ul className="comment-list">
                 {this.renderCommentsOfAPhoto()}
                 {this.renderEmptyCommentsMessage()}
