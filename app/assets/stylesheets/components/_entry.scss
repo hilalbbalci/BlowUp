@@ -1,7 +1,6 @@
 .entry-image-box {
     width: 100%;
-    // position: absolute;
-    
+    // position: absolute;  
 
 }
 
@@ -24,62 +23,8 @@
 .entry-middle-div {
   position: absolute;
   width: 100%;
-  height: 1700px;
+  height: 2000px;
   margin-top: 700px;
   background-color: rgb(255, 255, 255);
 
 }
-// .wave {
-//   position: absolute;
-//   width: 100%;
-//   height: auto;
-//   margin-top: 700px;
-//   background-color:black;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   background: linear-gradient(to bottom, sandybrown, chocolate);
-//   height: 50px;
-//   margin-bottom: 20px;
-  
-//   &::before,
-//   &::after {
-//   content: "";
-//   position: absolute;
-//   left: 0;
-//   bottom: 0;
-//   right: 0;
-//   background-repeat: repeat-x;
-//   }
-  
-//   &::before {
-//     height: 10px;
-//     background-size: 20px 20px;
-//     background-image: radial-gradient(circle at 100px -5px, transparent 12px, white 13px);
-//   }
-
-//   &::after {
-//     height: 15px;
-//     background-size: 40px 20px;
-//     background-image: radial-gradient(circle at 200px 15px, white 12px, transparent 13px);
-//   }
-  
-//   &--top {
-//     background: linear-gradient(to top, sandybrown, chocolate);
-    
-//   //   &::before,
-//   //   &::after {
-//   //     // to take place in top instead of bottom
-//   //     bottom: auto;
-//   //     top: 0;
-//   //   }
-    
-//   //   &::before {
-//   //     background-image: radial-gradient(circle at 10px 15px, transparent 12px, white 13px);
-//   //   }
-
-//   // &::after {
-//   //   background-image: radial-gradient(circle at 10px 0, white 12px, transparent 13px);
-//   //   }
-//   }
-// }
