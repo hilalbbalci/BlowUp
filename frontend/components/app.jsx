@@ -21,6 +21,7 @@ import PhotoIndexContainer from './photo/photo_index_container';
 import CommentIndexContainer from './comments/comment_index_container';
 import Home from './home/home';
 import Entry from './entry/entry';
+import Upload from './upload/upload';
 // import WhatMakesUsDifferent from './what_makes_different/what_makes_us_different';
 
 const App = () => (
@@ -39,7 +40,9 @@ const App = () => (
         </header>
         <div>
                 <AuthRoute exact path='/' component={Entry} />
-                <ProtectedRoute exact path='/' component={Home}/>   
+                <ProtectedRoute exact path='/' component={Home}/> 
+                <ProtectedRoute exact path="/upload" component={Upload} />
+
         </div>
         <div>
         

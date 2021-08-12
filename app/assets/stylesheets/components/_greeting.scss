@@ -20,13 +20,38 @@
     width: 18%;
     font-size: 20px;
     list-style: none;
+    li {
+        padding: 5px 10px;
+        ul {
+            display: none;
+        }
+    }
+}
+.user-icon > ul {
+    li {
+        font-size: 5px;
+        button {
+            border: none;
+        }
+    }
 }
 
 
-.logout-upload-photo ul {
-    display: none;
+.logout-upload-photo > li:hover > ul {
+    display: block;
+    position: absolute;
+    height: 200px;
+    margin-top: 10px;
+    width: 150px;
+    border-radius: 10px;
+    background-color: honeydew;
+    border-inline: rgb(208, 202, 202);
+    li {
+        border: none;
+    }
+     
 }
-.logout-upload-photo li:hover > ul {
+.drop-menu:hover {
     display: block;
 }
 

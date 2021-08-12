@@ -57,7 +57,7 @@ class UploadPhoto extends React.Component {
         if (this.state.selectForm === 0) {
             return (
                 <div className="upload-container">
-                    <IoArrowUp />
+                    <IoArrowUp size="30"/>
                     <h2>Upload photos</h2>
                     <label className="upload-label">
                         Select Photo

@@ -1,0 +1,31 @@
+.upload-group-app {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    height: 100px;
+    .upload-group {
+        background-color: black;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        p {
+            color: white;
+            strong {
+                color: cornflowerblue;
+            }
+        }
+    }
+}
+
+.upload-link {
+    font-size: 20px;
+    font-weight: bolder;
+    margin-bottom: 0.5%;
+    padding-left: 3.5%;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+}

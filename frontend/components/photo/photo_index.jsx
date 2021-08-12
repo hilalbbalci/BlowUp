@@ -24,7 +24,8 @@ class PhotoIndex extends React.Component {
                     <h2>Featured photographers</h2>
                     <p>Follow to explore new works</p>
                     <div className="photos-slices-container">
-                        <ul className="photo-item-container">
+                        <div className="photo-with-user">
+                           <ul className="photo-item-container">
                             {photos.slice(0, 3).map((photo, idx) => (
                                 <li className="photo-item" key={idx}>
                                     <Link to={`/photos/${photo.id}`} >
@@ -32,8 +33,10 @@ class PhotoIndex extends React.Component {
                                     </Link>
                                 </li>
                             ))}
-                        </ul>
-                        <ul className="photo-item-container">
+                        </ul> 
+                        </div>
+                        <div className="photo-with-user">
+                          <ul className="photo-item-container">
                             {photos.slice(3, 6).map((photo, idx) => (
                                 <li className="photo-item" key={idx}>
                                     <Link to={`/photos/${photo.id}`} >
@@ -41,8 +44,11 @@ class PhotoIndex extends React.Component {
                                     </Link>
                                 </li>
                             ))}
-                        </ul>
-                        <ul className="photo-item-container">
+                        </ul>  
+                        </div>
+                        
+                        <div className="photo-with-user">
+                             <ul className="photo-item-container">
                             {photos.slice(6, 9).map((photo, idx) => (
                                 <li className="photo-item" key={idx}>
                                     <Link to={`/photos/${photo.id}`} >
@@ -51,6 +57,10 @@ class PhotoIndex extends React.Component {
                                 </li>
                             ))}
                         </ul>
+                        
+                        </div>
+
+                       
                     </div>
                 </div>
                     

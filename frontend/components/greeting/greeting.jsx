@@ -21,8 +21,13 @@ const Greeting = ({ currentUser, logout }) => {
     );
     const personalGreeting = () => (
             <ul className="logout-upload-photo">
-            <li classNmae="user-icon"> < HiOutlineUserCircle size='40'/>
-                    <ul>
+                <li classNmae="user-icon"> < HiOutlineUserCircle size='40'/>
+                    <ul className="drop-menu">
+                        <li>Profile</li>
+                        <li>Portfolio</li>
+                        <li>Resources</li>
+                        <li>Stats</li>
+                        <li>Galleries</li>
                         <li>
                             <button className="header-button" onClick={logout}>Log out</button>
                         </li>
