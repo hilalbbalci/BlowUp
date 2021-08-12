@@ -27,11 +27,23 @@
         }
     }
 }
-.user-icon > ul {
+.drop-menu {
     li {
-        font-size: 5px;
-        button {
-            border: none;
+        font-size: 20px;
+        color: rgba(0, 0, 0, 0.606);
+        // padding-bottom: 2%;
+        #logout-button {
+            font-size: 15px;
+        background: transparent;
+        // box-shadow: 0px 0px 0px transparent;
+        border: 0px solid transparent;
+        text-shadow: 0px 0px 0px transparent;
+        // height: 50px;
+        // width: 80px;
+        padding: 2px;
+        }
+        #logout-button:hover {
+            color:cornflowerblue;
         }
     }
 }
@@ -40,9 +52,13 @@
 .logout-upload-photo > li:hover > ul {
     display: block;
     position: absolute;
-    height: 200px;
-    margin-top: 10px;
-    width: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    height: 400px;
+    margin-top: 5px;
+    width: 180px;
     border-radius: 10px;
     background-color: honeydew;
     border-inline: rgb(208, 202, 202);

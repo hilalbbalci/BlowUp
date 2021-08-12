@@ -13,6 +13,7 @@ const mSTP = (state, ownProps) => {
     return {
         photo: state.entities.photos[ownProps.match.params.id],
         session: state.session.currentUser,
+        // users: state.entities.users,
         user: photoUserSelector(state, ownProps.match.params.id),
     };
 };

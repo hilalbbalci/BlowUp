@@ -29,7 +29,7 @@ const Greeting = ({ currentUser, logout }) => {
                         <li>Stats</li>
                         <li>Galleries</li>
                         <li>
-                            <button className="header-button" onClick={logout}>Log out</button>
+                            <button id="logout-button" onClick={logout}>Log out</button>
                         </li>
                     </ul>
                 </li>
