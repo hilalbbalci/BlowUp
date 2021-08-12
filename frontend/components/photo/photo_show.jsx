@@ -10,14 +10,18 @@ import {Link} from 'react-router-dom';
 class PhotoShow extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            id: "",
-        };
+        // this.state = {
+        //     id: "",
+        // };
         this.handleback = this.handleback.bind(this)
+      
     }
 
     componentDidMount() {
         this.props.fetchPhoto(this.props.match.params.id);
+        this.props.fetchUser((this.props.fetchPhoto(this.props.match.params.id)).userId);
+       
+        // this.props.fetchUser(photo);
     }
 
     handleback() {
@@ -28,9 +32,11 @@ class PhotoShow extends React.Component {
     render() {
 
         const { photo } = this.props;
+        const { user } = this.props;
         if (!photo) return null;
-        console.log(photo.userId)
-        console.log(this.props.users)
+        console.log(photo.userId);
+        console.log(user)
+        // console.log(this.props.users[photo.userId]);
 
         
         return (

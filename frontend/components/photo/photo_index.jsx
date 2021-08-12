@@ -33,8 +33,9 @@ class PhotoIndex extends React.Component {
                                     </Link>
                                 </li>
                             ))}
-                        </ul> 
+                            </ul> 
                         </div>
+
                         <div className="photo-with-user">
                           <ul className="photo-item-container">
                             {photos.slice(3, 6).map((photo, idx) => (
@@ -44,7 +45,7 @@ class PhotoIndex extends React.Component {
                                     </Link>
                                 </li>
                             ))}
-                        </ul>  
+                            </ul>  
                         </div>
                         
                         <div className="photo-with-user">
@@ -56,8 +57,40 @@ class PhotoIndex extends React.Component {
                                     </Link>
                                 </li>
                             ))}
-                        </ul>
-                        
+                            </ul>
+                        </div>
+                        <div className="photo-with-user">
+                            <ul className="photo-item-container">
+                                {photos.slice(9, 12).map((photo, idx) => (
+                                    <li className="photo-item" key={idx}>
+                                        <Link to={`/photos/${photo.id}`} >
+                                            <img className="photo-img" src={photo.post} />
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                        <div className="photo-with-user">
+                            <ul className="photo-item-container">
+                                {photos.slice(12, 15).map((photo, idx) => (
+                                    <li className="photo-item" key={idx}>
+                                        <Link to={`/photos/${photo.id}`} >
+                                            <img className="photo-img" src={photo.post} />
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                        <div className="photo-with-user">
+                            <ul className="photo-item-container">
+                                {photos.slice(15, 18).map((photo, idx) => (
+                                    <li className="photo-item" key={idx}>
+                                        <Link to={`/photos/${photo.id}`} >
+                                            <img className="photo-img" src={photo.post} />
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ul>
                         </div>
 
                        

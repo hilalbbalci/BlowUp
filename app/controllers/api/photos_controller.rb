@@ -54,7 +54,7 @@ class Api::PhotosController < ApplicationController
         render plain: "You can't destroy what's not there."
         end
     end
-
+    
     private
 
     def photo_params
