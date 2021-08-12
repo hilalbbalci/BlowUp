@@ -101,7 +101,7 @@ class UploadPhoto extends React.Component {
                             <br />
                             <textarea cols="35" rows="3" className="upload-textarea" type="text" value={this.state.description} onChange={this.Update("description")} />
                         </label>
-                        <div class="cancel-submit">
+                        <div className="cancel-submit">
                             <button className="upload-button-cancel" onClick={this.handleCancel}>Cancel</button>
                             <input className="upload-button-upload" onClick={this.handleSubmit} type="submit" value="Upload" />
                         </div>

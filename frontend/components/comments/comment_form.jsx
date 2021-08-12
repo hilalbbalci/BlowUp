@@ -45,10 +45,14 @@ class CommentForm extends React.Component {
                     <div className="cancel-btn" onClick={this.handleCancel}>
                         Cancel
                     </div>
-                        <input type="submit" 
-                        onClick={this.handleSubmit}
-                        disabled={this.state.comment.length === 0}
-                    />      
+                    <div className="post-comment">
+                           <input type="submit" 
+                    onClick={this.handleSubmit}
+                    disabled={this.state.comment.length === 0}
+                    value="Post"
+                    />   
+                    </div>
+                    
                 </div>
             );
         }
