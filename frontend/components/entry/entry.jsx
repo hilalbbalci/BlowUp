@@ -10,7 +10,9 @@ class Entry extends React.Component {
                     <h1>Discover and share the world’s best photos</h1>
                     <br />
                     <p>Get inspired with incredible photos from diverse styles and genres around the world. We're not guided by fads—just great photography.</p>
-                    <Link to="/signup" className="signup">Sign up</Link>
+                    <div className="link">
+                        <Link to="/signup" className="signup">Sign up</Link>
+                    </div>
 
                 </div>
                 <div className="entry-image-box">  
