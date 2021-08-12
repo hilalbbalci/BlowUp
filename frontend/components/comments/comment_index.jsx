@@ -18,7 +18,9 @@ class CommentIndex extends React.Component {
             return null;
         }
         return this.props.comments.map(comment => {
-            const idPhoto = comment.photoId.toString();
+            if(comment){
+               const idPhoto = comment.photoId.toString();
+            
             if(idPhoto === this.props.photoId) {
                 return (
                     <div className="comment-info-box"> 
@@ -31,7 +33,7 @@ class CommentIndex extends React.Component {
             } else {
                 return 
             }     
-        });
+        }});
     }
 
     renderEmptyCommentsMessage() {
