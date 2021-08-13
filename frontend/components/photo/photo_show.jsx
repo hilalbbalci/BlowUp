@@ -86,9 +86,9 @@ class PhotoShow extends React.Component {
         // console.log(photo.userId);
         // console.log(this.props.users[photo.userId]);
         const user = this.props.users[photo.userId];
-        console.log(user);
+        // console.log(user.profile);
         if(!user) return null;
-        console.log(this.props.likes);
+        console.log(user);
         return (
         <div className="photo-show-biggest-container">
             <div className="photo-show-container">
@@ -108,7 +108,8 @@ class PhotoShow extends React.Component {
                     </div>
                     <div className="center-box">
                         <div className="photo-info-box">
-                            <p><HiOutlineUserCircle size="70"/></p>
+                            <img src={user.profile} />
+                            {/* <p><HiOutlineUserCircle size="70"/></p> */}
                             {/* <i onClick={() => this.props.history.push(`/likers/${photo.likerId}`)} className="fas fa-liker-circle profile_logo"></i> */}
                             <div className="next-to-photo">
                                 <h2>{photo.title}</h2>

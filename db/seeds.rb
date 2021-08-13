@@ -27,103 +27,92 @@ Photo.delete_all
 demo = User.create!(
   username: "demo_user",
   password: "password",
+  profile: "https://blowup-dev.s3.us-west-1.amazonaws.com/susankopek.jpeg"
+
 )
 
 diane = User.create!(
   username: "Diane",
   password: "password",
+  profile: "https://blowup-dev.s3.us-west-1.amazonaws.com/susankopek.jpeg"
+
 )
 annie = User.create!(
   username: "Annie",
   password: "password",
+  profile: "https://blowup-dev.s3.us-west-1.amazonaws.com/susankopek.jpeg"
+
 )
 
 robert = User.create!(
   username: "Robert",
   password: "password",
+  profile: "https://blowup-dev.s3.us-west-1.amazonaws.com/susankopek.jpeg"
+
 )
 steve = User.create!(
   username: "Steve",
   password: "password",
+  profile: "https://blowup-dev.s3.us-west-1.amazonaws.com/susankopek.jpeg"
+
 )
 
 edward = User.create!(
   username: "Edward",
   password: "password",
+  profile: "https://blowup-dev.s3.us-west-1.amazonaws.com/susankopek.jpeg"
+
 )
 alfred = User.create!(
   username: "Alfred",
   password: "password",
+  profile: "https://blowup-dev.s3.us-west-1.amazonaws.com/susankopek.jpeg"
+
 )
 
 irving = User.create!(
   username: "Irving",
   password: "password",
+  profile: "https://blowup-dev.s3.us-west-1.amazonaws.com/susankopek.jpeg"
+
 )
 
 cindy = User.create!(
   username: "Cindy",
   password: "password",
+  profile: "https://blowup-dev.s3.us-west-1.amazonaws.com/susankopek.jpeg"
+
 )
 amy = User.create!(
   username: "Amy",
   password: "password",
+  profile: "https://blowup-dev.s3.us-west-1.amazonaws.com/susankopek.jpeg"
+
 )
 drew = User.create!(
   username: "Drew",
   password: "password",
+  profile: "https://blowup-dev.s3.us-west-1.amazonaws.com/susankopek.jpeg"
+
 )
 john = User.create!(
   username: "John",
   password: "password",
+  profile: "https://blowup-dev.s3.us-west-1.amazonaws.com/susankopek.jpeg"
+
 )
 kate = User.create!(
   username: "Kate",
   password: "password",
+  profile: "https://blowup-dev.s3.us-west-1.amazonaws.com/susankopek.jpeg"
+
 )
 jazz = User.create!(
   username: "Jasmine",
   password: "password",
+  profile: "https://blowup-dev.s3.us-west-1.amazonaws.com/susankopek.jpeg"
 )
 
-####### CREATE FOLLOW #######
-
-# Follow.create({ followed_id: annie.id, follower_id: robert.id })
-# Follow.create({ followed_id: annie.id, follower_id: diane.id })
-# Follow.create({ followed_id: diane.id, follower_id: robert.id })
-# Follow.create({ followed_id: robert.id, follower_id: demo.id })
-
-# Follow.create({ followed_id: steve.id, follower_id: irving.id })
-# Follow.create({ followed_id: edward.id, follower_id: cindy.id })
-# Follow.create({ followed_id: steve.id, follower_id: irving.id })
-
-# Follow.create({ followed_id: cindy.id, follower_id: demo.id })
-# Follow.create({ followed_id: irving.id, follower_id: robert.id })
-# Follow.create({ followed_id: cindy.id, follower_id: steve.id })
-
-# Follow.create({ followed_id: amy.id, follower_id: john.id })
-# Follow.create({ followed_id: irving.id, follower_id: kate.id })
-# Follow.create({ followed_id: kate.id, follower_id: jazz.id })
-
-# Follow.create({ followed_id: jazz.id, follower_id: drew.id })
-# Follow.create({ followed_id: drew.id, follower_id: john.id })
-# Follow.create({ followed_id: cindy.id, follower_id: steve.id })
-
-# Follow.create({ followed_id: john.id, follower_id: irving.id })
-# Follow.create({ followed_id: jazz.id, follower_id: amy.id })
-# Follow.create({ followed_id: amy.id, follower_id: diane.id })
-
-# Follow.create({ followed_id: amy.id, follower_id: annie.id })
-# Follow.create({ followed_id: jazz.id, follower_id: annie.id })
-# Follow.create({ followed_id: robert.id, follower_id: drew.id })
-
-# Follow.create({ followed_id: jazz.id, follower_id: cindy.id })
-# Follow.create({ followed_id: edward.id, follower_id: jazz.id })
-# Follow.create({ followed_id: cindy.id, follower_id: steve.id })
-
-# Follow.create({ followed_id: drew.id, follower_id: edward.id })
-# Follow.create({ followed_id: cindy.id, follower_id: amy.id })
-# Follow.create({ followed_id: jazz.id, follower_id: diane.id })
 
 ####### IMPORT IMAGES #######
 
@@ -153,15 +142,13 @@ file23 = open("https://blowup-dev.s3.us-west-1.amazonaws.com/halilar.jpeg")
 file24 = open("https://blowup-dev.s3.us-west-1.amazonaws.com/hediyelikesya.jpeg")
 file25 = open("https://blowup-dev.s3.us-west-1.amazonaws.com/ilgincpencere.jpeg")
 file26 = open("https://blowup-dev.s3.us-west-1.amazonaws.com/entryPhoto.jpeg")
-# file26 = URI.open("")
-# file27 = URI.open("")
-# file28 = URI.open("")
-# file29 = URI.open("")
-# # file30 = URI.open("")
-# # file31 = URI.open("")
-# # file32 = URI.open("")
+file27 = URI.open("https://blowup-dev.s3.us-west-1.amazonaws.com/yogayapankadin.jpeg")
+file28 = URI.open("https://blowup-dev.s3.us-west-1.amazonaws.com/ayakkabilikiz.jpeg")
+file29 = URI.open("https://blowup-dev.s3.us-west-1.amazonaws.com/isiklar.jpeg")
+file30 = URI.open("https://blowup-dev.s3.us-west-1.amazonaws.com/sapka.jpeg")
+# file31 = URI.open("")
+# file32 = URI.open("")
 # file33 = URI.open("")
-
 # file34 = URI.open("")
 # file35 = URI.open("")
 # file36 = URI.open("")
@@ -205,6 +192,10 @@ photo23 = Photo.new(title: "Rugs", description: "Handcraft rugs are waiting for 
 photo24 = Photo.new(title: "Wind Chimes", description: "feel the enchanting melody", user_id: annie.id)
 photo25 = Photo.new(title: "An Interesting Window", description: "Some beauties are hidden, you need to find them", user_id: kate.id)
 photo26 = Photo.new(title: "Etry Image", description: "Some beauties are hidden, you need to find them", user_id: kate.id)
+photo27 = Photo.new(title: "Yoga", description: "Mental health", user_id: alfred.id)
+photo28 = Photo.new(title: "Big Shoes", description: "Under the shoes", user_id: amy.id)
+photo29 = Photo.new(title: "Lights", description: "Some beauties", user_id: cindy.id)
+photo30 = Photo.new(title: "On the Beach", description: "Have some rest and enjoy with sun", user_id: kate.id)
 
 photo1.post.attach(io: file1, filename: "flowergirl.jpeg")
 photo2.post.attach(io: file2, filename: "annekiz.jpeg")
@@ -232,6 +223,11 @@ photo23.post.attach(io: file23, filename: "halilar.jpeg")
 photo24.post.attach(io: file24, filename: "hediyelikesya.jpeg")
 photo25.post.attach(io: file25, filename: "ilgincpencere.jpeg")
 photo26.post.attach(io: file26, filename: "entryPhoto.jpeg")
+photo27.post.attach(io: file27, filename: "yogayapankadin.jpeg")
+photo28.post.attach(io: file28, filename: "ayakkabilikiz.jpeg")
+photo29.post.attach(io: file29, filename: "isiklar.jpeg")
+photo30.post.attach(io: file30, filename: "sapka.jpeg")
+
 
 
 photo1.save!
@@ -260,6 +256,10 @@ photo23.save!
 photo24.save!
 photo25.save!
 photo26.save!
+photo27.save!
+photo28.save!
+photo29.save!
+photo30.save!
 
 
 
