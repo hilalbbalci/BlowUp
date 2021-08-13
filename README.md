@@ -3,7 +3,7 @@
  [BlowUp live](https://blowupapp.herokuapp.com/)
 
 
-<img src="app/assets/images/Screen Shot 2021-08-13 at 9.33.47 AM.png" height="60px" />
+<img src="app/assets/images/Screen Shot 2021-08-13 at 9.33.47 AM.png" height="100px" width="350px"/>
 
 BlowUp is a clone of 500px, a website for photographers who like to display their portfolio.
 
