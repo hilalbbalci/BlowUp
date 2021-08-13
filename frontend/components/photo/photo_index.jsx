@@ -52,15 +52,11 @@ class PhotoIndex extends React.Component {
                                     )): null}     
                                 </ul> 
                                 <div className="username-profile-photo">
-                                    {/* <img src={user.profile}/> */}
                                     {(photoTank[user.id] && photoTank[user.id].length === 3) ? 
                                     <p>{user.username}</p> : null
                                     }
-                                </div>
-                                
+                                </div>    
                             </div>
-                          
-
                         ))}
                     </div>
                 </div>

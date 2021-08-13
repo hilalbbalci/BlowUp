@@ -16,7 +16,31 @@ BlowUp is a clone of 500px, a website for photographers who like to display thei
 - Users can see all sharing photos or select one of them and see the detail page.
 - Users can can comment on a photo on that detail page.
 - Users can view photos posted by all users in the Discover page
-- The photos are grouped by users at the top of the feed
+- The new users's work are grouped and showed at the top of the feed
+<div className="featured-photos">
+```                 <p>Follow to explore new works</p>
+                    <div className="photos-slices-container">
+                        {users.slice(0, 6).map(user => (
+                            <div className="photos-with-username">
+                                <ul className="photo-item-container">                              
+                                    {(photoTank[user.id] && photoTank[user.id].length === 3) ? photoTank[user.id].map(photo=> (
+                                        <li className="photo-item">
+                                            <Link to={`/photos/${photo.id}`} >
+                                                <img className="photo-img" src={photo.post} />
+                                            </Link>
+                                        </li>
+                                    )): null}     
+                                </ul> 
+                                <div className="username-profile-photo">
+                                    {(photoTank[user.id] && photoTank[user.id].length === 3) ? 
+                                    <p>{user.username}</p> : null
+                                    }
+                                </div>    
+                            </div>
+                        ))}
+                    </div>
+                </div>
+```
 - Users have their profile page and they can update their profile photo
 
 ## Technologies

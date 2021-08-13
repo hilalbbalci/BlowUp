@@ -1,17 +1,20 @@
 .login-signup {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    width: 9%;
+    justify-content: space-around;
+    width: 250px;
     font-size: 20px;
+    // height: 25px;
+    // font-weight: bolder;
+    
     
 }
 .login-signup > .signup {
-    border-radius: 35%;
+    border-radius: 25%;
     text-align: center;
-    width: 45%;
+    width: 100px;
     border: 2px solid black;
-    padding: 3%;
+    padding: 5px 10px;
 }
 .logout-upload-photo {
     display: flex;
@@ -60,7 +63,7 @@
     margin-top: 5px;
     width: 180px;
     border-radius: 10px;
-    background-color: honeydew;
+    background-color: rgb(255, 255, 255);
     border-inline: rgb(208, 202, 202);
     li {
         border: none;
