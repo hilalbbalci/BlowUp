@@ -63,10 +63,12 @@ class CommentForm extends React.Component {
     }
 
     render() {
+        console.log(this.props.currentUser);
         return (
             <form className="comment-form">
                 <div className="comment-input-container">
-                    <p><HiOutlineUserCircle size="30" /></p>                    
+                    <img src={this.props.currentUser.profile}/>
+                    {/* <p><HiOutlineUserCircle size="30" /></p>                     */}
                     <div className="comment-form-input" onClick={this.toggleButtons}>
                         {/* <FontAwesomeIcon icon={farComment} /> */}
                         <input

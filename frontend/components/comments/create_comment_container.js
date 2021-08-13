@@ -3,7 +3,7 @@ import CommentForm from './comment_form';
 import { createComment } from '../../actions/comment_actions';
 import { withRouter } from 'react-router-dom';
 
-const mapStateToProps = (ownProps) => {
+const mapStateToProps = (state, ownProps) => {
     return {
         formType: "createComment",
         preloadedState: {
@@ -11,6 +11,7 @@ const mapStateToProps = (ownProps) => {
             showButtons: false,
             // photoId: ownProps.match.params.photoId,
         },
+        currentUser: state.entities.users[state.session.id]
     };
 }
 
