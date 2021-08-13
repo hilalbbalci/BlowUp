@@ -3,7 +3,7 @@
  [BlowUp live](https://blowupapp.herokuapp.com/)
 
 
-<img src="" height="" />
+<img src="app/assets/images/Screen Shot 2021-08-13 at 9.33.47 AM.png" height="60px" />
 
 BlowUp is a clone of 500px, a website for photographers who like to display their portfolio.
 
@@ -37,7 +37,7 @@ BlowUp is a single page application build using ;
 - AWS to store uploaded photos
 
 
-#Future Updates
+# Future Updates
 
 * User will be able to like or unlike photos
 * User will be able to follow other users 
