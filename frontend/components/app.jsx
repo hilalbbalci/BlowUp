@@ -23,6 +23,7 @@ import Home from './home/home';
 import Entry from './entry/entry';
 import Upload from './upload/upload';
 import ProfilePhotoUpload from './profile/profile_photo_upload';
+import PhotoHomeContainer from './photo/photo_home_container'
 // import WhatMakesUsDifferent from './what_makes_different/what_makes_us_different';
 
 const App = () => (
@@ -46,6 +47,8 @@ const App = () => (
 
         </div>
         <div>
+            <AuthRoute exact path='/' component={PhotoHomeContainer} />
+
             <ProtectedRoute exact path='/' component={PhotoIndexContainer} />
         </div>
         <div>
