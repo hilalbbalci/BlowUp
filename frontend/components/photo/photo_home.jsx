@@ -21,21 +21,19 @@ class PhotoHome extends React.Component {
         
         
         return (
-            <div className="photo-index-container">
+            <div className="photo-index-box">
+                <h2>Editors' Choice</h2>
+                <p>Photos selected by our Editors</p>
                 
-                <div className="photos-all" >
-                    <h2>Editors' Choice</h2>
-                    <p>Photos selected by our Editors</p>
-                    
-                    <div className="row">    
-                        {photos.map((photo, idx) => (
-                        <div key={idx}>
-                            <Link to={`/photos/${photo.id}`} >
-                                <img className="photo-img" src={photo.post} />
-                            </Link>
-                        </div>
-                        ))}
+                <div className="row-all">    
+                    {photos.map((photo, idx) => (
+                    <div key={idx}>
+                        <li>
+                            <img className="photo-img" src={photo.post} />
+                        </li>
                     </div>
+                    ))}
+                
                 </div>
                 <div className="last-div">
                 </div>

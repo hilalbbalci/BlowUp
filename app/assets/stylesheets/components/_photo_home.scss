@@ -1,0 +1,21 @@
+.photo-index-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 65px;
+    padding-right: 55px;
+    .row-all {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        div {
+            li {
+                padding: auto;
+                list-style: none;
+                img {
+                    height: 400px;
+                }
+            }
+        }
+    }
+}
