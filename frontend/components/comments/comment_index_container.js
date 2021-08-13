@@ -7,7 +7,7 @@ const mapStateToProps = (state, ownProps) => ({
     photoId: ownProps.match.params.id,
     comments: Object.values(state.entities.comments),
     users: state.entities.users,
-    currentUserId: state.session.id
+    currentUser: state.entities.users[state.session.id]
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

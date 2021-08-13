@@ -24,8 +24,10 @@ class CommentIndex extends React.Component {
             if(idPhoto === this.props.photoId) {
                 return (
                     <div className="comment-info-box"> 
-                        <p><HiOutlineUserCircle size="30"/></p>                           
-                        <div className="next-to-photo">  
+                        <img src={this.props.users[comment.commenterId].profile} />
+                        {/* <p><HiOutlineUserCircle size="30"/></p>                            */}
+                        <div className="next-to-photo"> 
+                            <li className="commenter-name"> {this.props.users[comment.commenterId].username} </li>
                             <li> {comment.comment}</li>                                     
                         </div>    
                     </div>
