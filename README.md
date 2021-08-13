@@ -14,8 +14,8 @@ BlowUp is a clone of 500px, a website for photographers who like to display thei
 - Users can select and upload a photo
   - Add a title and description to the photo
 - Users can see all sharing photos or select one of them and see the detail page.
-- Users can can comment on a photo on that detail page.
-- Users can view photos posted by all users in the Discover page
+- Users can can comment on a photo on that detail page
+- Users can view photos posted by all users on Home Page
 - The new users's work are grouped and showed at the top of the feed
 <div className="featured-photos">
 ```                 <p>Follow to explore new works</p>
@@ -41,6 +41,7 @@ BlowUp is a clone of 500px, a website for photographers who like to display thei
                     </div>
                 </div>
 ```
+<img src="app/assets/images/Screen Shot 2021-08-13 at 9.24.04 AM.png" height="200px" width="auto">
 - Users have their profile page and they can update their profile photo
 
 ## Technologies
