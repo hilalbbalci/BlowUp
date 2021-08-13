@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import Root from "./components/root";
 import configureStore from "./store/store";
 import {fetchComments} from './actions/comment_actions'
+import {updateUser, fetchUsers} from './actions/user_actions'
 
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.getElementById("root");
@@ -19,7 +20,8 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
         store = configureStore();
     }
-   
+   window.updateUser = updateUser;
+   window.fetchUsers = fetchUsers;
     window.store = store;
    
     

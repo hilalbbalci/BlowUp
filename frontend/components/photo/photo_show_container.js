@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { fetchPhoto } from "../../actions/photo_actions";
 import { fetchUsers } from "../../actions/user_actions";
 import PhotoShow from "./photo_show";
-import photoUserSelector from '../../selectors/photo_user_selector';
+// import photoUserSelector from '../../selectors/photo_user_selector';
 // import { fetchlikes, createLike, deletelike } from "../../actions/like_actions";
 
 

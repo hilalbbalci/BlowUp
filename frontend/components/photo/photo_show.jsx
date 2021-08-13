@@ -22,6 +22,7 @@ class PhotoShow extends React.Component {
         this.props.fetchPhoto(this.props.match.params.id);
         this.props.fetchUsers();
         // this.props.fetchlikes();
+        // this.props.fetchlikes();
         // this.setState({userId: this.props.fetchUser(this.props.photo.userId)});
         // this.props.fetchUser(this.props.photo.userId);
         // console.log(this.props.photo);
@@ -58,6 +59,7 @@ class PhotoShow extends React.Component {
     // }
     // isUser() {
     //     // debugger
+    //     console.log(this.props.session.id)
     //     if (this.props.session === null) {
     //         return null
     //     } else if (this.props.session.id === this.props.photo.userId) {
@@ -86,6 +88,7 @@ class PhotoShow extends React.Component {
         const user = this.props.users[photo.userId];
         console.log(user);
         if(!user) return null;
+        console.log(this.props.likes);
         return (
         <div className="photo-show-biggest-container">
             <div className="photo-show-container">
