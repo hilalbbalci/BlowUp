@@ -46,9 +46,7 @@ const App = () => (
 
         </div>
         <div>
-        
             <ProtectedRoute exact path='/' component={PhotoIndexContainer} />
-
         </div>
         <div>
             <AuthRoute exact path="/login" component={SessionForm} />

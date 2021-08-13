@@ -25,8 +25,8 @@
     line-height: 1.5rem;
     width: 100%;
     height: 330px;
-    padding-left:10%; 
-    padding-right: 10%;
+    padding-left:5%; 
+    padding-right: 5%;
     border-bottom: 0.5px ridge rgba(0, 0, 0, 0.284);
     border-top: 0.5px ridge rgba(0, 0, 0, 0.284);
     h2 {
@@ -50,16 +50,45 @@
     align-items: center;
     justify-content: space-around;
     width: 100%;
-    padding-left:64px; 
-    padding-right: 50px; 
+    padding-left: 50px; 
+    padding-right: 50px;
+   .photos-with-username {
+        background-color: rgb(255, 255, 255); 
+        margin-left: 10%;
+        display: flex;
+        flex-direction: column;
+
+   .photo-item-container {
+       padding-top: 5%;
+       margin-left: 20px;
+       margin-right: 20px;
+        display: flex;
+        align-items: center;
+    }
+    .username-profile-photo {
+        display: flex;
+        margin-bottom: 2%;
+        margin-left: 5%;
+    img {
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        margin-left: 3%;
+
+    }
+    p {
+        font-weight: bold;
+        margin-bottom: 5%;
+    }
+    }
    
+   
+    }
 }
-.photo-item-container {
-    display: flex;
-}
+
 .photo-img {
     width: auto;
-    height: 180px;
+    height: 150px;
 }
 .photos-all {
     margin-top: 3%;

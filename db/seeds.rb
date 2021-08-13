@@ -24,93 +24,93 @@ Photo.delete_all
 
 ####### CREATE USERS #######
 
-demo = User.create!(
-  username: "demo_user",
+taha = User.create!(
+  username: "Taha Bebek",
   password: "password",
   profile: "https://blowup-dev.s3.us-west-1.amazonaws.com/susankopek.jpeg"
 
 )
 
 diane = User.create!(
-  username: "Diane",
+  username: "Diane Brown",
   password: "password",
-  profile: "https://blowup-dev.s3.us-west-1.amazonaws.com/susankopek.jpeg"
+  profile: "https://blowup-dev.s3.us-west-1.amazonaws.com/isiklar.jpeg"
 
 )
 annie = User.create!(
-  username: "Annie",
+  username: "Annie Sanders",
   password: "password",
-  profile: "https://blowup-dev.s3.us-west-1.amazonaws.com/susankopek.jpeg"
+  profile: "https://blowup-dev.s3.us-west-1.amazonaws.com/denizanasi.jpeg"
 
 )
 
 robert = User.create!(
-  username: "Robert",
+  username: "Robert Edgar",
   password: "password",
-  profile: "https://blowup-dev.s3.us-west-1.amazonaws.com/susankopek.jpeg"
+  profile: "https://blowup-dev.s3.us-west-1.amazonaws.com/dua.jpeg"
 
 )
 steve = User.create!(
-  username: "Steve",
+  username: "Steve Forest",
   password: "password",
-  profile: "https://blowup-dev.s3.us-west-1.amazonaws.com/susankopek.jpeg"
+  profile: "https://blowup-dev.s3.us-west-1.amazonaws.com/ayakkabilikiz.jpeg"
 
 )
 
 edward = User.create!(
-  username: "Edward",
+  username: "Edward Bill",
   password: "password",
-  profile: "https://blowup-dev.s3.us-west-1.amazonaws.com/susankopek.jpeg"
+  profile: "https://blowup-dev.s3.us-west-1.amazonaws.com/buzlugol.jpeg"
 
 )
 alfred = User.create!(
-  username: "Alfred",
+  username: "Alfred Taylor",
   password: "password",
-  profile: "https://blowup-dev.s3.us-west-1.amazonaws.com/susankopek.jpeg"
+  profile: "https://blowup-dev.s3.us-west-1.amazonaws.com/boksor.jpeg"
 
 )
 
 irving = User.create!(
-  username: "Irving",
+  username: "Irving Bell",
   password: "password",
-  profile: "https://blowup-dev.s3.us-west-1.amazonaws.com/susankopek.jpeg"
+  profile: "https://blowup-dev.s3.us-west-1.amazonaws.com/camdansurat.jpeg"
 
 )
 
 cindy = User.create!(
-  username: "Cindy",
+  username: "Cindy Wills",
   password: "password",
-  profile: "https://blowup-dev.s3.us-west-1.amazonaws.com/susankopek.jpeg"
+  profile: "https://blowup-dev.s3.us-west-1.amazonaws.com/gul.jpeg"
 
 )
 amy = User.create!(
-  username: "Amy",
+  username: "Amy Campell",
   password: "password",
-  profile: "https://blowup-dev.s3.us-west-1.amazonaws.com/susankopek.jpeg"
+  profile: "https://blowup-dev.s3.us-west-1.amazonaws.com/gelincikler+icin.jpeg"
 
 )
 drew = User.create!(
-  username: "Drew",
+  username: "Drew Lyn",
   password: "password",
-  profile: "https://blowup-dev.s3.us-west-1.amazonaws.com/susankopek.jpeg"
+  profile: "https://blowup-dev.s3.us-west-1.amazonaws.com/bisikletlisokak.jpeg"
 
 )
 john = User.create!(
-  username: "John",
+  username: "John Baltrus",
   password: "password",
-  profile: "https://blowup-dev.s3.us-west-1.amazonaws.com/susankopek.jpeg"
+  profile: "https://blowup-dev.s3.us-west-1.amazonaws.com/deniz.jpeg"
 
 )
 kate = User.create!(
-  username: "Kate",
+  username: "Kate Monk",
   password: "password",
-  profile: "https://blowup-dev.s3.us-west-1.amazonaws.com/susankopek.jpeg"
+  profile: "https://blowup-dev.s3.us-west-1.amazonaws.com/dalgic.jpeg"
 
 )
 jazz = User.create!(
-  username: "Jasmine",
+  username: "Jasmine Wood",
   password: "password",
-  profile: "https://blowup-dev.s3.us-west-1.amazonaws.com/susankopek.jpeg"
+  profile: "https://blowup-dev.s3.us-west-1.amazonaws.com/dovmeliadam.jpeg"
 )
 
 
@@ -192,10 +192,10 @@ photo23 = Photo.new(title: "Rugs", description: "Handcraft rugs are waiting for 
 photo24 = Photo.new(title: "Wind Chimes", description: "feel the enchanting melody", user_id: annie.id)
 photo25 = Photo.new(title: "An Interesting Window", description: "Some beauties are hidden, you need to find them", user_id: kate.id)
 photo26 = Photo.new(title: "Etry Image", description: "Some beauties are hidden, you need to find them", user_id: kate.id)
-photo27 = Photo.new(title: "Yoga", description: "Mental health", user_id: alfred.id)
+photo27 = Photo.new(title: "Yoga", description: "Mental health", user_id: annie.id)
 photo28 = Photo.new(title: "Big Shoes", description: "Under the shoes", user_id: amy.id)
-photo29 = Photo.new(title: "Lights", description: "Some beauties", user_id: cindy.id)
-photo30 = Photo.new(title: "On the Beach", description: "Have some rest and enjoy with sun", user_id: kate.id)
+photo29 = Photo.new(title: "Lights", description: "Some beauties", user_id: robert.id)
+photo30 = Photo.new(title: "On the Beach", description: "Have some rest and enjoy with sun", user_id: irving.id)
 
 photo1.post.attach(io: file1, filename: "flowergirl.jpeg")
 photo2.post.attach(io: file2, filename: "annekiz.jpeg")
