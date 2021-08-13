@@ -8,11 +8,27 @@ class PhotoIndex extends React.Component {
 
     componentDidMount() {
         this.props.fetchPhotos();
+        this.props.fetchUsers();
     }
 
     render() {
         const { photos } = this.props;
+        const { users } = this.props;
         if (!photos) return null;
+        if (!users) return null;
+        // console.log(photos)
+        // console.log(users)
+        let photoTank = {};
+        
+        for( let i=0; i< photos.length;i++){
+            let photo = photos[i]
+           if(!photoTank[photo.userId]){
+            photoTank[photo.userId] = [photo] ;
+        } else {
+            photoTank[photo.userId].push(photo)
+        } }
+
+    //   console.log(photoTank);
         return (
             <div className="photo-index-container">
                 <div className="first-item">
@@ -24,19 +40,20 @@ class PhotoIndex extends React.Component {
                     <h2>Featured photographers</h2>
                     <p>Follow to explore new works</p>
                     <div className="photos-slices-container">
-                        <div className="photo-with-user">
-                           <ul className="photo-item-container">
-                            {photos.slice(0, 3).map((photo, idx) => (
-                                <li className="photo-item" key={idx}>
-                                    <Link to={`/photos/${photo.id}`} >
-                                        <img className="photo-img" src={photo.post} />
-                                    </Link>
-                                </li>
-                            ))}
+                        {users.slice(0, 6).map(user => (
+                            <ul className="photo-item-container">                              
+                                {photoTank[user.id] ? photoTank[user.id].map(photo=> (
+                                    <li className="photo-item">
+                                        <Link to={`/photos/${photo.id}`} >
+                                            <img className="photo-img" src={photo.post} />
+                                        </Link>
+                                    </li>
+                                )): null}       
                             </ul> 
-                        </div>
+                            // {user.username}
+                        ))}
 
-                        <div className="photo-with-user">
+                        {/* <div className="photo-with-user">
                           <ul className="photo-item-container">
                             {photos.slice(3, 6).map((photo, idx) => (
                                 <li className="photo-item" key={idx}>
@@ -46,9 +63,9 @@ class PhotoIndex extends React.Component {
                                 </li>
                             ))}
                             </ul>  
-                        </div>
+                        </div> */}
                         
-                        <div className="photo-with-user">
+                        {/* <div className="photo-with-user">
                              <ul className="photo-item-container">
                             {photos.slice(6, 9).map((photo, idx) => (
                                 <li className="photo-item" key={idx}>
@@ -58,8 +75,8 @@ class PhotoIndex extends React.Component {
                                 </li>
                             ))}
                             </ul>
-                        </div>
-                        <div className="photo-with-user">
+                        </div> */}
+                        {/* <div className="photo-with-user">
                             <ul className="photo-item-container">
                                 {photos.slice(9, 12).map((photo, idx) => (
                                     <li className="photo-item" key={idx}>
@@ -80,8 +97,8 @@ class PhotoIndex extends React.Component {
                                     </li>
                                 ))}
                             </ul>
-                        </div>
-                        <div className="photo-with-user">
+                        </div> */}
+                        {/* <div className="photo-with-user">
                             <ul className="photo-item-container">
                                 {photos.slice(15, 18).map((photo, idx) => (
                                     <li className="photo-item" key={idx}>
@@ -91,7 +108,7 @@ class PhotoIndex extends React.Component {
                                     </li>
                                 ))}
                             </ul>
-                        </div>
+                        </div> */}
 
                        
                     </div>
