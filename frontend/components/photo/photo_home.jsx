@@ -22,8 +22,11 @@ class PhotoHome extends React.Component {
         
         return (
             <div className="photo-index-box">
-                <h2>Editors' Choice</h2>
-                <p>Photos selected by our Editors</p>
+                <div className="column-of-header">
+                    <h2>The best of the best</h2>
+                    <p>Our editors are always on the lookout for jaw dropping content for you to discover and stay inspired. Check back weekly to see what’s new.</p>
+                    <Link to="">View Editors' Choice</Link>  
+                </div>
                 
                 <div className="row-all">    
                     {photos.map((photo, idx) => (
