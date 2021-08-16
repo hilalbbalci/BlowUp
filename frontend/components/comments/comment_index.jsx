@@ -17,13 +17,13 @@ class CommentIndex extends React.Component {
         if(!this.props.photoId) {
             return null;
         }
-        return this.props.comments.map(comment => {
-            if(comment){
+        return this.props.comments.map((comment, idx) => {
+            if(comment.photoId){
                const idPhoto = comment.photoId.toString();
             
             if(idPhoto === this.props.photoId) {
                 return (
-                    <div className="comment-info-box"> 
+                    <div key={idx} className="comment-info-box"> 
                         <img src={this.props.users[comment.commenterId].profile} />
                         {/* <p><HiOutlineUserCircle size="30"/></p>                            */}
                         <div className="next-to-photo"> 
@@ -33,7 +33,7 @@ class CommentIndex extends React.Component {
                     </div>
                 );  
             } else {
-                return 
+                return null;
             }     
         }});
     }
