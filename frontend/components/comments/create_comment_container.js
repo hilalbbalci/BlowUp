@@ -7,11 +7,19 @@ const mapStateToProps = (state, ownProps) => {
     return {
         formType: "createComment",
         preloadedState: {
-            comment: "",
+            comment: {
+                comment: "",
+                photo_id: 0,
+                newComment:'',
+                
+            },
+            components:[],
+            commentComponent: null,
             showButtons: false,
-            // photoId: ownProps.match.params.photoId,
+            showNewComment: false,
         },
-        currentUser: state.entities.users[state.session.id]
+        currentUser: state.entities.users[state.session.id],
+      
     };
 }
 

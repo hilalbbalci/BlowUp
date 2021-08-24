@@ -30,6 +30,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "webpack": "webpack --mode=development --watch",
+    "start": "webpack serve --open",
     "postinstall": "webpack"
   },
   "engines": {
@@ -46,5 +47,8 @@
   "bugs": {
     "url": "https://github.com/hilalbbalci/BlowUp/issues"
   },
-  "homepage": "https://github.com/hilalbbalci/BlowUp#readme"
+  "homepage": "https://github.com/hilalbbalci/BlowUp#readme",
+  "devDependencies": {
+    "webpack-dev-server": "^4.0.0"
+  }
 }

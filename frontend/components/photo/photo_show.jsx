@@ -13,7 +13,7 @@ class PhotoShow extends React.Component {
         super(props);
         this.state = {
             userId: undefined,
-        }
+        };
         this.handleback = this.handleback.bind(this);
       
     }
@@ -32,61 +32,14 @@ class PhotoShow extends React.Component {
     handleback() {
         this.props.history.goBack();
     }
-    // toggleLike() {
-    //     let liked = false;
-    //     let photoLiked = [];
-    //     const { likes } = this.props;
-    //     likes.map(like => {
-    //         if (like && (this.props.photo.id === this.props.like.photoId) && this.props.session.id == this.props.like.likerId) {
-    //             photoLiked.push(this.props.like.id);
-    //             liked = true
-    //         }
-    //     })
-      
-    //     return (
-    //         <div className="like_button_box">
-    //             {
-    //                 liked ?
-    //                     <button className="like_button" onClick={() => this.props.deleteLike(photoLiked[0])}>
-    //                         <RiHeartFill size="30" />
-    //                     </button> :
-    //                     <button className="like_button" onClick={() => this.props.createLike(this.props.session.id, this.props.photo.id)}>
-    //                         <RiHeartLine size="30" />
-    //                     </button>
-    //             }
-    //         </div>
-    //     )
-    // }
-    // isUser() {
-    //     // debugger
-    //     console.log(this.props.session.id)
-    //     if (this.props.session === null) {
-    //         return null
-    //     } else if (this.props.session.id === this.props.photo.userId) {
-    //         return null
-    //     } else {
-    //         return this.toggleLike()
-    //     }
-    // }
-
+   
     render() {
        
         const { photo } = this.props;
-        // const user = this.props.fetchUser(photo.userId)
-        // console.log(photo);
-        // console.log(this.props.user);
-        // console.log(user);
-        // const { user } = this.props;
-        // console.log(this.props.likers);
+    
         if (!photo) return null;
-        // console.log(photo.likerId);
-        // console.log(user)
-        // console.log(this.props.users[photo.likerId]);
-
-        // console.log(photo.userId);
-        // console.log(this.props.users[photo.userId]);
+        
         const user = this.props.users[photo.userId];
-        // console.log(user.profile);
         if(!user) return null;
         console.log(user);
         return (
@@ -94,13 +47,11 @@ class PhotoShow extends React.Component {
             <div className="photo-show-container">
                 <div className="photo-box">
                     <img className="photo-show-img" src={photo.post} /> 
-                    {/* <Link to={`/photos/${(photo.id) + 1}`} ><GrNext size="50"/></Link> */}
                 </div>
                 
             </div>
             <div className="after-show-photo">
                 <div className="photo-show-info">
-                    {/* {this.isUser()} */}
                     <div className="logos">
                         <RiHeartLine size="30" />
                         <RiFolderAddLine size="30" />
@@ -109,8 +60,6 @@ class PhotoShow extends React.Component {
                     <div className="center-box">
                         <div className="photo-info-box">
                             <img src={user.profile} />
-                            {/* <p><HiOutlineUserCircle size="70"/></p> */}
-                            {/* <i onClick={() => this.props.history.push(`/likers/${photo.likerId}`)} className="fas fa-liker-circle profile_logo"></i> */}
                             <div className="next-to-photo">
                                 <h2>{photo.title}</h2>
                                 <p> by {user.username} </p>
@@ -124,13 +73,12 @@ class PhotoShow extends React.Component {
 
                     </div>
                     <CreateCommentContainer photoId={this.props.photo.id}/>
-                    <CommentIndexContainer />
+                    {/* <CommentIndexContainer /> */}
                 </div>
             </div>
         </div>
         )
     }
-
 }
 
 export default PhotoShow;

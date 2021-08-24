@@ -17,7 +17,7 @@ class CommentIndex extends React.Component {
         if(!this.props.photoId) {
             return null;
         }
-        return this.props.comments.map((comment, idx) => {
+        return this.props.comments.reverse().map((comment, idx) => {
             if(comment.photoId){
                const idPhoto = comment.photoId.toString();
             
@@ -25,7 +25,6 @@ class CommentIndex extends React.Component {
                 return (
                     <div key={idx} className="comment-info-box"> 
                         <img src={this.props.users[comment.commenterId].profile} />
-                        {/* <p><HiOutlineUserCircle size="30"/></p>                            */}
                         <div className="next-to-photo"> 
                             <li className="commenter-name"> {this.props.users[comment.commenterId].username} </li>
                             <li> {comment.comment}</li>                                     
@@ -51,16 +50,8 @@ class CommentIndex extends React.Component {
 
     render() {
         if (!this.props.comments) return null;
-        // let recentComments;
-        // this.props.comments.map(comment => {
-        //     const idPhoto = comment.photoId.toString();
-        //     if (idPhoto === this.props.photoId) {
-        //         recentComments.push(comment)
-        //     }
-        // };
         return (
-        <div className="comments-last-container">
-            <h3>Comments</h3>  
+        <div className="comments-last-container"> 
             <ul className="comment-list">
                 {this.renderCommentsOfAPhoto()}
                 {this.renderEmptyCommentsMessage()}
