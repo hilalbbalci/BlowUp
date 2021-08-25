@@ -122,12 +122,12 @@ class CommentForm extends React.Component {
                     <ul className="comment-list">
                         {this.state.components.map((item,i) => {
                             return (
-                                  <div className="comment-info-box">
-                                <img src={this.props.currentUser.profile} />
-                                <div className="next-to-photo"> 
-                                    <li id="username">{this.props.currentUser.username}</li>
-                                    <li>{item}</li>
-                                </div>
+                                <div className="comment-info-box">
+                                    <img src={this.props.currentUser.profile} />
+                                    <div className="next-to-photo"> 
+                                        <li className="commenter-name">{this.props.currentUser.username}</li>
+                                        <li>{item}</li>
+                                    </div>
                             </div>
                             )
                           
