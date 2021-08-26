@@ -28,16 +28,16 @@ class PhotoHome extends React.Component {
                     <Link to="">View Editors' Choice</Link>  
                 </div>
                 
-                <div className="row-all">    
+                {/* <div className="row-all">    
                     {photos.map((photo, idx) => (
                     <div key={idx}>
                         <li>
                             <img className="photo-img" src={photo.post} />
                         </li>
-                    </div>
-                    ))}
+                    </div> */}
+                    {/* ))} */}
                 
-                </div>
+                {/* </div> */}
                 <div className="last-div">
                 </div>
             </div>
