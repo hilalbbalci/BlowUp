@@ -6,6 +6,7 @@ import { HiOutlineUserCircle } from "react-icons/hi";
 class CommentIndex extends React.Component {
     constructor(props) {
         super(props);
+    
     }
 
     componentDidMount() {
@@ -36,7 +37,7 @@ class CommentIndex extends React.Component {
                     </div>
                      
                         <div>
-                            {this.props.currentUser.id === comment.commenterId ? (<button className="delete-btn">Delete</button>) : (<div></div>)}
+                            {this.props.currentUser.id === comment.commenterId ? (<button onClick={this.props.deleteComment.bind(this,comment.id)}className="delete-btn">Delete</button>) : (<div></div>)}
                         </div>  
                     </div>
                 );  
