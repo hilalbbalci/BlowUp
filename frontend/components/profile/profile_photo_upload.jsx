@@ -1,23 +1,33 @@
 import React from 'react';
+import axios from 'axios';
 
 class ProfilePhotoUpload extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            user: {
+                user: {
+                    // username: this.props.currentUser.username,
+                    profile: null,
+                    // password: this.props.currentUser.password   
+                }
+                
+            },
             photoFile: null,
             photoUrl: null,
             selectedPhoto: 0
-        }
+        };
         this.handleFile = this.handleFile.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
-
-    // Update(field) {
-    //     return e => this.setState({ [field]: e.target.value });
+    // componentDidMount() {
+    //     this.props.fetchUser(this.props.currentUser.id)
     // }
+    
 
     handleFile(e) {
         const file = e.target.files[0];
+        // console.log(file.name)
         const fileReader = new FileReader();
         fileReader.onloadend = () => {
             this.setState({ photoFile: file, photoUrl: fileReader.result, selectedPhoto: 1});
@@ -29,18 +39,26 @@ class ProfilePhotoUpload extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        const formData = new FormData();
-        
-        formData.append("user[profile]", this.state.photoFile);
+       
+
+        axios.get("https://ty559p5ri0.execute-api.us-west-1.amazonaws.com/default/getImageURL")
+        .then(resp=>
+            fetch(resp.data.uploadURL, {
+            method: "PUT",
+            body: this.state.photoFile }
+            ).then(resp=> {
+                this.setState({user: {user: {profile: resp.url}}})
+                console.log(this.state.user)
+            }));
+      
     
-        // this.props.updateUser(formData)
-        // .then(resp => this.props.history.push(`/users/${resp.id}`));
+        this.props.updateUser(this.state.user);
 
 
     }
    
     render() {
-
+        console.log(this.props);
         const preview = this.state.photoUrl ? <img className="upload_form_preview_img" src={(this.state.photoUrl)} /> : null
 
         if (this.state.selectedPhoto === 0) {
