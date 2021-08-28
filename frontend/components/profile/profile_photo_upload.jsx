@@ -5,24 +5,15 @@ class ProfilePhotoUpload extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            user: {
-                user: {
-                    // username: this.props.currentUser.username,
-                    profile: null,
-                    // password: this.props.currentUser.password   
-                }
-                
-            },
+            user: this.props.currentUser,
             photoFile: null,
             photoUrl: null,
-            selectedPhoto: 0
+            selectedPhoto: 0,
         };
         this.handleFile = this.handleFile.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
-    // componentDidMount() {
-    //     this.props.fetchUser(this.props.currentUser.id)
-    // }
+  
     
 
     handleFile(e) {
@@ -47,18 +38,21 @@ class ProfilePhotoUpload extends React.Component {
             method: "PUT",
             body: this.state.photoFile }
             ).then(resp=> {
-                this.setState({user: {user: {profile: resp.url}}})
-                console.log(this.state.user)
+                // this.setState({user: {profile: resp.url}});
+                this.setState(prevState => {
+                    let user = Object.assign({}, prevState.user);  // creating copy of state variable jasper
+                    user.profile = resp.url;                     // update the name property, assign a new value
+                    this.props.updateUser(user);
+                });
+                // console.log(this.state.user);
             }));
-      
-    
-        this.props.updateUser(this.state.user);
+        // 
 
 
     }
    
     render() {
-        console.log(this.props);
+        console.log(this.props.currentUser);
         const preview = this.state.photoUrl ? <img className="upload_form_preview_img" src={(this.state.photoUrl)} /> : null
 
         if (this.state.selectedPhoto === 0) {

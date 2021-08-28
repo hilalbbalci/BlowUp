@@ -22,7 +22,7 @@ import CommentIndexContainer from './comments/comment_index_container';
 import Home from './home/home';
 import Entry from './entry/entry';
 import Upload from './upload/upload';
-import ProfilePhotoUpload from './profile/profile_photo_upload';
+import ProfilePhotoUpload from './profile/profile_photo_upload_container';
 import PhotoHomeContainer from './photo/photo_home_container'
 // import WhatMakesUsDifferent from './what_makes_different/what_makes_us_different';
 

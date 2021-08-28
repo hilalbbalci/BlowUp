@@ -34,7 +34,8 @@ export const fetchUser = userId => dispatch => (
         .fail(err => dispatch(receiveUserErrors(err.responseJSON)))
 );
 export const updateUser = user => dispatch => (
-    ApiUser.updateUser(user).then(user => dispatch(receiveUser(user)))
+    ApiUser.updateUser(user)
+        .then(user => dispatch(receiveUser(user)))
         // .fail(err => dispatch(receiveUserErrors(err.responseJSON)))
 );
 export const fetchUsers = () => dispatch => (
