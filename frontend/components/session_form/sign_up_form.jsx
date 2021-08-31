@@ -56,7 +56,7 @@ class SignUpForm extends React.Component {
                     </label>
                     <input className="session-submit" type="submit" value={this.props.formType} />
                 </form>
-                <p>{this.renderErrors()}</p>
+                <p className="errors">{this.renderErrors()}</p>
                 <p>Already have an account? <strong>{this.props.navLink}</strong></p>
             </div>
 

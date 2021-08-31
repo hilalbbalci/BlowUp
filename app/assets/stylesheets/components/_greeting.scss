@@ -2,7 +2,8 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    width: 250px;
+    width: 10%;
+    min-width: 200px;
     font-size: 20px;
     // height: 25px;
     // font-weight: bolder;
@@ -10,11 +11,14 @@
     
 }
 .login-signup > .signup {
-    border-radius: 25%;
+    border-radius: 50px 50px;
     text-align: center;
-    width: 100px;
+    width: 35%;
+    height: 25px;
+    min-width: 70px;
+    max-width: 80px;
     border: 2px solid black;
-    padding: 5px 10px;
+    padding: 5%;
 }
 .logout-upload-photo {
     display: flex;
