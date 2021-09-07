@@ -23,11 +23,11 @@
     border: none;
     background-color: white;
     font-size: 15px;
-    width: 12%;
+    width: 10%;
     min-width: 80px;
     margin-left: 50%;
     text-align: center;
-     padding: 6px 15px 6px 35px;
+    padding: 6px 15px 6px 15px;
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
     border-radius: 20px;
@@ -39,4 +39,6 @@
     -moz-transition: all 0.7s ease 0s;
     -o-transition: all 0.7s ease 0s;
     transition: all 0.7s ease 0s;
+
 }
+
