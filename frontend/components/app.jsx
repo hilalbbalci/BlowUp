@@ -70,12 +70,8 @@ const App = () => (
                 <Link target="_blank" href="https://www.linkedin.com/in/hilal-balci-bebek-546b001b6/">
                     <img id="linkedin" src="https://blowup-dev.s3.us-west-1.amazonaws.com/LI-In-Bug.png"/>
                 </Link>
-            </div>
-            
+            </div>    
         </footer>
-        
-
-
     </div>
 );
 

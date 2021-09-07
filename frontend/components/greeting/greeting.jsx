@@ -35,7 +35,12 @@ const Greeting = ({ currentUser, logout }) => {
                 </li>
                 <li><RiMessage2Line size="30"/></li>
                 <li><RiNotification3Line size="30"/></li>
-                <li className="upload-photo"><Link to="/upload" ><IoArrowUp/>Upload</Link></li>
+                <li className="upload-photo">
+                    <Link to="/upload" >
+                        <IoArrowUp size="18"/>
+                        Upload
+                    </Link>
+                </li>
             </ul>
     );
 
