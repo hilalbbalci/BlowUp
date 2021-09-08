@@ -45,22 +45,25 @@
     border-radius: 5px;
     background-color: blanchedalmond;
     li {
-        font-size: 20px;
+      
         color: rgba(0, 0, 0, 0.606);
-        // padding-bottom: 2%;
+      
         #logout-button {
-            font-size: 15px;
+        font-size: 1.3rem;
+        opacity: 0.6;
         background: transparent;
-        // box-shadow: 0px 0px 0px transparent;
         border: 0px solid transparent;
         text-shadow: 0px 0px 0px transparent;
-        // height: 50px;
-        // width: 80px;
+        font-family: inherit;
         padding: 2px;
         }
         #logout-button:hover {
             color:cornflowerblue;
             cursor: pointer;
+        }
+        a {
+        font-size: 1.3rem;
+        opacity: 0.6;
         }
     }
 }
