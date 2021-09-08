@@ -1,13 +1,13 @@
 .login-signup {
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    width: 10%;
-    min-width: 200px;
-    font-size: 20px;
-    // height: 25px;
-    // font-weight: bolder;
-    
+    justify-content: stretch;
+    width: 100%;
+    font-size: 1.2rem;
+    font-weight: bold;
+    a {
+        padding: 0 10%;
+    }
     
 }
 .login-signup > .signup {
@@ -40,6 +40,10 @@
     cursor: pointer;
 }
 .drop-menu {
+    position:relative;
+    z-index: 10;
+    border-radius: 5px;
+    background-color: blanchedalmond;
     li {
         font-size: 20px;
         color: rgba(0, 0, 0, 0.606);

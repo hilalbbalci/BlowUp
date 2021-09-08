@@ -12,17 +12,17 @@ body {
 
 
 h1 {
-    font-size: 30px;
+    font-size: 2rem;
     font-weight: bolder;
     color: black;
 }
 h2 {
-    font-size: 20px;
+    font-size: 1.8rem;
     font-weight: bolder;
     color: black;
 }
 h3 {
-    font-size: 20px;
+    font-size: 1.4rem;
     color: black;
 }
 body, html {
@@ -76,5 +76,8 @@ body, html {
  }
  input:focus {
      outline: none;
+ }
+ button {
+     border: none;
  }
 

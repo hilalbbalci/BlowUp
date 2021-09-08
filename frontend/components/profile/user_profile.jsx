@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
  class UserProfile extends React.Component {
      constructor(props) {
@@ -29,12 +30,12 @@ import React from 'react';
      }
 
     render() {
-        const {user, photos} = this.props;
+        const {currentUser, user, photos} = this.props;
         if(!user) return null;
         if(!photos) return null;
         
         return (
-            <div>
+            <div className="profile-page">
                 <div className="profile-entry-photo">
                   <img src={photos[10].post} />
                 </div>
@@ -42,7 +43,9 @@ import React from 'react';
                     <img src={user.profile}/> 
                     <h3>{user.username}</h3>
                 </div>
-                <div>
+                {currentUser.id === user.id ? <Link to='/profilephoto'>Edit</Link> : null}
+              
+                <div className="follow-btn">
                     <button onClick={this.follow}>{this.state.followed? <p>Unfollow</p> : <p>Follow</p>}</button>
                 </div>
             </div>

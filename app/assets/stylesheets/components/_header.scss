@@ -1,6 +1,6 @@
 .header {
     box-sizing: border-box;
-    font-size: 25px;
+    font-size: 2rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -20,7 +20,7 @@
     color:cornflowerblue;
 }
 .search-bar {
-    margin-left: 5%;
+    margin-left: 20%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -28,7 +28,7 @@
     border: none;
     background-color: white;
     font-size: 15px;
-    width: 10%;
+    width: 100%;
     min-width: 80px;
     text-align: center;
     // padding: 6px 15px 6px 15px;
