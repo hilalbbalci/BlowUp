@@ -10,6 +10,9 @@ class PhotoIndex extends React.Component {
         this.props.fetchPhotos();
         this.props.fetchUsers();
     }
+    handleClick(route) {
+        return (e) => this.props.history.push(route);
+    }
 
     render() {
         const { photos } = this.props;
@@ -25,7 +28,7 @@ class PhotoIndex extends React.Component {
            if(!photoTank[photo.userId]){
             photoTank[photo.userId] = [photo] ;
         } else {
-            photoTank[photo.userId].push(photo)
+            photoTank[photo.userId].push(photo);
         } }
 
     //   console.log(photoTank);
@@ -53,7 +56,7 @@ class PhotoIndex extends React.Component {
                                 </ul> 
                                 <div className="username-profile-photo">
                                     {(photoTank[user.id] && photoTank[user.id].length === 3) ? 
-                                    <p>{user.username}</p> : null
+                                    <div className='username' onClick={this.handleClick(`/users/${user.id}`).bind(this)}>{user.username}</div> : null
                                     }
                                 </div>    
                             </div>
