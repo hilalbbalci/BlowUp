@@ -23,6 +23,7 @@ import Home from './home/home';
 import Entry from './entry/entry';
 import Upload from './upload/upload';
 import ProfilePhotoUpload from './profile/profile_photo_upload_container';
+import UserProfile from './profile/user_profile_container';
 import PhotoHomeContainer from './photo/photo_home_container'
 // import WhatMakesUsDifferent from './what_makes_different/what_makes_us_different';
 
@@ -56,7 +57,7 @@ const App = () => (
             <AuthRoute exact path="/signup" component={SignUpFormContainer} />
             <ProtectedRoute exact path="/upload" component={PhotoFormContainer} />
             <ProtectedRoute exact path="/photos/:id" component={PhotoShowContainer} />
-            <ProtectedRoute exact path="/profile" component={ProfilePhotoUpload} />
+            <ProtectedRoute exact path="/users/:userId" component={UserProfile} />
 
         </div>
         <footer>
