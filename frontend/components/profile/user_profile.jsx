@@ -5,22 +5,25 @@ import React from 'react';
          super(props);
          this.state= {
              followed: false,
+            
          };
          this.follow = this.follow.bind(this);
      }
      follow() {
-         const follow = {
-            followerId: this.props.currentUser.id,
-            followedId: this.props.user.id
+         const newFollow = {
+            follow: {
+                followerId: this.props.currentUser.id,
+                followedId: this.props.user.id
+            }
          };
-         console.log(follow);
+         console.log(newFollow);
          
          if (this.state.followed) {
              this.setState({followed: false})
             //  this.props.deleteFollow(follow.id)
          } else {
             this.setState({followed: true});
-            this.props.createFollow(follow).then(follow => console.log(follow));
+            this.props.createFollow(newFollow).then(follow => console.log(follow));
          }
       
      }

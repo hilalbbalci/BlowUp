@@ -23,7 +23,7 @@ const Greeting = ({ currentUser, logout }) => {
             <ul className="logout-upload-photo">
                 <li className="user-icon"> < HiOutlineUserCircle size='40'/>
                     <ul className="drop-menu">
-                        <li><Link to="/profile">Profile</Link></li>
+                        <li><Link to={`/users/${currentUser.id}`} >Profile</Link></li>
                         <li>Portfolio</li>
                         <li>Resources</li>
                         <li>Stats</li>

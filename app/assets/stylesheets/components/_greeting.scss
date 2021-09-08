@@ -23,17 +23,21 @@
 }
 .logout-upload-photo {
     display: flex;
+    margin-right: 2%;
     align-items: center;
-    justify-content: space-around;
-    width: 18%;
+    justify-content:space-evenly;
+    width: 100%;
     font-size: 20px;
     list-style: none;
     li {
-        padding: 5px 10px;
+        padding: 5px 1%;
         ul {
             display: none;
         }
     }
+}
+.user-icon:hover {
+    cursor: pointer;
 }
 .drop-menu {
     li {
@@ -52,8 +56,12 @@
         }
         #logout-button:hover {
             color:cornflowerblue;
+            cursor: pointer;
         }
     }
+}
+.drop-menu:hover {
+    cursor: pointer;
 }
 
 

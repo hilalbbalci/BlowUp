@@ -35,10 +35,13 @@ const App = () => (
                 <Link to="/" className="header-link-blow">Blow</Link>
                 <Link to="/" className="header-link-up">Up</Link>
             </div>
-            <div>
-            </div>
+            <div className="search-bar">
             <input type="text" placeholder= "Search BlowUp" />
-            <GreetingContainer />
+            </div>
+            <div className="greeting-component">
+             <GreetingContainer />   
+            </div>
+            
 
         </header>
         <div>
