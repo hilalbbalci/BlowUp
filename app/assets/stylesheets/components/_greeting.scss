@@ -25,12 +25,12 @@
     display: flex;
     // margin-right: 1%;
     align-items: center;
-    // justify-content:space-evenly;
+    padding-left: 35%;
     width: 100%;
     font-size: 1.3rem;
     list-style: none;
     li {
-        padding: 5px 0.5vh;
+        padding: 5px 1.3vh;
         ul {
             display: none;
         }
@@ -102,17 +102,21 @@
     border-radius: 50px 50px;
     text-align: center;
     padding-bottom: 1%;
-    width: 45%;
+    width: 55%;
     height: 20px;
     min-width: 70px;
-    max-width: 80px;
-    border: 2px solid black;
+    max-width: 100px;
+    border: 2px solid rgb(118, 120, 122);
     padding: 3%;
     padding-bottom: 4%;
     a {
     display: flex;
+    color: rgb(94, 96, 97);
     flex-direction: row;
     align-items: center;
     // justify-content: center;
+    }
+    a:hover {
+        cursor: pointer;
     }
 }

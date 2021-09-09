@@ -24,7 +24,8 @@ import Entry from './entry/entry';
 import Upload from './upload/upload';
 import ProfilePhotoUpload from './profile/profile_photo_upload_container';
 import UserProfile from './profile/user_profile_container';
-import PhotoHomeContainer from './photo/photo_home_container'
+import PhotoHomeContainer from './photo/photo_home_container';
+import { RiSearchLine } from "react-icons/ri";
 // import WhatMakesUsDifferent from './what_makes_different/what_makes_us_different';
 
 const App = () => (
@@ -35,11 +36,13 @@ const App = () => (
                 <Link to="/" className="header-link-blow">Blow</Link>
                 <Link to="/" className="header-link-up">Up</Link>
             </div>
-            <div className="search-bar">
-            <input type="text" placeholder= "Search BlowUp" />
-            </div>
+           
             <div className="greeting-component">
-             <GreetingContainer />   
+                <div className="search-bar">
+                    <svg stroke="currentColor" fill="rgb(118, 120, 122)" stroke-width="0" viewBox="0 0 24 24" height="0.7em" width="0.7em" xmlns="http://www.w3.org/2000/svg"><g><path fill="none" d="M0 0h24v24H0z"></path><path d="M18.031 16.617l4.283 4.282-1.415 1.415-4.282-4.283A8.96 8.96 0 0 1 11 20c-4.968 0-9-4.032-9-9s4.032-9 9-9 9 4.032 9 9a8.96 8.96 0 0 1-1.969 5.617zm-2.006-.742A6.977 6.977 0 0 0 18 11c0-3.868-3.133-7-7-7-3.868 0-7 3.132-7 7 0 3.867 3.132 7 7 7a6.977 6.977 0 0 0 4.875-1.975l.15-.15z"></path></g></svg>
+                    <input type="text" placeholder="Search BlowUp"/>
+                </div>
+                <GreetingContainer />   
             </div>
             
 
