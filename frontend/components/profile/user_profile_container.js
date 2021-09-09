@@ -7,7 +7,8 @@ import { createFollow } from '../../actions/follows_actions';
 const mSTP = (state = {}, ownProps) => ({
     currentUser: state.entities.users[state.session.id],
     user: state.entities.users[ownProps.match.params.userId],
-    photos: Object.values(state.entities.photos)
+    photos: Object.values(state.entities.photos),
+    follows: Object.values(state.entities.follows)
     // demoUser: Object.values(state.entities.users)[0]
 });
 

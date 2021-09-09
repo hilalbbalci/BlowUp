@@ -5,28 +5,27 @@ import {Link} from 'react-router-dom';
      constructor(props) {
          super(props);
          this.state= {
-             followed: false,
+             followed: (this.props.follows.some(follow => follow.followedId === this.props.user.id && follow.followerId === this.props.currentUser.id)),
             
          };
          this.follow = this.follow.bind(this);
      }
      follow() {
          const newFollow = {
-            follow: {
+             follow: {
                 followerId: this.props.currentUser.id,
                 followedId: this.props.user.id
-            }
+             }
          };
          console.log(newFollow);
-         
-         if (this.state.followed) {
-             this.setState({followed: false})
-            //  this.props.deleteFollow(follow.id)
+
+         if(this.props.follows.some(follow=> follow.followedId === this.props.user.id && follow.followerId === this.props.currentUser.id)) {
+             this.props.deleteFollow(this.props.follows.filter(follow => follow.followedId === this.props.user.id && follow.followerId === this.props.currentUser.id));
+             this.setState({ followed: false });
          } else {
-            this.setState({followed: true});
-            this.props.createFollow(newFollow).then(follow => console.log(follow));
-         }
-      
+             this.setState({ followed: true });
+             this.props.createFollow(newFollow).then(follow => console.log(follow));
+         } 
      }
 
     render() {
@@ -43,11 +42,12 @@ import {Link} from 'react-router-dom';
                     <img src={user.profile}/> 
                     <h3>{user.username}</h3>
                 </div>
-                {currentUser.id === user.id ? <Link to='/profilephoto'>Edit</Link> : null}
-              
+                {currentUser.id === user.id ? 
+                <div className="follow-btn"><Link to='/profilephoto'>Edit</Link></div> :
                 <div className="follow-btn">
                     <button onClick={this.follow}>{this.state.followed? <p>Unfollow</p> : <p>Follow</p>}</button>
                 </div>
+                }
             </div>
         )
         
