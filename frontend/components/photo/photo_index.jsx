@@ -43,7 +43,7 @@ class PhotoIndex extends React.Component {
                     <h2>Featured photographers</h2>
                     <p>Follow to explore new works</p>
                     <div className="photos-slices-container">
-                        {users.slice(0, 6).map(user => (
+                        {users.slice(1, 4).map(user => (
                             <div className="photos-with-username">
                                 <ul className="photo-item-container">                              
                                     {(photoTank[user.id] && photoTank[user.id].length === 3) ? photoTank[user.id].map(photo=> (
