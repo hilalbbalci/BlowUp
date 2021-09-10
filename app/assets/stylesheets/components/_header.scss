@@ -23,22 +23,20 @@
 }
 
 .greeting-component {
-    padding-left: 50%;
-    width: 25%;
-    // box-sizing: border-box;
-    // float:none;
+    padding-left: 30%;
+    width: 80%;
     display: flex;
         .search-bar {
         min-width: 300px;
         padding-left: 30%;
-        padding-right: 5%;
+        // padding-right: 5%;
         display: flex;
         justify-content: center;
         align-items: center;
         position:relative;
             svg {
                 position: absolute;
-                left:38%;
+                left:55%;
             }
             input {
             border: none;
@@ -61,7 +59,9 @@
             -o-transition: all 0.7s ease 0s;
             transition: all 0.7s ease 0s;
             }
+           
         }
+       
 
 }
 
