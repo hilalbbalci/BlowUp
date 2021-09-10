@@ -1,5 +1,5 @@
 class Api::FollowsController < ApplicationController
-    before_action :require_logged_in, only: [:create, :destroy]
+    # before_action :require_logged_in, only: [:create, :destroy]
 
   def index
     @follows = Follow.all
@@ -17,12 +17,13 @@ class Api::FollowsController < ApplicationController
     
     def create
         @follow = Follow.new(follow_params)
-        # @follow.followed_id = params[:id]
+        # @follow.followed_id = params[:user_id]
         # @follow.follower_id = current_user.id
         if @follow.save
-          render json: @follow.errors.full_messages
+          render json: @follow
         else
-          render :show
+          render json: @follow
+          # .errors.full_messages, status: 400
         end
     end
 
@@ -31,7 +32,7 @@ class Api::FollowsController < ApplicationController
         @follow.destroy
         render :show
     end
-    private 
+   
 
     def follow_params
         params.require(:follow).permit(:followed_id, :follower_id)

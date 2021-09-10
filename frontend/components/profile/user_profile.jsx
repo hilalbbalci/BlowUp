@@ -1,5 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import { GrEdit } from "react-icons/gr";
+
 
  class UserProfile extends React.Component {
      constructor(props) {
@@ -10,22 +12,23 @@ import {Link} from 'react-router-dom';
          };
          this.follow = this.follow.bind(this);
      }
-     follow() {
+     follow(e) {
+         e.preventDefault()
          const newFollow = {
              follow: {
-                followerId: this.props.currentUser.id,
-                followedId: this.props.user.id
+                followerId: "4",
+                followedId: "5"
              }
          };
          console.log(newFollow);
 
-         if(this.props.follows.some(follow=> follow.followedId === this.props.user.id && follow.followerId === this.props.currentUser.id)) {
-             this.props.deleteFollow(this.props.follows.filter(follow => follow.followedId === this.props.user.id && follow.followerId === this.props.currentUser.id));
-             this.setState({ followed: false });
-         } else {
-             this.setState({ followed: true });
+        //  if(this.props.follows.some(follow=> follow.followedId === this.props.user.id && follow.followerId === this.props.currentUser.id)) {
+        //      this.props.deleteFollow(this.props.follows.filter(follow => follow.followedId === this.props.user.id && follow.followerId === this.props.currentUser.id));
+        //      this.setState({ followed: false });
+        //  } else {
+        //      this.setState({ followed: true });
              this.props.createFollow(newFollow).then(follow => console.log(follow));
-         } 
+        //  } 
      }
 
     render() {
@@ -43,7 +46,8 @@ import {Link} from 'react-router-dom';
                     <h3>{user.username}</h3>
                 </div>
                 {currentUser.id === user.id ? 
-                <div className="follow-btn"><Link to='/profilephoto'>Edit</Link></div> :
+                <div className="follow-btn">
+                        <Link to='/profilephoto'><GrEdit/></Link></div> :
                 <div className="follow-btn">
                     <button onClick={this.follow}>{this.state.followed? <p>Unfollow</p> : <p>Follow</p>}</button>
                 </div>

@@ -8,7 +8,6 @@ import {
     HashRouter
 } from 'react-router-dom';
 
-
 import GreetingContainer from './greeting/greeting_container';
 import SignUpFormContainer from './session_form/signup_form_container';
 import SessionForm from './session_form/session_form';
@@ -64,7 +63,7 @@ const App = () => (
             <ProtectedRoute exact path="/upload" component={PhotoFormContainer} />
             <ProtectedRoute exact path="/photos/:id" component={PhotoShowContainer} />
             <ProtectedRoute exact path="/users/:userId" component={UserProfile} />
-            <ProtectedRoute exact path="'/profilephoto'" component={ProfilePhotoUpload} />
+            <ProtectedRoute exact path="/profilephoto" component={ProfilePhotoUpload} />
 
         </div>
         <footer>
