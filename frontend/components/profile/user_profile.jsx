@@ -13,28 +13,33 @@ import { GrEdit } from "react-icons/gr";
          this.follow = this.follow.bind(this);
      }
     
+    
      follow(e) {
-         let user= this.props.user;
-         let currentUser= this.props.currentUser;
          e.preventDefault();
-        //  if (!user.followers.includes(currentUser.id)) {
-            let currentUserIdStr = (currentUser.id).toString();
-            let userIdStr = (user.id).toString();
+         let user= this.props.user;
+         let currentUser= this.props.currentUser;   
+         let currentUserIdStr = (currentUser.id).toString();
+         let userIdStr = (user.id).toString();
+         if (!user.followers.includes(currentUserIdStr)) {
             user.followers.push(currentUserIdStr);
             currentUser.followings.push(userIdStr);
             console.log(user);
             console.log(currentUser);
              this.props.updateUser(user).then(updatedUser => console.log(updatedUser)); 
+             this.props.updateUser(currentUser).then(updatedCurrentUser => console.log(updatedCurrentUser)); 
+         } else {
+             let idx = user.followers.indexOf(currentUserIdStr);
+             console.log(idx)
+             delete user.followers[idx];
+             console.log(user.followers);
+             let idx2 = currentUser.followings.indexOf(userIdStr);
+             console.log(idx2)
+             delete currentUser.followings[idx2];
+             console.log(currentUser.followings);
+             this.props.updateUser(user).then(user=> console.log(user));
+             this.props.updateUser(currentUser).then(user=> console.log(user));
             
-             this.props.updateUser(currentUser).then(updatedCurrentUser => console.log(updatedCurrentUser));
-         
-        //  } else {
-        //      user.followers.filter(el=> el != currentUser.id);
-        //      currentUser.followings.filter(el=> el != user.id);
-        //      this.props.updateUser(user).then(user=> console.log(user));
-        //      this.props.updateUser(currentUser).then(user=> console.log(user));
-            
-        //  }
+         }
        
 
      }
@@ -53,6 +58,12 @@ import { GrEdit } from "react-icons/gr";
                 <div className="profile-username-photo">
                     <img src={user.profile}/> 
                     <h3>{user.username}</h3>
+                    <div className="follows-count">
+                      {user.followers ? <p>{user.followers.length} followers,</p> : null}
+                      <br />
+                      {user.followings ? <p>   {user.followings.length} follows</p> : null}   
+                    </div>
+                   
                 </div>
                 {currentUser.id === user.id ? 
                 <div className="follow-btn">
