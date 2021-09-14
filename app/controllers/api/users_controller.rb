@@ -65,6 +65,6 @@ class Api::UsersController < ApplicationController
     def user_params
         # params.require(:user).permit(:username, :email)
         # Add password
-        params.require(:user).permit(:username, :password, :profile)
+        params.require(:user).permit(:username, :password, :profile, :followers => [], :followings => [])
     end
 end

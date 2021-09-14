@@ -10,7 +10,7 @@ export const fetchFollows = (userId) => (
 export const createFollow = (follow) => (
     $.ajax({
         method: 'POST',
-        url: '/api/users/:user_id/follows',
+        url: `/api/users/${'3'}/follows`,
         data: {follow}
     })
 );

@@ -7,34 +7,43 @@ import { GrEdit } from "react-icons/gr";
      constructor(props) {
          super(props);
          this.state= {
-             followed: (this.props.follows.some(follow => follow.followedId === this.props.user.id && follow.followerId === this.props.currentUser.id)),
+             followed: false
             
          };
          this.follow = this.follow.bind(this);
      }
+    
      follow(e) {
-         e.preventDefault()
-         const newFollow = {
-             follow: {
-                followerId: "4",
-                followedId: "5"
-             }
-         };
-         console.log(newFollow);
-
-        //  if(this.props.follows.some(follow=> follow.followedId === this.props.user.id && follow.followerId === this.props.currentUser.id)) {
-        //      this.props.deleteFollow(this.props.follows.filter(follow => follow.followedId === this.props.user.id && follow.followerId === this.props.currentUser.id));
-        //      this.setState({ followed: false });
+         let user= this.props.user;
+         let currentUser= this.props.currentUser;
+         e.preventDefault();
+        //  if (!user.followers.includes(currentUser.id)) {
+            let currentUserIdStr = (currentUser.id).toString();
+            let userIdStr = (user.id).toString();
+            user.followers.push(currentUserIdStr);
+            currentUser.followings.push(userIdStr);
+            console.log(user);
+            console.log(currentUser);
+             this.props.updateUser(user).then(updatedUser => console.log(updatedUser)); 
+            
+             this.props.updateUser(currentUser).then(updatedCurrentUser => console.log(updatedCurrentUser));
+         
         //  } else {
-        //      this.setState({ followed: true });
-             this.props.createFollow(newFollow).then(follow => console.log(follow));
-        //  } 
+        //      user.followers.filter(el=> el != currentUser.id);
+        //      currentUser.followings.filter(el=> el != user.id);
+        //      this.props.updateUser(user).then(user=> console.log(user));
+        //      this.props.updateUser(currentUser).then(user=> console.log(user));
+            
+        //  }
+       
+
      }
 
     render() {
         const {currentUser, user, photos} = this.props;
-        if(!user) return null;
-        if(!photos) return null;
+        if (!user) return null;
+        if (!photos) return null;
+
         
         return (
             <div className="profile-page">
@@ -49,7 +58,8 @@ import { GrEdit } from "react-icons/gr";
                 <div className="follow-btn">
                         <Link to='/profilephoto'><GrEdit/></Link></div> :
                 <div className="follow-btn">
-                    <button onClick={this.follow}>{this.state.followed? <p>Unfollow</p> : <p>Follow</p>}</button>
+                        {console.log(this.props.user.followers.includes(this.props.currentUser.id.toString()))}
+                        <button onClick={this.follow}>{this.props.user.followers.includes(this.props.currentUser.id.toString()) ? <p>Unfollow</p> : <p>Follow</p>}</button>
                 </div>
                 }
             </div>
