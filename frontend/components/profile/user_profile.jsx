@@ -3,53 +3,48 @@ import {Link} from 'react-router-dom';
 import { GrEdit } from "react-icons/gr";
 
 
- class UserProfile extends React.Component {
-     constructor(props) {
-         super(props);
-         this.state= {
-             followed: false
-            
-         };
-         this.follow = this.follow.bind(this);
-     }
+class UserProfile extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state= {
+            followed: false
+        
+        };
+        this.follow = this.follow.bind(this);
+    }
     
-    
-     follow(e) {
-         e.preventDefault();
-         let user= this.props.user;
-         let currentUser= this.props.currentUser;   
-         let currentUserIdStr = (currentUser.id).toString();
-         let userIdStr = (user.id).toString();
-         if (!user.followers.includes(currentUserIdStr)) {
-            user.followers.push(currentUserIdStr);
-            currentUser.followings.push(userIdStr);
-            console.log(user);
-            console.log(currentUser);
-             this.props.updateUser(user).then(updatedUser => console.log(updatedUser)); 
-             this.props.updateUser(currentUser).then(updatedCurrentUser => console.log(updatedCurrentUser)); 
-         } else {
-             let idx = user.followers.indexOf(currentUserIdStr);
-             console.log(idx)
-             delete user.followers[idx];
-             console.log(user.followers);
-             let idx2 = currentUser.followings.indexOf(userIdStr);
-             console.log(idx2)
-             delete currentUser.followings[idx2];
-             console.log(currentUser.followings);
-             this.props.updateUser(user).then(user=> console.log(user));
-             this.props.updateUser(currentUser).then(user=> console.log(user));
-            
-         }
-       
-
-     }
+    follow(e) {
+        e.preventDefault();
+        let user= this.props.user;
+        let currentUser= this.props.currentUser;   
+        let currentUserIdStr = (currentUser.id).toString();
+        let userIdStr = (user.id).toString();
+        if (!user.followers.includes(currentUserIdStr)) {
+        user.followers.push(currentUserIdStr);
+        currentUser.followings.push(userIdStr);
+        console.log(user);
+        console.log(currentUser);
+            this.props.updateUser(user).then(updatedUser => console.log(updatedUser)); 
+            this.props.updateUser(currentUser).then(updatedCurrentUser => console.log(updatedCurrentUser)); 
+        } else {
+            let idx = user.followers.indexOf(currentUserIdStr);
+            console.log(idx)
+            delete user.followers[idx];
+            console.log(user.followers);
+            let idx2 = currentUser.followings.indexOf(userIdStr);
+            console.log(idx2)
+            delete currentUser.followings[idx2];
+            console.log(currentUser.followings);
+            this.props.updateUser(user).then(user=> console.log(user));
+            this.props.updateUser(currentUser).then(user=> console.log(user));    
+        }
+    }
 
     render() {
         const {currentUser, user, photos} = this.props;
         if (!user) return null;
         if (!photos) return null;
-
-        
+ 
         return (
             <div className="profile-page">
                 <div className="profile-entry-photo">
