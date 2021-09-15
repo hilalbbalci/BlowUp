@@ -9,13 +9,16 @@ const mSTP = (state = {}) => {
     return {
         photos: Object.values(state.entities.photos),
         errors: state.sessionErrors,
-        users: Object.values(state.entities.users)
+        users: Object.values(state.entities.users),
+        currentUser: state.entities.users[state.session.id],
     };
 };
 
 const mDTP = dispatch => ({
     fetchPhotos: () => dispatch(fetchPhotos()), 
-    fetchUsers: () => dispatch(fetchUsers()) 
+    fetchUsers: () => dispatch(fetchUsers()),
+    updateUser: user => dispatch(updateUser(user)),
+
 });
 
 export default connect(mSTP, mDTP)(PhotoIndex);

@@ -13,6 +13,25 @@ class PhotoIndex extends React.Component {
     handleClick(route) {
         return (e) => this.props.history.push(route);
     }
+    // follow(e) {
+    //     e.preventDefault();
+    //     let currentUser = this.props.currentUser;
+    //     let currentUserIdStr = (currentUser.id).toString();
+    //     let userIdStr = (user.id).toString();
+    //     if (!user.followers.includes(currentUserIdStr)) {
+    //         user.followers.push(currentUserIdStr);
+    //         currentUser.followings.push(userIdStr);
+    //         this.props.updateUser(user).then(updatedUser => console.log(updatedUser));
+    //         this.props.updateUser(currentUser).then(updatedCurrentUser => console.log(updatedCurrentUser));
+    //     } else {
+    //         let idx = user.followers.indexOf(currentUserIdStr);
+    //         delete user.followers[idx];
+    //         let idx2 = currentUser.followings.indexOf(userIdStr);
+    //         delete currentUser.followings[idx2];
+    //         this.props.updateUser(user).then(user => console.log(user));
+    //         this.props.updateUser(currentUser).then(user => console.log(user));
+    //     }
+    // }
 
     render() {
         const { photos } = this.props;
@@ -49,15 +68,21 @@ class PhotoIndex extends React.Component {
                                     {(photoTank[user.id] && photoTank[user.id].length === 3) ? photoTank[user.id].map(photo=> (
                                         <li className="photo-item">
                                             <Link to={`/photos/${photo.id}`} >
-                                                <img className="photo-img" src={photo.post} />
+                                                <img className="small-img" src={photo.post} />
                                             </Link>
                                         </li>
                                     )): null}     
                                 </ul> 
                                 <div className="username-profile-photo">
-                                    {(photoTank[user.id] && photoTank[user.id].length === 3) ? 
-                                    <div className='username' onClick={this.handleClick(`/users/${user.id}`).bind(this)}>{user.username}</div> : null
-                                    }
+                                        {(photoTank[user.id] && photoTank[user.id].length === 3) ?
+                                        <div>
+                                            <div>
+                                                <img className='user-photo' src={user.profile} />
+                                                <div className='username' onClick={this.handleClick(`/users/${user.id}`).bind(this)}>{user.username}</div>
+                                            </div>
+                                            {/* <button onClick={this.follow}><p>Unfollow</p></button> */}
+                                        </div> : null
+                                        }
                                 </div>    
                             </div>
                         ))}

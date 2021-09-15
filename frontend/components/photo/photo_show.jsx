@@ -21,16 +21,14 @@ class PhotoShow extends React.Component {
     componentDidMount() {
         this.props.fetchPhoto(this.props.match.params.id);
         this.props.fetchUsers();
-        // this.props.fetchlikes();
-        // this.props.fetchlikes();
-        // this.setState({userId: this.props.fetchUser(this.props.photo.userId)});
-        // this.props.fetchUser(this.props.photo.userId);
-        // console.log(this.props.photo);
-    
     }
 
     handleback() {
         this.props.history.goBack();
+    }
+
+    handleClick(route) {
+        return (e) => this.props.history.push(route);
     }
    
     render() {
@@ -62,7 +60,7 @@ class PhotoShow extends React.Component {
                             <img src={user.profile} />
                             <div className="next-to-photo">
                                 <h2>{photo.title}</h2>
-                                <p> by {user.username} </p>
+                                <p onClick={this.handleClick(`/users/${user.id}`).bind(this)}> by {user.username}</p>
                             </div>    
                         </div> 
                         <p>{photo.description}</p>

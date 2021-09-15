@@ -7,7 +7,7 @@ import SignUpForm from './sign_up_form';
 
 const mapStateToProps = (state) => {
     return {
-        errors: state.sessionErrors,
+        errors: Object.values(state.sessionErrors),
         user: {
             username: '',
             password: ''

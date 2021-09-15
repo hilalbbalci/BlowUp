@@ -60,34 +60,68 @@
     padding-right: 50px;
    .photos-with-username {
         background-color: rgb(255, 255, 255); 
-        width: 30%;
+        width: 40%;
         margin-left: 10%;
         display: flex;
         flex-direction: column;
 
    .photo-item-container {
-       padding-top: 5%;
-       margin-left: 20px;
-       margin-right: 20px;
+        padding-top: 5%;
+        margin-left: 3%;
         display: flex;
+        justify-content: space-around;
         align-items: center;
-        // .photo-item {
+       
+    }
+    .small-img {
+        width: 100px;
+        height: 120px;
+        object-fit: cover;
 
-        // }
     }
     .username-profile-photo {
         display: flex;
         align-items: center;        
         margin-bottom: 2%;
         margin-left: 5%;
+        div{
+        width: 100%;
+        padding-left: 2%;
+        padding-right: 3%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+            div {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+            }
+            button {
+                width: 40%;
+                height: 30px;
+                border-radius: 30px;
+                background-color: cornflowerblue;  
+                color: white;
+            }   
+            button:hover {
+                cursor: pointer;
+            }   
+        }        
        
         .username{
-            padding-top: 2%;
-            font-weight: bolder;
+            padding-top: 3%;
+            padding-left: 2%;
+            font-weight: bold;
             margin-bottom: 5%;
         }
         .username:hover {
             cursor: pointer;
+            color: cornflowerblue;
+        }
+        .user-photo {
+            width: 30px;
+            height: 30px;
+            border-radius: 100%;
         }
     }
    
@@ -98,6 +132,7 @@
 .photo-img {
     width: auto;
     height: 100px;
+
 }
 .photos-all {
     margin-top: 3%;

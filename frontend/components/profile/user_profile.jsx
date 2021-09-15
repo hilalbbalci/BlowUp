@@ -12,6 +12,9 @@ class UserProfile extends React.Component {
         };
         this.follow = this.follow.bind(this);
     }
+    componentDidMount () {
+        this.props.fetchUser(this.props.user.id)
+    }
     
     follow(e) {
         e.preventDefault();
@@ -64,7 +67,6 @@ class UserProfile extends React.Component {
                 <div className="follow-btn">
                         <Link to='/profilephoto'><GrEdit/></Link></div> :
                 <div className="follow-btn">
-                        {console.log(this.props.user.followers.includes(this.props.currentUser.id.toString()))}
                         <button onClick={this.follow}>{this.props.user.followers.includes(this.props.currentUser.id.toString()) ? <p>Unfollow</p> : <p>Follow</p>}</button>
                 </div>
                 }

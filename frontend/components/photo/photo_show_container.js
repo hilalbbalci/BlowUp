@@ -15,6 +15,8 @@ const mSTP = (state, ownProps) => {
         // user: state.entities.users[photo.userId],
         // likes: Object.values(state.entities.likes),
         users: state.entities.users,
+        currentUser: state.entities.users[state.session.id],
+        user: state.entities.users[ownProps.match.params.userId],
         // users :state.entities.users,
         // user: photoUserSelector(state, ownProps.match.params.id),
 
@@ -25,6 +27,7 @@ const mDTP = dispatch => {
     return {
         fetchPhoto: photoId => dispatch(fetchPhoto(photoId)),
         fetchUsers: () => dispatch(fetchUsers()),
+        updateUser: user => dispatch(updateUser(user)),
         // fetchlikes: () => dispatch(fetchlikes()),
         // createLike: (likerId, photoId) => dispatch(createLike(likerId, photoId)),
         // deleteLike: likeId => dispatch(deleteLike(likeId))
