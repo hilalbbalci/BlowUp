@@ -37,7 +37,7 @@ class SessionForm extends React.Component {
                     <li key={`error-${i}`}>
                         {error}
                     </li>
-                )) : null};
+                )) : null}
             </ul>
         );
     }
@@ -73,13 +73,13 @@ class SessionForm extends React.Component {
                 <p className="errors">{this.renderErrors()}</p>
                 <p>Don't have an account? <strong>{this.props.navLink}</strong></p>
             </div> 
-        );
+        )
     }
 }
 
-const mapStateToProps = ({sessionErrors}) => {
+const mapStateToProps = (state) => {
     return {
-        errors: sessionErrors,
+        errors: Object.values(state.sessionErrors),
         user: {
             username: '',
             password: ''
