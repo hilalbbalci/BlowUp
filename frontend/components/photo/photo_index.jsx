@@ -13,33 +13,12 @@ class PhotoIndex extends React.Component {
     handleClick(route) {
         return (e) => this.props.history.push(route);
     }
-    // follow(e) {
-    //     e.preventDefault();
-    //     let currentUser = this.props.currentUser;
-    //     let currentUserIdStr = (currentUser.id).toString();
-    //     let userIdStr = (user.id).toString();
-    //     if (!user.followers.includes(currentUserIdStr)) {
-    //         user.followers.push(currentUserIdStr);
-    //         currentUser.followings.push(userIdStr);
-    //         this.props.updateUser(user).then(updatedUser => console.log(updatedUser));
-    //         this.props.updateUser(currentUser).then(updatedCurrentUser => console.log(updatedCurrentUser));
-    //     } else {
-    //         let idx = user.followers.indexOf(currentUserIdStr);
-    //         delete user.followers[idx];
-    //         let idx2 = currentUser.followings.indexOf(userIdStr);
-    //         delete currentUser.followings[idx2];
-    //         this.props.updateUser(user).then(user => console.log(user));
-    //         this.props.updateUser(currentUser).then(user => console.log(user));
-    //     }
-    // }
-
+  
     render() {
         const { photos } = this.props;
         const { users } = this.props;
         if (!photos) return null;
         if (!users) return null;
-        // console.log(photos)
-        // console.log(users)
         let photoTank = {};
         
         for( let i=0; i< photos.length;i++){
@@ -50,7 +29,6 @@ class PhotoIndex extends React.Component {
             photoTank[photo.userId].push(photo);
         } }
 
-    //   console.log(photoTank);
         return (
             <div className="photo-index-container">
                 <div className="first-item">

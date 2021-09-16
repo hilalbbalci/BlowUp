@@ -77,7 +77,7 @@ class SessionForm extends React.Component {
     }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state = {}) => {
     return {
         errors: Object.values(state.sessionErrors),
         user: {

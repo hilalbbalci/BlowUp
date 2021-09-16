@@ -18,8 +18,7 @@ class PhotoHome extends React.Component {
         const { users } = this.props;
         if (!photos) return null;
         if (!users) return null;
-        // console.log(photos)
-        // console.log(users)
+      
         
         
         return (
