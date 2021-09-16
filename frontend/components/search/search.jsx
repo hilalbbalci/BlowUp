@@ -12,7 +12,9 @@ class Search extends React.Component {
     }
 
     handleChange(e) {
-        this.setState({inputValue: e.target.value});     
+        this.setState({inputValue: e.target.value});
+        const searchBar = document.querySelector(".search-results");
+        searchBar.style.display = "flex";
     }
    
     render() {
