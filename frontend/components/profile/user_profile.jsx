@@ -14,20 +14,20 @@ class UserProfile extends React.Component {
     }
  
   
-    componentDidMount () {
-            var id = window.location.href.substr(window.location.href.length - 3); 
+    // componentDidMount () {
+    //         var id = window.location.href.substr(window.location.href.length - 3); 
 
-            console.log(id);
-            this.props.fetchUser(id);
+    //         console.log(id);
+    //         this.props.fetchUser(id);
             
-            this.props.fetchPhotos();
-            console.log(this.props.user);
+    //         this.props.fetchPhotos();
+    //         console.log(this.props.user);
 
-    }
+    // }
 
-    componentDidUpdate(){
-        console.log(this.props.user)
-    }
+    // componentDidUpdate(){
+    //     console.log(this.props.user)
+    // }
 
   
     
