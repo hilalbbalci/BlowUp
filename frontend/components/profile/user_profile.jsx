@@ -12,9 +12,24 @@ class UserProfile extends React.Component {
         };
         this.follow = this.follow.bind(this);
     }
+ 
+  
     componentDidMount () {
-        this.props.fetchUser(this.props.user.id)
+            var id = window.location.href.substr(window.location.href.length - 3); 
+
+            console.log(id);
+            this.props.fetchUser(id);
+            
+            this.props.fetchPhotos();
+            console.log(this.props.user);
+
     }
+
+    componentDidUpdate(){
+        console.log(this.props.user)
+    }
+
+  
     
     follow(e) {
         e.preventDefault();
@@ -51,7 +66,7 @@ class UserProfile extends React.Component {
         return (
             <div className="profile-page">
                 <div className="profile-entry-photo">
-                  <img src={photos[10].post} />
+                  {photos[10] ?  <img src={photos[10].post} /> : null  }
                 </div>
                 <div className="profile-username-photo">
                     <img src={user.profile}/> 
@@ -67,7 +82,7 @@ class UserProfile extends React.Component {
                 <div className="follow-btn">
                         <Link to='/profilephoto'><GrEdit/></Link></div> :
                 <div className="follow-btn">
-                        <button onClick={this.follow}>{this.props.user.followers.includes(this.props.currentUser.id.toString()) ? <p>Unfollow</p> : <p>Follow</p>}</button>
+                      {this.props.currentUser? <button onClick={this.follow}>{this.props.user.followers.includes(this.props.currentUser.id.toString()) ? <p>Unfollow</p> : <p>Follow</p>}</button>  : null }  
                 </div>
                 }
             </div>

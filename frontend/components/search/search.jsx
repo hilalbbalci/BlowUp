@@ -29,7 +29,7 @@ class Search extends React.Component {
                     {this.state.inputValue.length > 0 ? this.props.users.filter(user => user.username.toLowerCase().includes(this.state.inputValue.toLowerCase())).map(user => {
                     return (
                         <li key={user.id} >
-                            <Link to={`api/users/${user.id}`}>{user.username}</Link>
+                            <Link to={`/users/${user.id}`}>{user.username}</Link>
                         </li>
                         )
                         }) : null }
