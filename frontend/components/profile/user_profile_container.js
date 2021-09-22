@@ -17,7 +17,7 @@ const mSTP = (state = {}, ownProps) => ({
 const mDTP = dispatch => ({
     updateUser: user => dispatch(updateUser(user)),
     fetchUser: userId => dispatch(fetchUser(userId)),
-    fetchUsers: ()=> dispatch(fetchUser()),
+    fetchUsers: ()=> dispatch(fetchUsers()),
     fetchPhotos: ()=> dispatch(fetchPhotos())
   
     // createFollow: follow => dispatch(createFollow(follow)),

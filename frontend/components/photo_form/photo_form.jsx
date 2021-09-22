@@ -1,6 +1,6 @@
 import React from 'react';
-// import { Redirect } from 'react-router-dom';
 import { IoArrowUp } from "react-icons/io5";
+// import { Redirect } from 'react-router';
 
 
 class UploadPhoto extends React.Component {
@@ -42,8 +42,11 @@ class UploadPhoto extends React.Component {
             formData.append("photo[description]", this.state.description);
             formData.append("photo[userId]", this.state.userId);
             formData.append("photo[post]", this.state.photoFile);
-            this.props.createPhoto(formData).then(rest => this.props.history.push(`/photos/${rest.id}`));
-        
+            this.props.createPhoto(formData).then(resp => {
+                console.log(resp.photo.id);
+                this.props.history.push(`/photos/${resp.photo.id}`);
+            });
+
     }
     handleCancel(e) {
         this.setState({ selectForm: 0 });

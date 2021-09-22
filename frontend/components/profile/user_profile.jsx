@@ -14,20 +14,12 @@ class UserProfile extends React.Component {
     }
  
   
-    // componentDidMount () {
-    //         var id = window.location.href.substr(window.location.href.length - 3); 
+    componentDidMount () {
+      
+            this.props.fetchUsers();
 
-    //         console.log(id);
-    //         this.props.fetchUser(id);
-            
-    //         this.props.fetchPhotos();
-    //         console.log(this.props.user);
+    }
 
-    // }
-
-    // componentDidUpdate(){
-    //     console.log(this.props.user)
-    // }
 
   
     
@@ -37,23 +29,21 @@ class UserProfile extends React.Component {
         let currentUser= this.props.currentUser;   
         let currentUserIdStr = (currentUser.id).toString();
         let userIdStr = (user.id).toString();
+        console.log(user.followers.includes(currentUserIdStr));
+        console.log(currentUser.followings.includes(userIdStr));
         if (!user.followers.includes(currentUserIdStr)) {
+            console.log('if');
         user.followers.push(currentUserIdStr);
         currentUser.followings.push(userIdStr);
-        console.log(user);
-        console.log(currentUser);
             this.props.updateUser(user).then(updatedUser => console.log(updatedUser)); 
             this.props.updateUser(currentUser).then(updatedCurrentUser => console.log(updatedCurrentUser)); 
         } else {
+            console.log('else')
             let idx = user.followers.indexOf(currentUserIdStr);
-            console.log(idx)
             delete user.followers[idx];
-            console.log(user.followers);
             let idx2 = currentUser.followings.indexOf(userIdStr);
-            console.log(idx2)
             delete currentUser.followings[idx2];
-            console.log(currentUser.followings);
-            this.props.updateUser(user).then(user=> console.log(user));
+            this.props.updateUser(user).then(user => console.log(user));
             this.props.updateUser(currentUser).then(user=> console.log(user));    
         }
     }
@@ -80,9 +70,10 @@ class UserProfile extends React.Component {
                 </div>
                 {currentUser.id === user.id ? 
                 <div className="follow-btn">
-                        <Link to='/profilephoto'><GrEdit/></Link></div> :
+                        <Link to='/profilephoto'><GrEdit/></Link>
+                </div> :
                 <div className="follow-btn">
-                      {this.props.currentUser? <button onClick={this.follow}>{this.props.user.followers.includes(this.props.currentUser.id.toString()) ? <p>Unfollow</p> : <p>Follow</p>}</button>  : null }  
+                    <button onClick={this.follow}>{(user.followers.includes(currentUser.id.toString()) && currentUser.followings.includes(user.id.toString())) ? <p>Unfollow</p> : <p>Follow</p>}</button>
                 </div>
                 }
             </div>
