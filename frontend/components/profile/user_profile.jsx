@@ -31,20 +31,30 @@ class UserProfile extends React.Component {
         let userIdStr = (user.id).toString();
         console.log(user.followers.includes(currentUserIdStr));
         console.log(currentUser.followings.includes(userIdStr));
-        if (!user.followers.includes(currentUserIdStr)) {
+        if (!user.followers.includes(currentUserIdStr) && !currentUser.followings.includes(userIdStr)) {
             console.log('if');
-        user.followers.push(currentUserIdStr);
-        currentUser.followings.push(userIdStr);
+            user.followers.push(currentUserIdStr);
+            currentUser.followings.push(userIdStr);
+            console.log(user);
+            console.log(currentUser);
             this.props.updateUser(user).then(updatedUser => console.log(updatedUser)); 
             this.props.updateUser(currentUser).then(updatedCurrentUser => console.log(updatedCurrentUser)); 
         } else {
-            console.log('else')
+            console.log('else');
             let idx = user.followers.indexOf(currentUserIdStr);
             delete user.followers[idx];
+            if(user.followers.every(el=> el === null)) {
+                user.followers.push("delete");
+            }
+            console.log(user.followers);
             let idx2 = currentUser.followings.indexOf(userIdStr);
             delete currentUser.followings[idx2];
-            this.props.updateUser(user).then(user => console.log(user));
-            this.props.updateUser(currentUser).then(user=> console.log(user));    
+            if (currentUser.followings.every(el => el === null)) {
+                currentUser.followings.push("delete");
+            }
+            console.log(currentUser.followings);
+            this.props.updateUser(user).then(resp => console.log(resp.user.followers));
+            this.props.updateUser(currentUser).then(resp=> console.log(resp.user.followings));    
         }
     }
 
@@ -62,9 +72,11 @@ class UserProfile extends React.Component {
                     <img src={user.profile}/> 
                     <h3>{user.username}</h3>
                     <div className="follows-count">
-                      {user.followers ? <p>{user.followers.length} followers,</p> : null}
+                      {user.followers ? <p>
+                          {user.followers.some(el=> el === 'delete') ? user.followers.length-1 : user.followers.length} followers,</p> : null}
                       <br />
-                      {user.followings ? <p>   {user.followings.length} follows</p> : null}   
+                      {user.followings ? <p>   
+                            {user.followings.some(el => el === 'delete') ? user.followings.length - 1 :user.followings.length} follows</p> : null}   
                     </div>
                    
                 </div>
