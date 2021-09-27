@@ -19,6 +19,9 @@ class CommentIndex extends React.Component {
     deleteComment(commentId) {
         this.props.deleteComment(commentId);
     }
+    updateComment(){
+        this.props.updateComment(comment)
+    }
    
 
     renderCommentsOfAPhoto() {
@@ -41,8 +44,8 @@ class CommentIndex extends React.Component {
                     </div>
                      
                         <div>
-                            {this.props.currentUser.id === comment.commenterId ? (<button onClick={this.props.deleteComment.bind(this, comment.id)} className="delete-btn"><RiDeleteBin6Line size="10" /></button>) : (<div></div>)}
-                            {this.props.currentUser.id === comment.commenterId ? (<button onClick={this.props.deleteComment.bind(this, comment.id)} className="edit-btn"><GrEdit size="10" /></button>) : (<div></div>)}
+                            {this.props.currentUser.id === comment.commenterId ? (<button onClick={this.props.deleteComment.bind(this, comment.id)} className="delete-btn"><RiDeleteBin6Line size="15" /></button>) : (<div></div>)}
+                            {this.props.currentUser.id === comment.commenterId ? (<button onClick={this.props.updateComment.bind(this, comment)} className="edit-btn"><GrEdit size="15" /></button>) : (<div></div>)}
                         </div>  
                     </div>
                 );  

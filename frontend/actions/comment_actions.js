@@ -44,6 +44,11 @@ export const createComment = (comment) => dispatch => (
         .then(comment => dispatch(receiveComment(comment)))
         .fail(err => dispatch(receiveCommentErrors(err.responseJSON)))
 );
+export const updateComment = (comment) => dispatch => (
+    commentAPI.updateComment(comment)
+        .then(comment => dispatch(receiveComment(comment)))
+        .fail(err => dispatch(receiveCommentErrors(err.responseJSON)))
+);
 
 
 

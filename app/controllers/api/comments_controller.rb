@@ -25,19 +25,14 @@ class Api::CommentsController < ApplicationController
     end
   end
 
-#   def update
-#     @comment = Comment.find(params[:id])
-
-#     if current_user.id != @comment.commenter_id
-#       render json: ['Unauthorized action'], status: 401
-#     elsif @comment && @comment.update(comment_params)
-#       render :show
-#     elsif !@comment 
-#       render json: ['Could not find comment'], status: 400
-#     else
-#       render json: @comment.errors.full_messages, status: 400
-#     end
-#   end
+  def update
+    @comment = Comment.find(params[:id]) 
+    if @comment && @comment.update(comment_params)
+      render :show
+    else 
+      render json: @comment.errors.full_messages, status: 400
+    end
+  end
 
   def destroy
     @comment = Comment.find_by(id: params[:id])
