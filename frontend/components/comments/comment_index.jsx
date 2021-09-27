@@ -50,7 +50,7 @@ class CommentIndex extends React.Component {
                      
                         <div>
                             {this.props.currentUser.id === comment.commenterId ? (<button onClick={this.props.deleteComment.bind(this, comment.id)} className="delete-btn"><RiDeleteBin6Line size="15" /></button>) : (<div></div>)}
-                            {this.props.currentUser.id === comment.commenterId ? (<button onClick={this.props.wannaedit.bind(this)} className="edit-btn"><GrEdit size="15" /></button>) : (<div></div>)}
+                            {this.props.currentUser.id === comment.commenterId ? (<button onClick={this.wannaedit.bind(this)} className="edit-btn"><GrEdit size="15" /></button>) : (<div></div>)}
                         </div>  
                     </div>
                 );  
