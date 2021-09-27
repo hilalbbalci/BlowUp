@@ -10,6 +10,9 @@ import { GrEdit } from "react-icons/gr";
 class CommentIndex extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            wannaedit: false,
+        }
     
     }
 
@@ -19,8 +22,8 @@ class CommentIndex extends React.Component {
     deleteComment(commentId) {
         this.props.deleteComment(commentId);
     }
-    updateComment(){
-        this.props.updateComment(comment)
+    wannaedit(){
+        this.setState({wannaedit: true})
     }
    
 
@@ -39,13 +42,15 @@ class CommentIndex extends React.Component {
                         <img src={this.props.users[comment.commenterId].profile} />
                         <div className="next-to-photo"> 
                             <li className="commenter-name"> {this.props.users[comment.commenterId].username} </li>
-                            <li> {comment.comment}</li>                                     
+                            {this.props.currentUser.id === comment.commenterId ? 
+                            <li>{this.state.wannaedit ? <input type="text" value={comment.comment} /> : {comment.comment}}</li> :
+                            <li> {comment.comment}</li>  }                                   
                         </div> 
                     </div>
                      
                         <div>
                             {this.props.currentUser.id === comment.commenterId ? (<button onClick={this.props.deleteComment.bind(this, comment.id)} className="delete-btn"><RiDeleteBin6Line size="15" /></button>) : (<div></div>)}
-                            {this.props.currentUser.id === comment.commenterId ? (<button onClick={this.props.updateComment.bind(this, comment)} className="edit-btn"><GrEdit size="15" /></button>) : (<div></div>)}
+                            {this.props.currentUser.id === comment.commenterId ? (<button onClick={this.props.wannaedit.bind(this)} className="edit-btn"><GrEdit size="15" /></button>) : (<div></div>)}
                         </div>  
                     </div>
                 );  
