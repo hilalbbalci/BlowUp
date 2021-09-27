@@ -84,10 +84,22 @@
         .delete-btn {
             display: none;
         }
+        .edit-btn {
+            display: none;
+        }
     }
 }
 .comment-info-box:hover > div > .delete-btn {
     display: block;
+}
+.comment-info-box:hover > div > .edit-btn {
+    display: block;
+}
+.edit-btn:hover {
+    cursor: pointer;
+}
+.delete-btn:hover {
+    cursor: pointer;
 }
 .comments-last-container {
     h3 {

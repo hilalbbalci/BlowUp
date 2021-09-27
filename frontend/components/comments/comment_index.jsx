@@ -1,6 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { HiOutlineUserCircle } from "react-icons/hi";
+import { RiDeleteBin6Line } from "react-icons/ri";
+import { GrEdit } from "react-icons/gr";
+
+
 
 
 class CommentIndex extends React.Component {
@@ -37,7 +41,8 @@ class CommentIndex extends React.Component {
                     </div>
                      
                         <div>
-                            {this.props.currentUser.id === comment.commenterId ? (<button onClick={this.props.deleteComment.bind(this,comment.id)}className="delete-btn">Delete</button>) : (<div></div>)}
+                            {this.props.currentUser.id === comment.commenterId ? (<button onClick={this.props.deleteComment.bind(this, comment.id)} className="delete-btn"><RiDeleteBin6Line size="10" /></button>) : (<div></div>)}
+                            {this.props.currentUser.id === comment.commenterId ? (<button onClick={this.props.deleteComment.bind(this, comment.id)} className="edit-btn"><GrEdit size="10" /></button>) : (<div></div>)}
                         </div>  
                     </div>
                 );  
