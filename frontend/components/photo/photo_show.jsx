@@ -51,9 +51,9 @@ class PhotoShow extends React.Component {
             <div className="after-show-photo">
                 <div className="photo-show-info">
                     <div className="logos">
-                        <RiHeartLine size="30" />
+                        {/* <RiHeartLine size="30" />
                         <RiFolderAddLine size="30" />
-                        <RiShareLine size="30" />
+                        <RiShareLine size="30" /> */}
                     </div>
                     <div className="center-box">
                         <div className="photo-info-box">

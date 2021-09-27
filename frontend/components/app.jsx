@@ -69,12 +69,12 @@ const App = () => (
                 <p>©Developed by Hilal Biten Balci Bebek</p>
             </div>
             <div id="sources">
-                <Link target="_blank" href="https://github.com/hilalbbalci">
+                <a target="_blank" href="https://github.com/hilalbbalci">
                     <img id="github" src="https://blowup-dev.s3.us-west-1.amazonaws.com/GitHub-Mark-32px.png"/>
-                </Link>
-                <Link target="_blank" href="https://www.linkedin.com/in/hilal-balci-bebek-546b001b6/">
+                </a>
+                <a target="_blank" href="https://www.linkedin.com/in/hilal-balci-bebek-546b001b6/">
                     <img id="linkedin" src="https://blowup-dev.s3.us-west-1.amazonaws.com/LI-In-Bug.png"/>
-                </Link>
+                </a>
             </div>    
         </footer>
     </div>
