@@ -28,7 +28,7 @@ class CommentIndex extends React.Component {
     }
     edit(comment) {
         console.log(comment);
-        console.log(document.getElementsByClassName("editted-comment")[0]);
+        console.log(document.getElementsByClassName("editted-comment"));
         // this.props.updateComment(comment); 
 
     }
