@@ -52,7 +52,7 @@ class CommentIndex extends React.Component {
                             <div className="next-to-photo"> 
                                 <li className="commenter-name"> {this.props.users[comment.commenterId].username} </li>
                                 {this.props.currentUser.id === comment.commenterId ? 
-                                <li>{this.state.wannaedit ? <input className="editted-comment" type="text" placeholder={comment.comment}></input><button onClick={this.edit(comment)}>Edit</button> : <li>{comment.comment}</li>}</li> :
+                                    <li>{this.state.wannaedit ? <div><input className="editted-comment" type="text" ></input><button onClick={this.edit(comment)}>Edit</button></div> : <li>{comment.comment}</li>}</li> :
                                 <li> {comment.comment}</li>  }                                   
                             </div> 
                         </div>
