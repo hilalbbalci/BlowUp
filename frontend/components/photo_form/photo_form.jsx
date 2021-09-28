@@ -43,7 +43,6 @@ class UploadPhoto extends React.Component {
             formData.append("photo[userId]", this.state.userId);
             formData.append("photo[post]", this.state.photoFile);
             this.props.createPhoto(formData).then(resp => {
-                console.log(resp.photo.id);
                 this.props.history.push(`/photos/${resp.photo.id}`);
             });
 

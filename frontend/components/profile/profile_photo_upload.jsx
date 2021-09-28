@@ -18,7 +18,6 @@ class ProfilePhotoUpload extends React.Component {
 
     handleFile(e) {
         const file = e.target.files[0];
-        // console.log(file.name)
         const fileReader = new FileReader();
         fileReader.onloadend = () => {
             this.setState({ photoFile: file, photoUrl: fileReader.result, selectedPhoto: 1});
@@ -44,7 +43,6 @@ class ProfilePhotoUpload extends React.Component {
                     user.profile = resp.url;                     // update the name property, assign a new value
                     this.props.updateUser(user);
                 });
-                // console.log(this.state.user);
             }));
         // 
 
@@ -52,7 +50,6 @@ class ProfilePhotoUpload extends React.Component {
     }
    
     render() {
-        console.log(this.props.currentUser);
         const preview = this.state.photoUrl ? <img className="upload_form_preview_img" src={(this.state.photoUrl)} /> : null
 
         if (this.state.selectedPhoto === 0) {

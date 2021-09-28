@@ -29,32 +29,24 @@ class UserProfile extends React.Component {
         let currentUser= this.props.currentUser;   
         let currentUserIdStr = (currentUser.id).toString();
         let userIdStr = (user.id).toString();
-        console.log(user.followers.includes(currentUserIdStr));
-        console.log(currentUser.followings.includes(userIdStr));
         if (!user.followers.includes(currentUserIdStr) && !currentUser.followings.includes(userIdStr)) {
-            console.log('if');
             user.followers.push(currentUserIdStr);
             currentUser.followings.push(userIdStr);
-            console.log(user);
-            console.log(currentUser);
-            this.props.updateUser(user).then(updatedUser => console.log(updatedUser)); 
-            this.props.updateUser(currentUser).then(updatedCurrentUser => console.log(updatedCurrentUser)); 
+            this.props.updateUser(user); 
+            this.props.updateUser(currentUser); 
         } else {
-            console.log('else');
             let idx = user.followers.indexOf(currentUserIdStr);
             delete user.followers[idx];
             if(user.followers.every(el=> el === null)) {
                 user.followers.push("delete");
             }
-            console.log(user.followers);
             let idx2 = currentUser.followings.indexOf(userIdStr);
             delete currentUser.followings[idx2];
             if (currentUser.followings.every(el => el === null)) {
                 currentUser.followings.push("delete");
             }
-            console.log(currentUser.followings);
-            this.props.updateUser(user).then(resp => console.log(resp.user.followers));
-            this.props.updateUser(currentUser).then(resp=> console.log(resp.user.followings));    
+            this.props.updateUser(user);
+            this.props.updateUser(currentUser);    
         }
     }
 

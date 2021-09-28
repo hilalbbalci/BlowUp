@@ -53,7 +53,6 @@ class CommentForm extends React.Component {
  
 
     renderButtons() {
-        // console.log(this.state);
         if (this.state.showButtons || this.state.comment.comment.length > 0) {
             return (
                 <div className="comment-btns">
@@ -86,7 +85,6 @@ class CommentForm extends React.Component {
         this.setState({
             components:array
         })
-        console.log(array.length+newComment+this.state.components.length)
 
     
         // if(this.state.showNewComment === true) {
@@ -97,7 +95,6 @@ class CommentForm extends React.Component {
     }
 
     render() {
-        console.log(this.state.components)
 
         return (
         <div>

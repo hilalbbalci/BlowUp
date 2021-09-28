@@ -30,8 +30,8 @@ class CommentIndex extends React.Component {
         console.log(comment);
         const value = document.querySelector(".editted-comment");
         console.log(value);
-       comment.comment = value.value;
-       this.props.updateComment(comment); 
+    //    comment.comment = value.value;
+    //    this.props.updateComment(comment); 
 
     }
    

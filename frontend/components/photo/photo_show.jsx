@@ -39,7 +39,6 @@ class PhotoShow extends React.Component {
         
         const user = this.props.users[photo.userId];
         if(!user) return null;
-        console.log(user);
         return (
         <div className="photo-show-biggest-container">
             <div className="photo-show-container">

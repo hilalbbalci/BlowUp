@@ -3,7 +3,6 @@ import { createPhoto } from "../../actions/photo_actions";
 import UploadPhoto from "./photo_form";
 
 const mSTP = (state = {}) => {
-    // console.log(state);
     return ({
         photo: state.entities.photos,
         userId: state.session.id
