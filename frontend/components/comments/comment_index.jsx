@@ -12,7 +12,8 @@ class CommentIndex extends React.Component {
         super(props);
         this.state = {
             wannaedit: false,
-        }
+        };
+        this.edit = this.edit.bind(this);
     
     }
 
@@ -23,7 +24,15 @@ class CommentIndex extends React.Component {
         this.props.deleteComment(commentId);
     }
     wannaedit(){
-        this.setState({wannaedit: true})
+        this.setState({wannaedit: true});
+    }
+    edit(comment) {
+        console.log(comment);
+        const value = document.querySelector(".editted-comment");
+        console.log(value);
+       comment.comment = value.value;
+       this.props.updateComment(comment); 
+
     }
    
 
@@ -43,7 +52,7 @@ class CommentIndex extends React.Component {
                             <div className="next-to-photo"> 
                                 <li className="commenter-name"> {this.props.users[comment.commenterId].username} </li>
                                 {this.props.currentUser.id === comment.commenterId ? 
-                                <li>{this.state.wannaedit ? <input type="text" value={comment.comment}></input> : <li>{comment.comment}</li>}</li> :
+                                <li>{this.state.wannaedit ? <input className="editted-comment" type="text" placeholder={comment.comment}></input><button onClick={this.edit(comment)}>Edit</button> : <li>{comment.comment}</li>}</li> :
                                 <li> {comment.comment}</li>  }                                   
                             </div> 
                         </div>
