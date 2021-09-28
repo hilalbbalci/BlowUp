@@ -29,11 +29,11 @@ export const deleteComment = commentId => (
     })
 );
 
-export const updateComment = (user) => {
+export const updateComment = (comment) => {
     return $.ajax({
         method: 'PATCH',
-        url: `/api/users/${user.id}`,
-        data: { user }
+        url: `/api/comments/${comment.id}`,
+        data: { comment }
     }
     )
 };

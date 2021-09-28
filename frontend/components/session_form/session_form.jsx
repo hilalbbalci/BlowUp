@@ -6,10 +6,14 @@ import { login } from '../../actions/session_actions';
 class SessionForm extends React.Component {
     constructor(props) {
         super(props);
-        this.state = this.props.user;
+        this.state ={
+            user: this.props.user,
+            showErrors: false
+        } 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.demoUser = this.demoUser.bind(this);
     }
+    
    
     update(field) {
         return e => this.setState({
@@ -19,8 +23,9 @@ class SessionForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        const user = Object.assign({}, this.state);
+        const user = Object.assign({}, this.state.user);
         this.props.processForm(user);
+        this.setState({showErrors : true})
     }
     demoUser() {
         // e.preventDefault();
@@ -70,7 +75,7 @@ class SessionForm extends React.Component {
                 </form> 
                 <button onClick={this.demoUser.bind(this)} className="demo-user">Demo User</button>
 
-                <p className="errors">{this.renderErrors()}</p>
+                <p className="errors">{this.state.showErrors ? this.renderErrors() : null}</p>
                 <p>Don't have an account? <strong>{this.props.navLink}</strong></p>
             </div> 
         )

@@ -27,9 +27,9 @@ class CommentIndex extends React.Component {
         this.setState({wannaedit: true});
     }
     edit(comment) {
-        console.log(comment);
-        console.log(document.getElementsByClassName("editted-comment")[0]);
-        // this.props.updateComment(comment); 
+        // console.log(comment);
+        this.props.updateComment(comment); 
+        this.setState({wannaedit: false});
 
     }
    
@@ -43,6 +43,8 @@ class CommentIndex extends React.Component {
                const idPhoto = comment.photoId.toString();
               
             if(idPhoto === this.props.photoId) {
+                let edittableComment = comment;
+                console.log(edittableComment);
                 return (
                     <div key={idx} className="comment-info-box"> 
                         <div>
@@ -50,7 +52,7 @@ class CommentIndex extends React.Component {
                             <div className="next-to-photo"> 
                                 <li className="commenter-name"> {this.props.users[comment.commenterId].username} </li>
                                 {this.props.currentUser.id === comment.commenterId ? 
-                                    <li>{this.state.wannaedit ? <div><input className="editted-comment" type="text" placeholder={comment.comment}></input><button onClick={this.edit(comment)}>Edit</button></div> : <li>{comment.comment}</li>}</li> :
+                                    <li>{this.state.wannaedit ? <div><input onChange={(text)=> {edittableComment.comment = text.target.value}} className="editted-comment" type="text" placeholder={comment.comment}></input><button onClick={()=> {this.edit(edittableComment)}}>Edit</button></div> : <li>{comment.comment}</li>}</li> :
                                 <li> {comment.comment}</li>  }                                   
                             </div> 
                         </div>

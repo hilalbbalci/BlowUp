@@ -4,7 +4,10 @@ import GoogleLogin from 'react-google-login';
 class SignUpForm extends React.Component {
     constructor(props) {
         super(props);
-        this.state = props.user;
+        this.state = {
+            user: props.user,
+            showErrors: false,
+        }
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
@@ -16,8 +19,9 @@ class SignUpForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        const user = Object.assign({}, this.state);
+        const user = Object.assign({}, this.state.user);
         this.props.processForm(user);
+        this.setState({showErrors: true});
     }
     renderErrors() {
         return (
@@ -56,7 +60,7 @@ class SignUpForm extends React.Component {
                     </label>
                     <input className="session-submit" type="submit" value={this.props.formType} />
                 </form>
-                <p className="errors">{this.renderErrors()}</p>
+                <p className="errors">{this.state.showErrors ? this.renderErrors() : null}</p>
                 <p>Already have an account? <strong>{this.props.navLink}</strong></p>
             </div>
 
