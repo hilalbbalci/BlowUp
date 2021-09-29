@@ -27,7 +27,6 @@ class CommentIndex extends React.Component {
         this.setState({wannaedit: true});
     }
     edit(comment) {
-        // console.log(comment);
         this.props.updateComment(comment); 
         this.setState({wannaedit: false});
 
@@ -44,7 +43,6 @@ class CommentIndex extends React.Component {
               
             if(idPhoto === this.props.photoId) {
                 let edittableComment = comment;
-                console.log(edittableComment);
                 return (
                     <div key={idx} className="comment-info-box"> 
                         <div>

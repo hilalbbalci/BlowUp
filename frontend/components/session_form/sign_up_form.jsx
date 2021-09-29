@@ -5,24 +5,31 @@ class SignUpForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            user: props.user,
+            user: {
+                username: props.user.username,
+                password: props.user.password
+            },
             showErrors: false,
         }
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    update(field) {
-        return e => this.setState({
-            [field]: e.currentTarget.value
-        });
-    }
-
+    // update(field) {
+    //     return e => this.setState({
+    //         [field]: e.currentTarget.value
+    //     });
+    // }
     handleSubmit(e) {
-        // e.preventDefault();
-        const user = Object.assign({}, this.state.user);
-        this.props.processForm(user);
-        this.setState({showErrors: true});
+        e.preventDefault();
+        this.props.processForm(this.state.user);
+        this.setState({ showErrors: true });
     }
+    // handleSubmit(e) {
+    //     // e.preventDefault();
+    //     const user = Object.assign({}, this.state.user);
+    //     this.props.processForm(user);
+    //     this.setState({showErrors: true});
+    // }
     renderErrors() {
         return (
             <ul>
@@ -46,7 +53,7 @@ class SignUpForm extends React.Component {
                         <br />
                         <input type="text"
                             value={this.state.username}
-                            onChange={this.update('username')}
+                            onChange={(text) => { this.setState({ user: { username: text.target.value, password: this.state.user.password } }) }}
                             className="login-input"
                         />
                     </label>
@@ -54,7 +61,7 @@ class SignUpForm extends React.Component {
                         <br />
                         <input type="password"
                             value={this.state.password}
-                            onChange={this.update('password')}
+                            onChange={(text) => { this.setState({ user: { username: this.state.user.username, password: text.target.value } }) }}
                             className="login-input"
                         />
                     </label>

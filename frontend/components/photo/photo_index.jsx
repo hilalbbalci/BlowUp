@@ -16,9 +16,7 @@ class PhotoIndex extends React.Component {
   
     render() {
         const { photos } = this.props;
-        console.log(photos);
         const { users } = this.props;
-        console.log(users)
         if (!photos) return null;
         if (!users) return null;
         let photoTank = {};
