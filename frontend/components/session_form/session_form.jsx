@@ -7,25 +7,40 @@ class SessionForm extends React.Component {
     constructor(props) {
         super(props);
         this.state ={
-            user: this.props.user,
+            user: {
+                username: this.props.user.username,
+                password: this.props.user.password
+            },
             showErrors: false
         } 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.demoUser = this.demoUser.bind(this);
+        this.update = this.update.bind(this);
     }
     
    
     update(field) {
-        return e => this.setState({
-            [field]: e.currentTarget.value
-        });
+        return e => {
+            e.preventDefault();
+            this.setState({
+            user: {
+                [field]: e.currentTarget.value
+                }
+            });
+         };
     }
 
     handleSubmit(e) {
         e.preventDefault();
+        // if(this.props.errors.length > 0 ) {
+        //     return null;
+        // }
+      
+        console.log(this.state.user);
         const user = Object.assign({}, this.state.user);
+        console.log(user);
         this.props.processForm(user);
-        this.setState({showErrors : true})
+        this.setState({showErrors : true});
     }
     demoUser() {
         // e.preventDefault();
@@ -58,7 +73,7 @@ class SessionForm extends React.Component {
                         <label>Username
                             <br />
                             <input type="text"
-                                value={this.state.username}
+                                value={this.state.user.username}
                                 onChange={this.update('username')}
                                 className="login-input"
                             />
@@ -66,7 +81,7 @@ class SessionForm extends React.Component {
                         <label>Password
                             <br />
                             <input type="password"
-                                value={this.state.password}
+                                value={this.state.user.password}
                                 onChange={this.update('password')}
                                 className="login-input"
                             />
