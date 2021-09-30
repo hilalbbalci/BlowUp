@@ -9,7 +9,7 @@ class Api::PhotosController < ApplicationController
     def create
         @photo = Photo.new(photo_params)
         @photo.user_id = current_user.id
-        @photo.post.attach(params[:photo][:post])
+        # @photo.post.attach(params[:photo][:post])
         if @photo.save! 
         # redirect_to photo_url(@chirp)
         render :show
