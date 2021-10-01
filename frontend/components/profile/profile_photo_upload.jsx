@@ -39,9 +39,12 @@ class ProfilePhotoUpload extends React.Component {
             ).then(resp=> {
                 // this.setState({user: {profile: resp.url}});
                 this.setState(prevState => {
-                    let user = Object.assign({}, prevState.user);  // creating copy of state variable jasper
-                    user.profile = resp.url;                     // update the name property, assign a new value
-                    this.props.updateUser(user);
+                    let user = Object.assign({}, prevState.user); 
+                    let url = resp.url.split("?");
+                    user.profile = url[0];                     // update the name property, assign a new value
+                    this.props.updateUser(user).then(resp => {
+                        this.props.history.push(`/users/${user.id}`);
+                    });
                 });
             }));
         // 
