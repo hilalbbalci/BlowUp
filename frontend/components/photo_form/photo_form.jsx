@@ -41,7 +41,6 @@ class UploadPhoto extends React.Component {
         fileReader.onloadend = () => {
             this.setState({ photoFile: file, photoUrl: fileReader.result, selectForm: 1 });
         };
-        console.log(this.state);
 
         if (file) {
             fileReader.readAsDataURL(file);
@@ -55,7 +54,6 @@ class UploadPhoto extends React.Component {
             formData.append("photo[description]", this.state.photo.photo.description);
             formData.append("photo[userId]", this.state.photo.photo.userId);
             formData.append("photo[post]", this.state.photoFile);
-        console.log(formData);
 
         axios.get("https://ty559p5ri0.execute-api.us-west-1.amazonaws.com/default/getImageURL")
             .then(resp =>
@@ -65,11 +63,9 @@ class UploadPhoto extends React.Component {
                 }
                 ).then(resp => {
                     this.setState(prevState => {
-                        console.log(prevState);
                         let photo = Object.assign({}, prevState.photo); 
                         let url = resp.url.split("?");
                         photo.photo.post = url[0];     
-                        console.log(photo);               
                         this.props.createPhoto(photo).then(resp => {
                             this.props.history.push(`/photos/${resp.photo.id}`);
                         });
