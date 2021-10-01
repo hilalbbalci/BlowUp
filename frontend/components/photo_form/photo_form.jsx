@@ -66,9 +66,10 @@ class UploadPhoto extends React.Component {
                 ).then(resp => {
                     this.setState(prevState => {
                         console.log(prevState);
-                        let photo = Object.assign({}, prevState.photo);  // creating copy of state variable jasper
-                        photo.photo.post = resp.url;     
-                        console.log(photo);                // update the name property, assign a new value
+                        let photo = Object.assign({}, prevState.photo); 
+                        let url = resp.url.split("?");
+                        photo.photo.post = url[0];     
+                        console.log(photo);               
                         this.props.createPhoto(photo).then(resp => {
                             this.props.history.push(`/photos/${resp.photo.id}`);
                         });

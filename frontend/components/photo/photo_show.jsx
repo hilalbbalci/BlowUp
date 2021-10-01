@@ -36,7 +36,8 @@ class PhotoShow extends React.Component {
         const { photo } = this.props;
     
         if (!photo) return null;
-        
+        // let photoUrl = photo.post.split('?');
+        // photoUrl = photoUrl[0];
         const user = this.props.users[photo.userId];
         if(!user) return null;
         return (
