@@ -1,32 +1,31 @@
 import { connect } from 'react-redux';
 import CommentForm from './comment_form';
-import { createComment } from '../../actions/comment_actions';
+import { createComment, fetchComments, deleteComment, updateComment } from '../../actions/comment_actions';
 import { withRouter } from 'react-router-dom';
 
-const mapStateToProps = (state, ownProps) => {
-    return {
-        formType: "createComment",
-        preloadedState: {
-            comment: {
-                comment: "",
-                photo_id: 0,
-                newComment:'',
-                
-            },
-            components:[],
-            commentComponent: null,
-            showButtons: false,
-            showNewComment: false,
+const mapStateToProps = (state, ownProps) => ({
+    photoId: ownProps.match.params.id,
+    comments: Object.values(state.entities.comments),
+    users: state.entities.users,
+    currentUser: state.entities.users[state.session.id],
+    preloadedState: {
+        comment: {
+            comment: "",
+            photoId: 0,
         },
-        currentUser: state.entities.users[state.session.id],
-      
-    };
-}
+        showButtons: false,
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        action: (comment) => dispatch(createComment(comment))
+
     }
-}
+
+});
+
+const mapDispatchToProps = (dispatch, ownProps) => ({
+    fetchComments: () =>
+        dispatch(fetchComments(ownProps.match.params.photoId)),
+    deleteComment: (commentId) => dispatch(deleteComment(commentId)),
+    updateComment: (comment) => dispatch(updateComment(comment)),
+    createComment: (comment) => dispatch(createComment(comment))
+});
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(CommentForm));

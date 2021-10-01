@@ -30,6 +30,7 @@ class UploadPhoto extends React.Component {
         fileReader.onloadend = () => {
             this.setState({ photoFile: file, photoUrl: fileReader.result, selectForm: 1 });
         };
+
         if (file) {
             fileReader.readAsDataURL(file);
         }
@@ -42,9 +43,10 @@ class UploadPhoto extends React.Component {
             formData.append("photo[description]", this.state.description);
             formData.append("photo[userId]", this.state.userId);
             formData.append("photo[post]", this.state.photoFile);
-            this.props.createPhoto(formData).then(resp => {
-                this.props.history.push(`/photos/${resp.photo.id}`);
-            });
+            this.props.createPhoto(formData);
+            // .then(resp => {
+            //     this.props.history.push(`/photos/${resp.photo.id}`);
+            // });
 
     }
     handleCancel(e) {
