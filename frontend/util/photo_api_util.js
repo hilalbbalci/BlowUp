@@ -20,15 +20,16 @@ export const fetchPhoto = id => (
 //     })
 // );
 
-export const createPhoto = formData => (
+export const createPhoto = formData => {
+    return(
     $.ajax({
         method: 'POST',
         url: 'api/photos',
         data: formData,
-        contentType: false,
-        processData: false
-    })
-);
+        // contentType: false,
+        // processData: false
+    }));
+};
 
 export const deletePhoto = photoId => (
     $.ajax({

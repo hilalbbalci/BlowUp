@@ -1,16 +1,18 @@
 import React from 'react';
 import { IoArrowUp } from "react-icons/io5";
-// import { Redirect } from 'react-router';
-
+import axios from 'axios';
 
 class UploadPhoto extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            id: "",
+            photo: {
+                photo: {
             title: "",
             description: "",
-            userId: this.props.userId,
+            userId: this.props.userId, 
+            post: ""
+            }}, 
             photoFile: null,
             photoUrl: null,
             selectForm: 0,
@@ -21,8 +23,17 @@ class UploadPhoto extends React.Component {
     }
 
     Update(field) {
-        return e => this.setState({ [field]: e.target.value });
+        return e => this.setState({photo: {photo: Object.assign(
+            {},
+            this.state.photo.photo,
+            { [field]: e.target.value } 
+        )},
+            photoFile: this.state.photoFile,
+            photoUrl: this.state.photoUrl,
+            selectForm: this.state.selectForm,
+        });
     }
+  
 
     handleFile(e) {
         const file = e.target.files[0];
@@ -30,6 +41,7 @@ class UploadPhoto extends React.Component {
         fileReader.onloadend = () => {
             this.setState({ photoFile: file, photoUrl: fileReader.result, selectForm: 1 });
         };
+        console.log(this.state);
 
         if (file) {
             fileReader.readAsDataURL(file);
@@ -39,16 +51,40 @@ class UploadPhoto extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
             const formData = new FormData();
-            formData.append("photo[title]", this.state.title);
-            formData.append("photo[description]", this.state.description);
-            formData.append("photo[userId]", this.state.userId);
+            formData.append("photo[title]", this.state.photo.photo.title);
+            formData.append("photo[description]", this.state.photo.photo.description);
+            formData.append("photo[userId]", this.state.photo.photo.userId);
             formData.append("photo[post]", this.state.photoFile);
-            this.props.createPhoto(formData);
-            // .then(resp => {
-            //     this.props.history.push(`/photos/${resp.photo.id}`);
-            // });
+        console.log(formData);
+
+        axios.get("https://ty559p5ri0.execute-api.us-west-1.amazonaws.com/default/getImageURL")
+            .then(resp =>
+                fetch(resp.data.uploadURL, {
+                    method: "PUT",
+                    body: this.state.photoFile
+                }
+                ).then(resp => {
+                    this.setState(prevState => {
+                        console.log(prevState);
+                        let photo = Object.assign({}, prevState.photo);  // creating copy of state variable jasper
+                        photo.photo.post = resp.url;     
+                        console.log(photo);                // update the name property, assign a new value
+                        this.props.createPhoto(photo).then(resp => {
+                            this.props.history.push(`/photos/${resp.photo.id}`);
+                        });
+                    });
+                }));
+        // 
+
 
     }
+
+    //         this.props.createPhoto(formData)
+    //         .then(resp => {
+    //             this.props.history.push(`/photos/${resp.photo.id}`);
+    //         });
+
+    // }
     handleCancel(e) {
         this.setState({ selectForm: 0 });
     }
@@ -97,13 +133,13 @@ class UploadPhoto extends React.Component {
                     <form className="upload-photo-form">
                         <label>Title
                             <br />
-                            <input className="upload-input" type="text" value={this.state.title} onChange={this.Update("title")} />
-                            {this.state.tError ? <p className="errors">Title can not be empty</p> : null}
+                            <input className="upload-input" type="text" value={this.state.photo.photo.title} onChange={this.Update("title")} />
+                            {/* {this.state.tError ? <p className="errors">Title can not be empty</p> : null} */}
                         </label>
                         <br />
                         <label>Description
                             <br />
-                            <textarea cols="35" rows="3" className="upload-textarea" type="text" value={this.state.description} onChange={this.Update("description")} />
+                            <textarea cols="35" rows="3" className="upload-textarea" type="text" value={this.state.photo.photo.description} onChange={this.Update("description")} />
                         </label>
                         <div className="cancel-submit">
                             <button className="upload-button-cancel" onClick={this.handleCancel}>Cancel</button>
