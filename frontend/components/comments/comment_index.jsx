@@ -20,20 +20,36 @@ class CommentIndex extends React.Component {
     componentDidMount() {
         this.props.fetchComments();
     }
+    // componentDidUpdate() {
+    //     this.props.fetchComments();
+
+    // }
+  
     deleteComment(commentId) {
-        this.props.deleteComment(commentId);
+        this.props.deleteComment(commentId)
     }
     wannaedit(){
+        // let comments = this.props.comments.filter(comment => (comment.commenterId === this.props.currentUser.id) && (comment.photoId.toString() === this.props.photoId));
         this.setState({wannaedit: true});
     }
-    edit(comment) {
-        this.props.updateComment(comment); 
-        this.setState({wannaedit: false});
-
+   
+   
+    edit(value, comment){
+        let edittablecomment = {
+            comment: value,
+            photoId: comment.photoId,
+            commenterId: comment.commenterId,
+            id: comment.id
+        };
+        edittablecomment.comment.length > 0 ? 
+            this.props.updateComment(edittablecomment).then(()=> {
+                this.setState({ wannaedit: false });
+            }) : alert("Make a comment");
     }
    
 
     renderCommentsOfAPhoto() {
+        let newComment = "";
         if(!this.props.photoId) {
             return null;
         }
@@ -42,7 +58,6 @@ class CommentIndex extends React.Component {
                const idPhoto = comment.photoId.toString();
               
             if(idPhoto === this.props.photoId) {
-                let edittableComment = comment;
                 return (
                     <div key={idx} className="comment-info-box"> 
                         <div>
@@ -50,8 +65,13 @@ class CommentIndex extends React.Component {
                             <div className="next-to-photo"> 
                                 <li className="commenter-name"> {this.props.users[comment.commenterId].username} </li>
                                 {this.props.currentUser.id === comment.commenterId ? 
-                                    <li>{this.state.wannaedit ? <div><input onChange={(text)=> {edittableComment.comment = text.target.value}} className="editted-comment" type="text" placeholder={comment.comment}></input><button onClick={()=> {this.edit(edittableComment)}}>Edit</button></div> : <li>{comment.comment}</li>}</li> :
-                                <li> {comment.comment}</li>  }                                   
+                                    <li>{this.state.wannaedit ? <div>
+                                        <input 
+                                        className="editted-comment" type="text" ></input>
+                                        {/* {console.log(document.querySelector(".editted-comment"))} */}
+                                        <button onClick={()=> this.edit(document.querySelector(".editted-comment").value, comment)}>Edit</button>
+                                        </div> : <li>{comment.comment}</li>
+                                        }</li> : <li> {comment.comment}</li>  }                                   
                             </div> 
                         </div>
                      
@@ -68,23 +88,18 @@ class CommentIndex extends React.Component {
     }
 
     renderEmptyCommentsMessage() {
-        if (this.props.comments.length === 0) {
             return (<li className="comment-zero">
                         No comments yet
                     </li>)
-        } else {
-            return null;
-        }
-
     }
 
     render() {
-        if (!this.props.comments) return null;
+        // console.log(this.state.comments);
+        // if (!this.props.comments) return null;
         return (
         <div className="comments-last-container"> 
             <ul className="comment-list">
-                {this.renderCommentsOfAPhoto()}
-                {this.renderEmptyCommentsMessage()}
+                {this.props.comments.length > 0 ? this.renderCommentsOfAPhoto() : this.renderEmptyCommentsMessage()}
             </ul>
         </div>
         )

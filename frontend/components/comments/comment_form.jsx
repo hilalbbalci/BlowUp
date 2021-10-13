@@ -19,10 +19,10 @@ class CommentForm extends React.Component {
         // this.renderNewComment = this.renderNewComment.bind(this);
     }
  
-   componentDidMount() {
-       this.props.fetchComments();
-    //    return (ReactDOM.findDOMNode(this));
-   }
+//    componentDidMount() {
+//        this.props.fetchComments();
+//     //    return (ReactDOM.findDOMNode(this));
+//    }
    componentDidUpdate() {
        this.props.fetchComments();
 
@@ -79,21 +79,9 @@ class CommentForm extends React.Component {
 
  
     }
-    // renderNewComment(newComment) {
-    //     let array=this.state.components;
-    //     //const newComment = this.state.comment.newComment;
-    //     array.unshift( newComment);
-    //     this.setState({
-    //         components:array
-    //     })
-    // }
-
-    
-       
-    
+ 
 
     render() {
-
         return (
         <div>
             <form className="comment-form">
@@ -112,25 +100,7 @@ class CommentForm extends React.Component {
                 </div>
                 {this.renderButtons()}
             </form>
-                {/* <div className="comments-last-container">
-                    <h3>Comments</h3>
-                    <ul className="comment-list">
-                        {this.state.components.map((item,i) => {
-                            return (
-                                <div className="comment-info-box">
-                                    <img src={this.props.currentUser.profile} />
-                                    <div className="next-to-photo"> 
-                                        <li className="commenter-name">{this.props.currentUser.username}</li>
-                                        <li>{item}</li>
-                                    </div>
-                                </div>
-                                )
-                          
-                           
-                        })}
-                    </ul> */}
-                    <CommentIndexContainer />
-                {/* </div> */}
+            <CommentIndexContainer />
 
         </div>
             
