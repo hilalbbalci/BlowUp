@@ -26,7 +26,7 @@ class CommentIndex extends React.Component {
     // }
   
     deleteComment(commentId) {
-        this.props.deleteComment(commentId)
+        this.props.deleteComment(commentId).then(resp=> {console.log(resp)});
     }
     wannaedit(){
         // let comments = this.props.comments.filter(comment => (comment.commenterId === this.props.currentUser.id) && (comment.photoId.toString() === this.props.photoId));
@@ -49,11 +49,11 @@ class CommentIndex extends React.Component {
    
 
     renderCommentsOfAPhoto() {
-        let newComment = "";
+
         if(!this.props.photoId) {
             return null;
         }
-        return this.props.comments.reverse().map((comment, idx) => {
+        return this.props.comments.map((comment, idx) => {
             if(comment.photoId){
                const idPhoto = comment.photoId.toString();
               
@@ -68,8 +68,8 @@ class CommentIndex extends React.Component {
                                     <li>{this.state.wannaedit ? <div>
                                         <input 
                                         className="editted-comment" type="text" ></input>
-                                        {/* {console.log(document.querySelector(".editted-comment"))} */}
                                         <button onClick={()=> this.edit(document.querySelector(".editted-comment").value, comment)}>Edit</button>
+                                        <button onClick={()=> this.setState({wannaedit: false})}>Cancel</button>
                                         </div> : <li>{comment.comment}</li>
                                         }</li> : <li> {comment.comment}</li>  }                                   
                             </div> 
@@ -94,8 +94,7 @@ class CommentIndex extends React.Component {
     }
 
     render() {
-        // console.log(this.state.comments);
-        // if (!this.props.comments) return null;
+        if (!this.props.comments) return null;
         return (
         <div className="comments-last-container"> 
             <ul className="comment-list">
