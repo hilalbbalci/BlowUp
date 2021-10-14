@@ -20,10 +20,11 @@ class CommentIndex extends React.Component {
     componentDidMount() {
         this.props.fetchComments();
     }
-    // componentDidUpdate() {
-    //     this.props.fetchComments();
+    componentDidUpdate() {
+        this.props.fetchComments();
 
-    // }
+    }
+
   
     deleteComment(commentId) {
         this.props.deleteComment(commentId).then(resp=> {console.log(resp)});
