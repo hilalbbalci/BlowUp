@@ -20,10 +20,10 @@ class CommentForm extends React.Component {
     }
  
 
-   componentDidUpdate() {
-       this.props.fetchComments();
+//    componentDidUpdate() {
+//        this.props.fetchComments();
 
-   }
+//    }
    
     toggleButtons() {
         this.setState({ showButtons: !this.state.showButtons });

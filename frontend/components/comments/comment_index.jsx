@@ -21,7 +21,10 @@ class CommentIndex extends React.Component {
     componentDidMount() {
         this.props.fetchComments();
     }
-    // componentDidUpdate() {
+    // componentDidUpdate(prevProps) {
+    //     if(prevProps.comments.length != this.props.comments.length) {
+    //         debugger
+    //     }
     //     this.props.fetchComments();
 
     // }
@@ -29,7 +32,7 @@ class CommentIndex extends React.Component {
   
     deleteComment(commentId) {
         this.props.deleteComment(commentId);
-        this.setState({wannaedit: false, id: this.state.id});
+        // this.setState({wannaedit: false, id: 0});
 
     }
     // wannaedit(){
