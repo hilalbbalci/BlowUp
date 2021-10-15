@@ -19,10 +19,7 @@ class CommentForm extends React.Component {
         // this.renderNewComment = this.renderNewComment.bind(this);
     }
  
-//    componentDidMount() {
-//        this.props.fetchComments();
-//     //    return (ReactDOM.findDOMNode(this));
-//    }
+
    componentDidUpdate() {
        this.props.fetchComments();
 

@@ -12,6 +12,7 @@ class CommentIndex extends React.Component {
         super(props);
         this.state = {
             wannaedit: false,
+            id: 0,
         };
         this.edit = this.edit.bind(this);
     
@@ -20,19 +21,21 @@ class CommentIndex extends React.Component {
     componentDidMount() {
         this.props.fetchComments();
     }
-    componentDidUpdate() {
-        this.props.fetchComments();
+    // componentDidUpdate() {
+    //     this.props.fetchComments();
 
-    }
+    // }
 
   
     deleteComment(commentId) {
-        this.props.deleteComment(commentId).then(resp=> {console.log(resp)});
+        this.props.deleteComment(commentId);
+        this.setState({wannaedit: false, id: this.state.id});
+
     }
-    wannaedit(){
-        // let comments = this.props.comments.filter(comment => (comment.commenterId === this.props.currentUser.id) && (comment.photoId.toString() === this.props.photoId));
-        this.setState({wannaedit: true});
-    }
+    // wannaedit(){
+    //     // let comments = this.props.comments.filter(comment => (comment.commenterId === this.props.currentUser.id) && (comment.photoId.toString() === this.props.photoId));
+    //     this.setState({wannaedit: true});
+    // }
    
    
     edit(value, comment){
@@ -44,7 +47,7 @@ class CommentIndex extends React.Component {
         };
         edittablecomment.comment.length > 0 ? 
             this.props.updateComment(edittablecomment).then(()=> {
-                this.setState({ wannaedit: false });
+                this.setState({ wannaedit: false, id: this.state.id });
             }) : alert("Make a comment");
     }
    
@@ -66,19 +69,20 @@ class CommentIndex extends React.Component {
                             <div className="next-to-photo"> 
                                 <li className="commenter-name"> {this.props.users[comment.commenterId].username} </li>
                                 {this.props.currentUser.id === comment.commenterId ? 
-                                    <li>{this.state.wannaedit ? <div>
+                                    <li>{this.state.wannaedit && comment.id === this.state.id ?
+                                    <div>
                                         <input 
                                         className="editted-comment" type="text" ></input>
-                                        <button onClick={()=> this.edit(document.querySelector(".editted-comment").value, comment)}>Edit</button>
-                                        <button onClick={()=> this.setState({wannaedit: false})}>Cancel</button>
-                                        </div> : <li>{comment.comment}</li>
+                                        <button className="edit-cancel" onClick={()=> this.edit(document.querySelector(".editted-comment").value, comment)}>Edit</button>
+                                        <button className="edit-cancel" onClick={()=> this.setState({wannaedit: false, id: this.state.id})}>Cancel</button>
+                                    </div> : <li>{comment.comment}</li>
                                         }</li> : <li> {comment.comment}</li>  }                                   
                             </div> 
                         </div>
                      
                         <div>
                             {this.props.currentUser.id === comment.commenterId ? (<button onClick={this.props.deleteComment.bind(this, comment.id)} className="delete-btn"><RiDeleteBin6Line size="15" /></button>) : (<div></div>)}
-                            {this.props.currentUser.id === comment.commenterId ? (<button onClick={this.wannaedit.bind(this)} className="edit-btn"><GrEdit size="15" /></button>) : (<div></div>)}
+                            {this.props.currentUser.id === comment.commenterId ? (<button onClick={()=> {this.setState({wannaedit: true, id: comment.id})}} className="edit-btn"><GrEdit size="15" /></button>) : (<div></div>)}
                         </div>  
                     </div>
                 );  
