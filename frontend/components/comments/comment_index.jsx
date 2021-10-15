@@ -1,6 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { HiOutlineUserCircle } from "react-icons/hi";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { GrEdit } from "react-icons/gr";
 
@@ -21,24 +19,13 @@ class CommentIndex extends React.Component {
     componentDidMount() {
         this.props.fetchComments();
     }
-    // componentDidUpdate(prevProps) {
-    //     if(prevProps.comments.length != this.props.comments.length) {
-    //         debugger
-    //     }
-    //     this.props.fetchComments();
-
-    // }
-
+   
   
     deleteComment(commentId) {
         this.props.deleteComment(commentId);
-        // this.setState({wannaedit: false, id: 0});
 
     }
-    // wannaedit(){
-    //     // let comments = this.props.comments.filter(comment => (comment.commenterId === this.props.currentUser.id) && (comment.photoId.toString() === this.props.photoId));
-    //     this.setState({wannaedit: true});
-    // }
+   
    
    
     edit(value, comment){

@@ -1,9 +1,7 @@
 import React from "react";
 import CommentIndexContainer from "./comment_index_container";
 import ReactDOM from "react-dom";
-// import UserIcon from "../user_profile/user_icon";
-// import { faComment as farComment } from "@fortawesome/free-regular-svg-icons";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 
 class CommentForm extends React.Component {
     constructor(props) {
@@ -16,14 +14,8 @@ class CommentForm extends React.Component {
         this.handleInput = this.handleInput.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleCancel = this.handleCancel.bind(this);
-        // this.renderNewComment = this.renderNewComment.bind(this);
     }
  
-
-//    componentDidUpdate() {
-//        this.props.fetchComments();
-
-//    }
    
     toggleButtons() {
         this.setState({ showButtons: !this.state.showButtons });
@@ -35,9 +27,7 @@ class CommentForm extends React.Component {
             this.props.createComment(this.state);
             
         }
-        // this.setState({ showNewComment: true });
-        // this.render();
-        // const newComment= this.state.comment.comment;
+      
         this.setState(this.props.preloadedState);
 
         
@@ -84,9 +74,7 @@ class CommentForm extends React.Component {
             <form className="comment-form">
                 <div className="comment-input-container">
                     <img src={this.props.currentUser.profile}/>
-                    {/* <p><HiOutlineUserCircle size="30" /></p>                     */}
                     <div className="comment-form-input" onClick={this.toggleButtons}>
-                        {/* <FontAwesomeIcon icon={farComment} /> */}
                         <input
                             type="text"
                             onChange={this.handleInput}
